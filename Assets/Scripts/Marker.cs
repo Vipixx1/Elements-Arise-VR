@@ -32,7 +32,8 @@ public class Marker : MonoBehaviour
 
     private void Draw()
     {
-        if (Physics.Raycast(_tip.position, transform.up, out _touch, _tipHeight))
+        _colors = Enumerable.Repeat(_color, _penSize * _penSize).ToArray();
+        if (Physics.Raycast(_tip.position, _tip.transform.right, out _touch, _tipHeight))
         {
             if (_touch.transform.CompareTag("Whiteboard"))
             {
