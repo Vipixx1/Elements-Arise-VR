@@ -19,7 +19,7 @@ public class Whiteboard : MonoBehaviour
     private void Update()
     {
         // Clear the whiteboard when the user presses the Start button
-        if(OVRInput.Get(OVRInput.Button.Start))
+        if (OVRInput.Get(OVRInput.Button.Start))
         {
             EraseWhiteboard();
         }

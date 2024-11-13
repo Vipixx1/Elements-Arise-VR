@@ -224,9 +224,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tip: {fileID: 1909703694}
-  _penSize: 100
+  _penSize: 50
   _tipHeight: 0.05
-  _color: {r: 0, g: 0, b: 1, a: 1}
+  _color: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &222044999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2081,7 +2081,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &1916195622
 MeshCollider:
   m_ObjectHideFlags: 0
