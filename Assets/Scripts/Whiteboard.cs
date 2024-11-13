@@ -21,8 +21,13 @@ public class Whiteboard : MonoBehaviour
         // Clear the whiteboard when the user presses the Start button
         if(OVRInput.Get(OVRInput.Button.Start))
         {
-            texture = new Texture2D((int)textureSize.x, (int)textureSize.y);
-            r.material.mainTexture = texture;
+            EraseWhiteboard();
         }
+    }
+
+    public void EraseWhiteboard()
+    {
+        texture = new Texture2D((int)textureSize.x, (int)textureSize.y);
+        r.material.mainTexture = texture;
     }
 }
