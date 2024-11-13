@@ -44,7 +44,7 @@ public class Marker : MonoBehaviour
     void Update()
     {
         Draw();
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             RecognizeGesture();
         }
