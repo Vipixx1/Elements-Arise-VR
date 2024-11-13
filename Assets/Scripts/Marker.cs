@@ -23,6 +23,8 @@ public class Marker : MonoBehaviour
     private List<Point> points = new List<Point>();
     private int strokeId = -1;
     private bool recognized;
+
+    [SerializeField] TMPro.TextMeshPro text;
     private string message = "";
 
     void Start()
@@ -78,7 +80,7 @@ public class Marker : MonoBehaviour
 
                 _whiteboard.texture.SetPixels(x, y, _penSize, _penSize, _colors);
 
-                points.Add(new Point(_touchPos.x, _touchPos.y, strokeId)); // Track gesture points
+                points.Add(new Point(x, y, strokeId)); // Track gesture points
 
                 if (_touchedLastFrame)
                 {
@@ -87,6 +89,8 @@ public class Marker : MonoBehaviour
                         var lerpX = (int)Mathf.Lerp(_lastTouchPos.x, x, f);
                         var lerpY = (int)Mathf.Lerp(_lastTouchPos.y, y, f);
                         _whiteboard.texture.SetPixels(lerpX, lerpY, _penSize, _penSize, _colors);
+
+                        points.Add(new Point(lerpX, lerpY, strokeId));
                     }
 
                     transform.rotation = _lastTouchRot;
@@ -114,22 +118,13 @@ public class Marker : MonoBehaviour
 
         message = gestureResult.GestureClass + " " + gestureResult.Score;
         Debug.Log(message);
+        text.text = message;
+
+        // Add things after the recognition (if gesture.GestureClass == ???; if gestureResult.Score > ???)
+
 
         // Clear for the next gesture
         /*points.Clear();
         strokeId = -1;*/
-    }
-
-    public void AddNewGesture(string gestureName)
-    {
-        if (points.Count > 0 && !string.IsNullOrEmpty(gestureName))
-        {
-            string fileName = $"{Application.persistentDataPath}/{gestureName}-{DateTime.Now.ToFileTime()}.xml";
-
-            GestureIO.WriteGesture(points.ToArray(), gestureName, fileName);
-            trainingSet.Add(new Gesture(points.ToArray(), gestureName));
-
-            Debug.Log($"Gesture '{gestureName}' added!");
-        }
     }
 }
