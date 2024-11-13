@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tip: {fileID: 1909703694}
-  _penSize: 80
+  _penSize: 100
   _tipHeight: 0.05
   _color: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &290701934
@@ -2003,6 +2003,7 @@ GameObject:
   - component: {fileID: 1916195623}
   - component: {fileID: 1916195622}
   - component: {fileID: 1916195626}
+  - component: {fileID: 1916195629}
   - component: {fileID: 1916195627}
   - component: {fileID: 1916195628}
   m_Layer: 0
@@ -2145,6 +2146,18 @@ MonoBehaviour:
   _renderer: {fileID: 1916195623}
   _normalColor: {r: 1, g: 1, b: 1, a: 1}
   _selectColor: {r: 1, g: 0, b: 0, a: 1}
+--- !u!114 &1916195629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916195621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47c02a5f1da180f44b05407ab55d7054, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
