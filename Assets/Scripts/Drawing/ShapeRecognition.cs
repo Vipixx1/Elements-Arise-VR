@@ -1,154 +1,58 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
 
-public class ShapeRecognition : MonoBehaviour
+namespace Drawing
 {
-    private Renderer _renderer;
-    private Whiteboard _whiteboard;
-    private Color _colorMandatory = Color.green;
-    private Color _colorAvoid = Color.red;
-    private Color[] _point;
-    private int _pointSize = 10;
-    
-    [SerializeField] private TextMeshPro _text;
-    
-    private List<Vector2> _squareMandatory = new List<Vector2>
-    {
-        new Vector2(0.2f, 0.2f),
-        new Vector2(0.8f, 0.8f),
-        new Vector2(0.2f, 0.8f),
-        new Vector2(0.8f, 0.2f),
-    };
-    
-    private List<Vector2> _squareAvoid = new List<Vector2>
-    {
-        new Vector2(0.5f, 0.5f),
-    };
-    
-    
-    private List<Vector2> _triangleMandatory = new List<Vector2>
-    {
-        new Vector2(0.5f, 0.2f),
-        new Vector2(0.2f, 0.8f),
-        new Vector2(0.8f, 0.8f),
-    };
-    
-    private List<Vector2> _triangleAvoid = new List<Vector2>
-    {
-        new Vector2(0.5f, 0.5f),
-        new Vector2(0.2f, 0.2f),
-        new Vector2(0.8f, 0.2f),
-    };
-    
-    void Start()
-    { 
-        _renderer = GetComponent<Renderer>();
-        _whiteboard = GetComponent<Whiteboard>();
-    }
-    
-    void Update()
+    public class ShapeRecognition : MonoBehaviour
     {
         
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            _whiteboard.EraseWhiteboard();
-            DrawSquare();
+        private Renderer _renderer;
+        private Whiteboard _whiteboard;
+        private Color _colorMandatory = Color.green;
+        private Color _colorAvoid = Color.red;
+        private Color[] _point;
+        private int _pointSize = 10;
+        
+        private DrawableShapes _drawableShapes = new DrawableShapes();
+        private int _currentShapeIndex = 0;
+       
+        public List<DrawableShapeSO> DrawableShapesList = new List<DrawableShapeSO>();
+        [SerializeField] private TextMeshPro _text;
+    
+        void Start()
+        { 
+            _renderer = GetComponent<Renderer>();
+            _whiteboard = GetComponent<Whiteboard>();
         }
-        
-        if (Input.GetKeyDown(KeyCode.T))
+    
+        void Update()
         {
-            _whiteboard.EraseWhiteboard();
-            DrawTriangle();
-        }
         
-        if (IsSquare())
-        {
-            _text.text = "Carré";
-            return;
-        }
-        
-        if (IsTriangle())
-        {
-            _text.text = "Triangle";
-            return;
-        }
-        
-        _text.text = "Rien";
-    }
-
-    private bool IsSquare()
-    {
-        foreach (Vector2 point in _squareMandatory)
-        {
-            if(_whiteboard.texture.GetPixel((int) (point.x * _whiteboard.textureSize.x), (int) (point.y * _whiteboard.textureSize.y)) != Color.blue)
+            if (Input.GetKeyDown(KeyCode.D))
             {
-                return false;
+                _whiteboard.EraseWhiteboard();
+                _drawableShapes.DebugShape(DrawableShapesList[_currentShapeIndex], _whiteboard, _pointSize);
+                _currentShapeIndex = (_currentShapeIndex + 1) % DrawableShapesList.Count;
             }
-        }
-        
-        foreach (Vector2 point in _squareAvoid)
-        {
-            if(_whiteboard.texture.GetPixel((int) (point.x * _whiteboard.textureSize.x), (int) (point.y * _whiteboard.textureSize.y)) == Color.blue)
+            
+            if (Input.GetKeyDown(KeyCode.R))
             {
-                return false;
+                RecognizeShape();
             }
+            
         }
-
-        return true;
-    }
-    
-    private bool IsTriangle()
-    {
-        foreach (Vector2 point in _triangleMandatory)
+        
+        private void RecognizeShape()
         {
-            if(_whiteboard.texture.GetPixel((int) (point.x * _whiteboard.textureSize.x), (int) (point.y * _whiteboard.textureSize.y)) != Color.blue)
+            foreach (DrawableShapeSO shape in DrawableShapesList)
             {
-                return false;
+                if (!_drawableShapes.IsShape(shape, _whiteboard)) continue;
+                _text.text = shape.ShapeName;
+                return;
             }
+            _text.text = "Rien";
         }
-        
-        foreach (Vector2 point in _triangleAvoid)
-        {
-            if(_whiteboard.texture.GetPixel((int) (point.x * _whiteboard.textureSize.x), (int) (point.y * _whiteboard.textureSize.y)) == Color.blue)
-            {
-                return false;
-            }
-        }
-
-        return true;
-    }
-    
-    private void DrawSquare()
-    {
-        foreach (Vector2 point in _squareMandatory)
-        {
-            _whiteboard.texture.SetPixels((int) (point.x * _whiteboard.textureSize.x), (int) (point.y * _whiteboard.textureSize.y), _pointSize, _pointSize, Enumerable.Repeat(_colorMandatory, _pointSize * _pointSize).ToArray());
-        }
-        
-        foreach (Vector2 point in _squareAvoid)
-        {
-            _whiteboard.texture.SetPixels((int) (point.x * _whiteboard.textureSize.x), (int) (point.y * _whiteboard.textureSize.y), _pointSize, _pointSize, Enumerable.Repeat(_colorAvoid, _pointSize * _pointSize).ToArray());
-        }
-        
-        _whiteboard.texture.Apply();
-    }
-
-    private void DrawTriangle()
-    {
-        foreach (Vector2 point in _triangleMandatory)
-        {
-            _whiteboard.texture.SetPixels((int) (point.x * _whiteboard.textureSize.x), (int) (point.y * _whiteboard.textureSize.y), _pointSize, _pointSize, Enumerable.Repeat(_colorMandatory, _pointSize * _pointSize).ToArray());
-        }
-        
-        foreach (Vector2 point in _triangleAvoid)
-        {
-            _whiteboard.texture.SetPixels((int) (point.x * _whiteboard.textureSize.x), (int) (point.y * _whiteboard.textureSize.y), _pointSize, _pointSize, Enumerable.Repeat(_colorAvoid, _pointSize * _pointSize).ToArray());
-        }
-        
-        _whiteboard.texture.Apply();
     }
 }

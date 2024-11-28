@@ -2329,6 +2329,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47c02a5f1da180f44b05407ab55d7054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DrawableShapesList:
+  - {fileID: 11400000, guid: 5ca6470951d830a4eaff50937d8b8aa7, type: 2}
+  - {fileID: 11400000, guid: 29e0e766c2895e24999e184dd0905d58, type: 2}
+  - {fileID: 11400000, guid: 6d2b90f56814e064caec89f5bffaa469, type: 2}
   _text: {fileID: 1386875047}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
