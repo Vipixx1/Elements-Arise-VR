@@ -35,9 +35,10 @@ public class Demo : MonoBehaviour {
 		drawArea = new Rect(0, 0, Screen.width - Screen.width / 3, Screen.height);
 
 		//Load pre-made gestures
-		TextAsset[] gesturesXml = Resources.LoadAll<TextAsset>("GestureSet/10-stylus-MEDIUM/");
-		foreach (TextAsset gestureXml in gesturesXml)
-			trainingSet.Add(GestureIO.ReadGestureFromXML(gestureXml.text));
+		//// TextAsset[] gesturesXml = Resources.LoadAll<TextAsset>("GestureSet/10-stylus-MEDIUM/");
+        /*TextAsset[] gesturesXml = Resources.LoadAll<TextAsset>("GestureSet/10-stylus-MEDIUM-test/");
+        foreach (TextAsset gestureXml in gesturesXml)
+			trainingSet.Add(GestureIO.ReadGestureFromXML(gestureXml.text));*/
 
 		//Load user custom gestures
 		string[] filePaths = Directory.GetFiles(Application.persistentDataPath, "*.xml");

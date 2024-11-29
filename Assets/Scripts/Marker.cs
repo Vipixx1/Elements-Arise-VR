@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-using PDollarGestureRecognizer;
 using System;
 
 public class Marker : MonoBehaviour
@@ -19,43 +18,14 @@ public class Marker : MonoBehaviour
     private bool _touchedLastFrame;
     private Quaternion _lastTouchRot;
 
-    private List<Gesture> trainingSet = new List<Gesture>();
-    private List<Point> points = new List<Point>();
-    private int strokeId = -1;
-    private bool recognized;
-
-    [SerializeField] TMPro.TextMeshPro text;
-    private string message = "";
-
     void Start()
     {
         _colors = Enumerable.Repeat(_color, _penSize * _penSize).ToArray();
-
-        // Load pre-made gestures
-        TextAsset[] gesturesXml = Resources.LoadAll<TextAsset>("GestureSet/10-stylus-MEDIUM/");
-        Debug.Log(gesturesXml.Length);
-        foreach (TextAsset gestureXml in gesturesXml)
-            trainingSet.Add(GestureIO.ReadGestureFromXML(gestureXml.text));
-
-        // Load user-defined gestures
-        string[] filePaths = System.IO.Directory.GetFiles(Application.persistentDataPath, "*.xml");
-        foreach (string filePath in filePaths)
-            trainingSet.Add(GestureIO.ReadGestureFromFile(filePath));
     }
 
     void Update()
     {
         Draw();
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            RecognizeGesture();
-        }
-
-        if (OVRInput.Get(OVRInput.Button.Start))
-        {
-            points.Clear();
-            strokeId = -1;
-        }
     }
 
     private void Draw()
@@ -78,9 +48,8 @@ public class Marker : MonoBehaviour
 
                 if (y < 0 || y > _whiteboard.textureSize.y || x < 0 || x > _whiteboard.textureSize.x) return;
 
-                _whiteboard.texture.SetPixels(x, y, _penSize, _penSize, _colors);
-
-                points.Add(new Point(x, y, strokeId)); // Track gesture points
+                _whiteboard.DrawPoint(x, y, _penSize, _penSize, _colors);
+                
 
                 if (_touchedLastFrame)
                 {
@@ -88,9 +57,8 @@ public class Marker : MonoBehaviour
                     {
                         var lerpX = (int)Mathf.Lerp(_lastTouchPos.x, x, f);
                         var lerpY = (int)Mathf.Lerp(_lastTouchPos.y, y, f);
-                        _whiteboard.texture.SetPixels(lerpX, lerpY, _penSize, _penSize, _colors);
 
-                        points.Add(new Point(lerpX, lerpY, strokeId));
+                        _whiteboard.DrawPoint(lerpX, lerpY, _penSize, _penSize, _colors);
                     }
 
                     transform.rotation = _lastTouchRot;
@@ -109,22 +77,5 @@ public class Marker : MonoBehaviour
         _touchedLastFrame = false;
     }
 
-    private void RecognizeGesture()
-    {
-        recognized = true;
-
-        Gesture candidate = new Gesture(points.ToArray());
-        Result gestureResult = PointCloudRecognizer.Classify(candidate, trainingSet.ToArray());
-
-        message = gestureResult.GestureClass + " " + gestureResult.Score;
-        Debug.Log(message);
-        text.text = message;
-
-        // Add things after the recognition (if gesture.GestureClass == ???; if gestureResult.Score > ???)
-
-
-        // Clear for the next gesture
-        /*points.Clear();
-        strokeId = -1;*/
-    }
+    
 }

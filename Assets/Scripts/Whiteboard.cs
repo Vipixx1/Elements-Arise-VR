@@ -2,12 +2,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using PDollarGestureRecognizer;
 
 public class Whiteboard : MonoBehaviour
 {
+    private Whiteboard _whiteboard;
+
     public Texture2D texture;
     public Vector2 textureSize = new Vector2(2048, 2048);
     private Renderer r;
+
+    public List<Point> Points { get; set; } = new List<Point>();
 
     void Start()
     {
@@ -29,5 +34,14 @@ public class Whiteboard : MonoBehaviour
     {
         texture = new Texture2D((int)textureSize.x, (int)textureSize.y);
         r.material.mainTexture = texture;
+        Points.Clear();
+
+    }
+
+    public void DrawPoint(int x, int y, int width, int height, Color[] colors)
+    {
+        texture.SetPixels(x, y, width, height, colors);
+        //texture.Apply();
+        Points.Add(new Point(x, y, 0));
     }
 }
