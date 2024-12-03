@@ -9,7 +9,7 @@ namespace Drawing
     {
         
         private Renderer _renderer;
-        private Whiteboard _whiteboard;
+        private Scroll scroll;
         private Color _colorMandatory = Color.green;
         private Color _colorAvoid = Color.red;
         private Color[] _point;
@@ -24,7 +24,7 @@ namespace Drawing
         void Start()
         { 
             _renderer = GetComponent<Renderer>();
-            _whiteboard = GetComponent<Whiteboard>();
+            scroll = GetComponent<Scroll>();
         }
     
         void Update()
@@ -32,8 +32,8 @@ namespace Drawing
         
             if (Input.GetKeyDown(KeyCode.D))
             {
-                _whiteboard.EraseWhiteboard();
-                _drawableShapes.DebugShape(DrawableShapesList[_currentShapeIndex], _whiteboard, _pointSize);
+                scroll.EraseScroll();
+                _drawableShapes.DebugShape(DrawableShapesList[_currentShapeIndex], scroll, _pointSize);
                 _currentShapeIndex = (_currentShapeIndex + 1) % DrawableShapesList.Count;
             }
             
@@ -48,7 +48,7 @@ namespace Drawing
         {
             foreach (DrawableShapeSO shape in DrawableShapesList)
             {
-                if (!_drawableShapes.IsShape(shape, _whiteboard)) continue;
+                if (!_drawableShapes.IsShape(shape, scroll)) continue;
                 _text.text = shape.ShapeName;
                 return;
             }

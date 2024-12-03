@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DrawingManager : MonoBehaviour
 {
-    [SerializeField] private GameObject whiteboard;
+    [SerializeField] private GameObject scroll;
     [SerializeField] private GameObject camera;
 
     private bool isRightHandActivated = false;
@@ -14,32 +14,19 @@ public class DrawingManager : MonoBehaviour
     {
         if (isRightHandActivated && isLeftHandActivated)
         {
-            //whiteboard.GetComponent<Whiteboard>().EraseWhiteboard();
-            whiteboard.SetActive(true);
-            whiteboard.transform.position = camera.transform.position + camera.transform.forward*0.5f;
-            whiteboard.transform.rotation = camera.transform.rotation * Quaternion.Euler(270, 0, 0);
-
-            //Debug.Log("Whiteboard activated");
+            scroll.SetActive(true);
+            scroll.transform.position = camera.transform.position + camera.transform.forward*0.5f;
+            scroll.transform.rotation = camera.transform.rotation * Quaternion.Euler(270, 0, 0);
         }
     }
 
-    public void ActivateRightHand()
+    public void SetRightHand(bool isActivated)
     {
-        isRightHandActivated = true;
+        isRightHandActivated = isActivated;
     }
 
-    public void DeactivateRightHand()
+    public void SetLeftHand(bool isActivated)
     {
-        isRightHandActivated = false;
-    }
-
-    public void ActivateLeftHand()
-    {
-        isLeftHandActivated = true;
-    }
-
-    public void DeactivateLeftHand()
-    {
-        isLeftHandActivated = false;
+        isLeftHandActivated = isActivated;
     }
 }

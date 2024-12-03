@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using PDollarGestureRecognizer;
 
-public class Whiteboard : MonoBehaviour
+public class Scroll : MonoBehaviour
 {
-    private Whiteboard _whiteboard;
+    private Scroll scroll;
 
     public Texture2D texture;
     public Vector2 textureSize = new Vector2(2048, 2048);
@@ -23,14 +23,14 @@ public class Whiteboard : MonoBehaviour
 
     private void Update()
     {
-        // Clear the whiteboard when the user presses the Start button
+        // Clear the scroll when the user presses the Start button
         if (OVRInput.Get(OVRInput.Button.Start))
         {
-            EraseWhiteboard();
+            EraseScroll();
         }
     }
 
-    public void EraseWhiteboard()
+    public void EraseScroll()
     {
         texture = new Texture2D((int)textureSize.x, (int)textureSize.y);
         r.material.mainTexture = texture;
@@ -41,7 +41,6 @@ public class Whiteboard : MonoBehaviour
     public void DrawPoint(int x, int y, int width, int height, Color[] colors)
     {
         texture.SetPixels(x, y, width, height, colors);
-        //texture.Apply();
         Points.Add(new Point(x, y, 0));
     }
 }

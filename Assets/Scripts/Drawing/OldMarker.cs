@@ -14,7 +14,7 @@ public class OldMarker : MonoBehaviour
     private Color[] _colors;
 
     private RaycastHit _touch;
-    private Whiteboard _whiteboard;
+    private Scroll scroll;
     private Vector2 _touchPos, _lastTouchPos;
     private bool _touchedLastFrame;
     private Quaternion _lastTouchRot;
@@ -35,21 +35,21 @@ public class OldMarker : MonoBehaviour
         _colors = Enumerable.Repeat(_color, _penSize * _penSize).ToArray();
         if (Physics.Raycast(_tip.position, _tip.transform.right, out _touch, _tipHeight))
         {
-            if (_touch.transform.CompareTag("Whiteboard"))
+            if (_touch.transform.CompareTag("Scroll"))
             {
-                if (_whiteboard == null)
+                if (scroll == null)
                 {
-                    _whiteboard = _touch.transform.GetComponent<Whiteboard>();
+                    scroll = _touch.transform.GetComponent<Scroll>();
                 }
 
                 _touchPos = new Vector2(_touch.textureCoord.x, _touch.textureCoord.y);
 
-                var x = (int)(_touchPos.x * _whiteboard.textureSize.x - (_penSize / 2));
-                var y = (int)(_touchPos.y * _whiteboard.textureSize.y - (_penSize / 2));
+                var x = (int)(_touchPos.x * scroll.textureSize.x - (_penSize / 2));
+                var y = (int)(_touchPos.y * scroll.textureSize.y - (_penSize / 2));
 
-                if (y < 0 || y > _whiteboard.textureSize.y || x < 0 || x > _whiteboard.textureSize.x) return;
+                if (y < 0 || y > scroll.textureSize.y || x < 0 || x > scroll.textureSize.x) return;
                 
-                _whiteboard.texture.SetPixels(x, y, _penSize, _penSize, _colors);
+                scroll.texture.SetPixels(x, y, _penSize, _penSize, _colors);
 
                 if (_touchedLastFrame)
                 {
@@ -58,13 +58,13 @@ public class OldMarker : MonoBehaviour
                     {
                         var lerpX = (int)Mathf.Lerp(_lastTouchPos.x, x, f);
                         var lerpY = (int)Mathf.Lerp(_lastTouchPos.y, y, f);
-                        _whiteboard.texture.SetPixels(lerpX, lerpY, _penSize, _penSize, _colors);
+                        scroll.texture.SetPixels(lerpX, lerpY, _penSize, _penSize, _colors);
                     }
 
                     transform.rotation = _lastTouchRot;
                 }
                 
-                _whiteboard.texture.Apply();
+                scroll.texture.Apply();
 
                 _lastTouchPos = new Vector2(x, y);
                 _lastTouchRot = transform.rotation;
@@ -73,7 +73,7 @@ public class OldMarker : MonoBehaviour
             }
         }
 
-        _whiteboard = null;
+        scroll = null;
         _touchedLastFrame = false;
     }
 }
