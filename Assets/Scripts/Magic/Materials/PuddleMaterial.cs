@@ -1,3 +1,4 @@
+using Meta.WitAi;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,8 @@ public class PuddleMaterial : Material
     [SerializeField] private int initialMaxScale;
     private int maxScale;
     private Vector3 initialScaleVector;
-    private bool isWalkable;
+    [SerializeField] GameObject icePrefab;
+    bool test = true;
 
     private void Awake()
     {
@@ -26,7 +28,6 @@ public class PuddleMaterial : Material
             maxScale +=1;
         }
 
-        isWalkable = false;
 
         transform.localScale -= initialScaleVector/ initialMaxScale;
         Debug.Log(maxScale);
@@ -51,7 +52,13 @@ public class PuddleMaterial : Material
     public override void OnIce(ObjectData data)
     {
         base.OnIce(data);
-        isWalkable = true;
+        if (test)
+        {
+            test = false;
+            Vector3 spawnPos = transform.position + new Vector3(0,0.45f,0);
+
+            GameObject icePaddle = Instantiate(icePrefab, spawnPos,Quaternion.identity);
+        }
     }
 
 }

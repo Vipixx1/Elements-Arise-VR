@@ -18,7 +18,7 @@ public class InputDebug : MonoBehaviour
     void Update()
 
     {
-
+        Renderer mat = GetComponent<Renderer>();
         pos = Input.mousePosition;
 
         pos.z = 10;
@@ -34,7 +34,8 @@ public class InputDebug : MonoBehaviour
             FireSpell spell = gameObject.AddComponent<FireSpell>();
             spell.Humidity = -1;
             spell.Temperature = 1;
-        }        
+            mat.material.color = Color.red;
+        }
         else if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             foreach (Component comp in gameObject.GetComponents<Spell>())
@@ -44,8 +45,9 @@ public class InputDebug : MonoBehaviour
             VolcanoSpell spell = gameObject.AddComponent<VolcanoSpell>();
             spell.Humidity = -1;
             spell.Temperature = 1;
+            mat.material.color = Color.black;
         }
-        else if(Input.GetKeyDown(KeyCode.Alpha2))
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             foreach (Component comp in gameObject.GetComponents<Spell>())
             {
@@ -54,14 +56,16 @@ public class InputDebug : MonoBehaviour
             IceSpell spell = gameObject.AddComponent<IceSpell>();
             spell.Humidity = -1;
             spell.Temperature = -1;
+            mat.material.color = Color.cyan;
         }
-        else  if (Input.GetKeyDown(KeyCode.Alpha3))
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             foreach (Component comp in gameObject.GetComponents<Spell>())
             {
                 Destroy(comp);
             }
             gameObject.AddComponent<PlantSpell>();
+            mat.material.color = Color.green;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
@@ -72,9 +76,10 @@ public class InputDebug : MonoBehaviour
             WaterSpell spell = gameObject.AddComponent<WaterSpell>();
             spell.Humidity = 1;
             spell.Temperature = -1;
+            mat.material.color = Color.blue;
         }
-            
-            
+
+
 
     }
 

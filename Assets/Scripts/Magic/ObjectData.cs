@@ -42,3 +42,17 @@ public class ObjectData : MonoBehaviour
 
     }
 }
+
+public enum SpellType
+{
+    EARTH,
+    FIRE,
+    ICE,
+    PLANT,
+    SAND,
+    STEAM,
+    THUNDER,
+    VOLCANO,
+    WATER,
+    WIND,
+}
