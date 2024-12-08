@@ -22,7 +22,6 @@ public class CrystalMaterial : Material
     {
         if (timeRemaining < 0)
         {
-            Debug.Log(timeRemaining);
             mat.material.SetColor("_EmissionColor", mat.material.GetColor("_Color") * 0);
         } else 
             timeRemaining -= Time.deltaTime;
