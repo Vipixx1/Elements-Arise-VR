@@ -149,10 +149,10 @@ namespace PDollarGestureRecognizer
         public Point[] Resample(Point[] points, int n)
         {
             Point[] newPoints = new Point[n];
-            newPoints[0] = new Point(points[0].X, points[0].Y, points[0].StrokeID);
+            newPoints[0] = new Point(points[0].X, points[0].Y, points[0].StrokeID); // First point added
             int numPoints = 1;
 
-            float I = PathLength(points) / (n - 1); // computes interval length
+            float I = PathLength(points) / (n - 1);
             float D = 0;
             for (int i = 1; i < points.Length; i++)
             {
@@ -162,9 +162,8 @@ namespace PDollarGestureRecognizer
                     if (D + d >= I)
                     {
                         Point firstPoint = points[i - 1];
-                        while (D + d >= I)
+                        while (D + d >= I && numPoints < n) // Check if we can add more points
                         {
-                            // add interpolated point
                             float t = Math.Min(Math.Max((I - D) / d, 0.0f), 1.0f);
                             if (float.IsNaN(t)) t = 0.5f;
                             newPoints[numPoints++] = new Point(
@@ -173,7 +172,6 @@ namespace PDollarGestureRecognizer
                                 points[i].StrokeID
                             );
 
-                            // update partial length
                             d = D + d - I;
                             D = 0;
                             firstPoint = newPoints[numPoints - 1];
@@ -184,10 +182,14 @@ namespace PDollarGestureRecognizer
                 }
             }
 
-            if (numPoints == n - 1) // sometimes we fall a rounding-error short of adding the last point, so add it if so
-                newPoints[numPoints++] = new Point(points[points.Length - 1].X, points[points.Length - 1].Y, points[points.Length - 1].StrokeID);
+            if (numPoints < n) // Ensure that the last point is added if needed
+            {
+                newPoints[numPoints] = new Point(points[points.Length - 1].X, points[points.Length - 1].Y, points[points.Length - 1].StrokeID);
+            }
+
             return newPoints;
         }
+
 
         /// <summary>
         /// Computes the path length for an array of points

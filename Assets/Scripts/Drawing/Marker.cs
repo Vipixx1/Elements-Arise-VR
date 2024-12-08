@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using System.Linq;
-using System;
+using UnityEngine;
 
 public class Marker : MonoBehaviour
 {
@@ -11,12 +10,10 @@ public class Marker : MonoBehaviour
     [SerializeField] private float _tipHeight = 0.03f;
     [SerializeField] private Color _color = Color.blue;
 
-    [SerializeField] private DrawingRecognizer drawingRecognizer;
+    [SerializeField] private Scroll scroll; // Reference to Scroll object
 
     private Color[] _colors;
     private RaycastHit _touch;
-    private Scroll scroll;
-    
     private Vector2 _touchPos, _lastTouchPos;
     private bool _touchedLastFrame;
     private Quaternion _lastTouchRot;
@@ -53,6 +50,12 @@ public class Marker : MonoBehaviour
 
                 scroll.DrawPoint(x, y, _penSize, _penSize, _colors);
 
+                if (!_touchedLastFrame)
+                {
+                    // Start a new stroke
+                    scroll.StartStroke();
+                }
+
                 if (_touchedLastFrame)
                 {
                     for (float f = 0.01f; f < 1.00f; f += 0.01f)
@@ -67,18 +70,22 @@ public class Marker : MonoBehaviour
                 }
 
                 scroll.texture.Apply();
-                drawingRecognizer.IsRecognizing = true;
 
                 _lastTouchPos = new Vector2(x, y);
                 _lastTouchRot = transform.rotation;
                 _touchedLastFrame = true;
+
                 return;
             }
+        }
+
+        if (_touchedLastFrame)
+        {
+            scroll.FinalizeStroke();
         }
 
         scroll = null;
         _touchedLastFrame = false;
     }
 
-    
 }

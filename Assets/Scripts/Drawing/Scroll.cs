@@ -1,18 +1,16 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using PDollarGestureRecognizer;
 
 public class Scroll : MonoBehaviour
 {
-    private Scroll scroll;
-
     public Texture2D texture;
     public Vector2 textureSize = new Vector2(2048, 2048);
     private Renderer r;
 
-    public List<Point> Points { get; set; } = new List<Point>();
+    // Centralized gesture points
+    public List<Point> Points { get; private set; } = new List<Point>();
+    private int strokeId = -1; // Keeps track of strokes
 
     void Start()
     {
@@ -35,12 +33,24 @@ public class Scroll : MonoBehaviour
         texture = new Texture2D((int)textureSize.x, (int)textureSize.y);
         r.material.mainTexture = texture;
         Points.Clear();
+        strokeId = -1; // Reset stroke ID
+    }
 
+    public void StartStroke()
+    {
+        strokeId++;
     }
 
     public void DrawPoint(int x, int y, int width, int height, Color[] colors)
     {
         texture.SetPixels(x, y, width, height, colors);
-        Points.Add(new Point(x, y, 0));
+
+        // Add gesture point, invert Y for consistency with PDollar
+        Points.Add(new Point(x, -y, strokeId));
+    }
+
+    public void FinalizeStroke()
+    {
+        // Additional handling for when a stroke ends, if needed
     }
 }

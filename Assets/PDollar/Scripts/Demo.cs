@@ -94,6 +94,15 @@ public class Demo : MonoBehaviour {
 				currentGestureLineRenderer.SetVertexCount(++vertexCount);
 				currentGestureLineRenderer.SetPosition(vertexCount - 1, Camera.main.ScreenToWorldPoint(new Vector3(virtualKeyPosition.x, virtualKeyPosition.y, 10)));
 			}
+
+		}
+
+		if (points.Count > 200)
+		{
+			Gesture candidate = new Gesture(points.ToArray());
+			Result gestureResult = PointCloudRecognizer.Classify(candidate, trainingSet.ToArray());
+
+			message = gestureResult.GestureClass + " " + gestureResult.Score;
 		}
 	}
 

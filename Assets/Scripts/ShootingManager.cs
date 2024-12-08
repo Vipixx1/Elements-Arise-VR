@@ -51,20 +51,17 @@ public class ShootingManager : MonoBehaviour
         {
             isRightHandSpellReady = true;
             rightHandElement = element;
-            Debug.Log($"Sort {element} assigné à la main droite !");
         }
         else if (handTag == "LeftHand")
         {
             isLeftHandSpellReady = true;
             leftHandElement = element;
-            Debug.Log($"Sort {element} assigné à la main gauche !");
         }
     }
 
     private void ShootSpell(string element, Transform handTransform)
     {
         GameObject spell = Instantiate(spellPrefab, handTransform.position, handTransform.rotation);
-        Debug.Log($"Tir d'un sort {element} depuis {handTransform.name}");
 
         switch (element.ToLower())
         {
