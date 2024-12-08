@@ -6,14 +6,21 @@ using Material = Magic.Materials.Material;
 
 public class WoodMaterial : Material
 {
-    private float scaling = 1;
+    private float scaling;
     [SerializeField] private float maxScaling;
     private bool isBurning = false;
     private bool isGrowing = false;
 
+    private void Start()
+    {
+        scaling = transform.localScale.y;
+        maxScaling *= scaling;
+    }
+
+
     private void Update()
     {
-        transform.rotation = Quaternion.identity;
+       
 
         if (isGrowing && scaling < maxScaling)
         {
@@ -29,7 +36,9 @@ public class WoodMaterial : Material
             }
         
         }
-        gameObject.transform.localScale = new Vector3(1, scaling, 1);
+        Vector3 newScale = gameObject.transform.lossyScale;
+        newScale.y = scaling;
+        gameObject.transform.localScale = newScale;
 
     
     }
