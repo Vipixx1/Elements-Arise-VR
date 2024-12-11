@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tip: {fileID: 1909703694}
-  _penSize: 50
+  _penSize: 45
   _tipHeight: 0.05
   _color: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &290701934
@@ -2179,7 +2179,7 @@ GameObject:
   - component: {fileID: 1916195628}
   m_Layer: 0
   m_Name: Whiteboard
-  m_TagString: Whiteboard
+  m_TagString: Scroll
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2329,6 +2329,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47c02a5f1da180f44b05407ab55d7054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DrawableShapesList:
+  - {fileID: 11400000, guid: 5ca6470951d830a4eaff50937d8b8aa7, type: 2}
+  - {fileID: 11400000, guid: 12f201099c29fda48b3d92b24c3ea8b2, type: 2}
+  - {fileID: 11400000, guid: 29e0e766c2895e24999e184dd0905d58, type: 2}
+  - {fileID: 11400000, guid: 6d2b90f56814e064caec89f5bffaa469, type: 2}
   _text: {fileID: 1386875047}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
