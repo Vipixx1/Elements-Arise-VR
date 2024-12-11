@@ -330,6 +330,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wood
       objectReference: {fileID: 0}
+    - target: {fileID: 5121315023200904139, guid: dacc732e3161f044f99d4b4f5e01c5c4, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -478,6 +482,14 @@ PrefabInstance:
     - target: {fileID: 2934409839681906305, guid: 33edea2e292aff640b4da944eb5026bb, type: 3}
       propertyPath: m_Name
       value: puddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3070509126883686968, guid: 33edea2e292aff640b4da944eb5026bb, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7630112088591105337, guid: 33edea2e292aff640b4da944eb5026bb, type: 3}
+      propertyPath: initialMaxScale
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -760,6 +772,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stone
       objectReference: {fileID: 0}
+    - target: {fileID: 7932259815835254130, guid: e68c43eee6d803a419134bb49187284d, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -787,7 +803,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2801053398965674485, guid: 5578a26a44a07a648be5a2b55c91c4cc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.14
+      value: 5.41
       objectReference: {fileID: 0}
     - target: {fileID: 2801053398965674485, guid: 5578a26a44a07a648be5a2b55c91c4cc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -795,7 +811,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2801053398965674485, guid: 5578a26a44a07a648be5a2b55c91c4cc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.6779306
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2801053398965674485, guid: 5578a26a44a07a648be5a2b55c91c4cc, type: 3}
       propertyPath: m_LocalRotation.w

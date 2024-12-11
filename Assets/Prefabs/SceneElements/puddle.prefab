@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409b0469f0b258148a6253d6e9898b52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialMaxScale: 0
+  initialMaxScale: 5
   icePrefab: {fileID: 5150503099792141148, guid: 5578a26a44a07a648be5a2b55c91c4cc, type: 3}
 --- !u!114 &3187348473789290374
 MonoBehaviour:

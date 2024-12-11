@@ -23,7 +23,7 @@ public class IceMaterial : Material
     {
         timeDuration -= Time.deltaTime;
         if (timeDuration < 0) { 
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
 
