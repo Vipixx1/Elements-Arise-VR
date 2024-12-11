@@ -1791,6 +1791,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plastic
       objectReference: {fileID: 0}
+    - target: {fileID: 3318408086992586317, guid: c2c67ecbc29356440b8c848c42ce847a, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318408086992586317, guid: c2c67ecbc29356440b8c848c42ce847a, type: 3}
+      propertyPath: m_TagString
+      value: Material
+      objectReference: {fileID: 0}
     - target: {fileID: 4740369777911649623, guid: c2c67ecbc29356440b8c848c42ce847a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -2502,6 +2510,14 @@ PrefabInstance:
     - target: {fileID: 3788366317704130030, guid: dacc732e3161f044f99d4b4f5e01c5c4, type: 3}
       propertyPath: m_Name
       value: Wood
+      objectReference: {fileID: 0}
+    - target: {fileID: 3788366317704130030, guid: dacc732e3161f044f99d4b4f5e01c5c4, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3788366317704130030, guid: dacc732e3161f044f99d4b4f5e01c5c4, type: 3}
+      propertyPath: m_TagString
+      value: Material
       objectReference: {fileID: 0}
     - target: {fileID: 5121315023200904139, guid: dacc732e3161f044f99d4b4f5e01c5c4, type: 3}
       propertyPath: m_UseGravity
@@ -3854,6 +3870,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: puddle
       objectReference: {fileID: 0}
+    - target: {fileID: 2934409839681906305, guid: 33edea2e292aff640b4da944eb5026bb, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2934409839681906305, guid: 33edea2e292aff640b4da944eb5026bb, type: 3}
+      propertyPath: m_TagString
+      value: Material
+      objectReference: {fileID: 0}
     - target: {fileID: 3070509126883686968, guid: 33edea2e292aff640b4da944eb5026bb, type: 3}
       propertyPath: m_UseGravity
       value: 1
@@ -4441,6 +4465,13 @@ MonoBehaviour:
   - {fileID: 1321639561}
   - {fileID: 247739362}
   - {fileID: 1297777653}
+  prefabs2:
+  - {fileID: 3318408086992586317, guid: c2c67ecbc29356440b8c848c42ce847a, type: 3}
+  - {fileID: 6916867120113568947, guid: e68c43eee6d803a419134bb49187284d, type: 3}
+  - {fileID: 3788366317704130030, guid: dacc732e3161f044f99d4b4f5e01c5c4, type: 3}
+  - {fileID: 2731831269375236205, guid: 4f53871f6ae4dac4aa613acbe4b22034, type: 3}
+  - {fileID: 5150503099792141148, guid: 5578a26a44a07a648be5a2b55c91c4cc, type: 3}
+  - {fileID: 2934409839681906305, guid: 33edea2e292aff640b4da944eb5026bb, type: 3}
 --- !u!4 &1380890927
 Transform:
   m_ObjectHideFlags: 0
@@ -5319,6 +5350,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stone
       objectReference: {fileID: 0}
+    - target: {fileID: 6916867120113568947, guid: e68c43eee6d803a419134bb49187284d, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6916867120113568947, guid: e68c43eee6d803a419134bb49187284d, type: 3}
+      propertyPath: m_TagString
+      value: Material
+      objectReference: {fileID: 0}
     - target: {fileID: 7932259815835254130, guid: e68c43eee6d803a419134bb49187284d, type: 3}
       propertyPath: m_UseGravity
       value: 1
@@ -5680,6 +5719,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crystal
       objectReference: {fileID: 0}
+    - target: {fileID: 2731831269375236205, guid: 4f53871f6ae4dac4aa613acbe4b22034, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2731831269375236205, guid: 4f53871f6ae4dac4aa613acbe4b22034, type: 3}
+      propertyPath: m_TagString
+      value: Material
+      objectReference: {fileID: 0}
     - target: {fileID: 2989313509991076964, guid: 4f53871f6ae4dac4aa613acbe4b22034, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5792,6 +5839,14 @@ PrefabInstance:
     - target: {fileID: 5150503099792141148, guid: 5578a26a44a07a648be5a2b55c91c4cc, type: 3}
       propertyPath: m_Name
       value: Ice
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150503099792141148, guid: 5578a26a44a07a648be5a2b55c91c4cc, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5150503099792141148, guid: 5578a26a44a07a648be5a2b55c91c4cc, type: 3}
+      propertyPath: m_TagString
+      value: Material
       objectReference: {fileID: 0}
     - target: {fileID: 6293957778919491285, guid: 5578a26a44a07a648be5a2b55c91c4cc, type: 3}
       propertyPath: maxTimeDuration
