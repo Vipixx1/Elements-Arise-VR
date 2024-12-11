@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class ThunderSpell : Spell
 {
+
+    private void Start()
+    {
+        Temperature = 1;
+    }
+
     public override void Catch(ObjectData data)
     {
         base.Catch(data);

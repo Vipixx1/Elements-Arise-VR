@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class VolcanoSpell : Spell
 {
+
+    private void Start()
+    {
+        Temperature = 3;
+    }
+
     public override void Catch(ObjectData data)
     {
         base.Catch(data);

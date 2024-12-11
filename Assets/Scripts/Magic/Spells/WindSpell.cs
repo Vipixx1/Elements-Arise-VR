@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class WindSpell : Spell
 {
+
+    private void Start()
+    {
+        Humidity = -1;
+    }
+
     public override void Catch(ObjectData data)
     {
         base.Catch(data);

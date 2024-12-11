@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class FireSpell : Spell
 {
+
+    private void Start()
+    {
+        Temperature = 1;
+        Humidity = -1;
+    }
+
     public override void Catch(ObjectData data)
     {
         base.Catch(data);
