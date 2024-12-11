@@ -6,11 +6,17 @@ public class ScrollSpellResult : MonoBehaviour
     private string currentSpellElement;
     [SerializeField] private Scroll scroll;
 
-    public void OnGrab()
+    public void OnSelect()
     {
         OnSpellReady?.Invoke(currentSpellElement, "RightHand");
-        this.gameObject.SetActive(false);
         scroll.EraseScroll();
+        this.gameObject.GetComponent<Renderer>().enabled = false;
+        //this.gameObject.SetActive(false);
+    }
+
+    public void OnUnselect()
+    {
+        this.gameObject.SetActive(false);
     }
 
     public void SetCurrentSpellElement(string element)

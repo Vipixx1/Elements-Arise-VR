@@ -74,8 +74,9 @@ public class DrawingRecognizer : MonoBehaviour
     {
         if (scrollSpellResult == null) return;
 
-        scrollSpellResult.transform.position = scroll.transform.position;
+        scrollSpellResult.transform.position = scroll.transform.position + scroll.transform.TransformDirection(Vector3.forward * 0.3f);
         Renderer spellRenderer = scrollSpellResult.gameObject.GetComponent<Renderer>();
+        spellRenderer.enabled = true;
 
         if (gestureClass.StartsWith("square"))
         {
