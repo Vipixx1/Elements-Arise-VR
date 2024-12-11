@@ -30,7 +30,7 @@ public class CrystalMaterial : Material
     public override void OnEarth(ObjectData data)
     {
         base.OnEarth(data);
-        mat.material.color =new Color(139, 69, 19);
+        mat.material.color =new Color32(139, 69, 19,0);
         mat.material.SetColor("_EmissionColor", mat.material.GetColor("_Color") * 0);
         if (spellType == SpellType.EARTH)
             Glow();
@@ -75,7 +75,7 @@ public class CrystalMaterial : Material
     public override void OnSand(ObjectData data)
     {
         base.OnSand(data);
-        mat.material.color = new Color(244, 164, 96);
+        mat.material.color = new Color32(244, 164, 96,0);
         mat.material.SetColor("_EmissionColor", mat.material.GetColor("_Color") * 0);
         if (spellType == SpellType.SAND)
             Glow();
@@ -84,7 +84,7 @@ public class CrystalMaterial : Material
     public override void OnSteam(ObjectData data)
     {
         base.OnSteam(data);
-        mat.material.color = new Color(135, 206, 235);
+        mat.material.color = new Color32(135, 206, 235,0);
         mat.material.SetColor("_EmissionColor", mat.material.GetColor("_Color") * 0);
         if (spellType == SpellType.STEAM)
             Glow();
@@ -111,7 +111,7 @@ public class CrystalMaterial : Material
     public override void OnWind(ObjectData data)
     {
         base.OnWind(data);
-        mat.material.color = new Color(152, 251, 152);
+        mat.material.color = new Color32(152, 251, 152,0);
         mat.material.SetColor("_EmissionColor", mat.material.GetColor("_Color") * 0);
         if (spellType == SpellType.WIND)
             Glow();
