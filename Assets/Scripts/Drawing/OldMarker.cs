@@ -35,7 +35,7 @@ public class OldMarker : MonoBehaviour
         _colors = Enumerable.Repeat(_color, _penSize * _penSize).ToArray();
         if (Physics.Raycast(_tip.position, _tip.transform.right, out _touch, _tipHeight))
         {
-            if (_touch.transform.CompareTag("Scroll"))
+            if (_touch.transform.CompareTag("ScrollA"))
             {
                 if (scroll == null)
                 {

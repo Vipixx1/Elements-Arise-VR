@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Scroll
   - Material
+  - ScrollA
   layers:
   - Default
   - TransparentFX

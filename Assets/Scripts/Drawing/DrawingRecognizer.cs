@@ -43,7 +43,7 @@ public class DrawingRecognizer : MonoBehaviour
 
     private void RecognizeGesture()
     {
-        if (scroll.Points.Count < 200)
+        if (scroll.Points.Count < 300)
         {
             message = "Not enough points drawn";
             text.text = message;

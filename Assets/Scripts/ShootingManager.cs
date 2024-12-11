@@ -86,6 +86,6 @@ public class ShootingManager : MonoBehaviour
                 break;
         }
 
-        spell.GetComponent<Rigidbody>().AddForce(handTransform.right * 300);
+        spell.GetComponent<Rigidbody>().AddForce((-handTransform.up*0.4f + handTransform.right*0.6f) * 900);
     }
 }
