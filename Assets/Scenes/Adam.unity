@@ -2331,7 +2331,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DrawableShapesList:
   - {fileID: 11400000, guid: 5ca6470951d830a4eaff50937d8b8aa7, type: 2}
-  - {fileID: 11400000, guid: 12f201099c29fda48b3d92b24c3ea8b2, type: 2}
   - {fileID: 11400000, guid: 29e0e766c2895e24999e184dd0905d58, type: 2}
   - {fileID: 11400000, guid: 6d2b90f56814e064caec89f5bffaa469, type: 2}
   _text: {fileID: 1386875047}
