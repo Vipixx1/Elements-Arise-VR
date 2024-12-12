@@ -3460,9 +3460,9 @@ Transform:
   - {fileID: 279704876}
   - {fileID: 1747175576}
   - {fileID: 247739369}
-  - {fileID: 1297777660}
-  - {fileID: 1912580946}
   - {fileID: 1321639567}
+  - {fileID: 1912580946}
+  - {fileID: 1297777660}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &399969676
@@ -5136,7 +5136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2934409839681906305, guid: 33edea2e292aff640b4da944eb5026bb, type: 3}
       propertyPath: m_Name
-      value: puddle
+      value: Puddle
       objectReference: {fileID: 0}
     - target: {fileID: 2934409839681906305, guid: 33edea2e292aff640b4da944eb5026bb, type: 3}
       propertyPath: m_Layer
@@ -7467,8 +7467,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -34.121, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.012, y: 3.02}
-  m_SizeDelta: {x: 40.4619, y: 13.5565}
+  m_AnchoredPosition: {x: -0.0381, y: 3.02}
+  m_SizeDelta: {x: 55.9697, y: 13.5565}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1513955521
 MonoBehaviour:
@@ -7490,7 +7490,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: crystal
+  m_text: crystal (fire)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11230,7 +11230,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2731831269375236205, guid: 4f53871f6ae4dac4aa613acbe4b22034, type: 3}
       propertyPath: m_Name
-      value: Crystal
+      value: Fire Crystal
       objectReference: {fileID: 0}
     - target: {fileID: 2731831269375236205, guid: 4f53871f6ae4dac4aa613acbe4b22034, type: 3}
       propertyPath: m_Layer

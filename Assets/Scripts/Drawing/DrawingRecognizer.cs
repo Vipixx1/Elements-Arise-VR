@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using PDollarGestureRecognizer;
+using System.IO;
 
 public class DrawingRecognizer : MonoBehaviour
 {
@@ -35,8 +36,8 @@ public class DrawingRecognizer : MonoBehaviour
 
     private void LoadGestures()
     {
-        // Load user-defined gestures
-        string[] filePaths = System.IO.Directory.GetFiles(Application.persistentDataPath, "*.xml");
+        string folderPath = Path.Combine(Application.dataPath, "Shapes");
+        string[] filePaths = System.IO.Directory.GetFiles(folderPath, "*.xml");
         foreach (string filePath in filePaths)
             trainingSet.Add(GestureIO.ReadGestureFromFile(filePath));
     }
@@ -45,7 +46,7 @@ public class DrawingRecognizer : MonoBehaviour
     {
         if (scroll.Points.Count < 300)
         {
-            message = "Not enough points drawn";
+            message = "Nothing";
             text.text = message;
             return;
         }
@@ -54,14 +55,10 @@ public class DrawingRecognizer : MonoBehaviour
         Gesture candidate = new(scroll.Points.ToArray());
         Result gestureResult = PointCloudRecognizer.Classify(candidate, trainingSet.ToArray());
 
-        message = $"{gestureResult.GestureClass} {gestureResult.Score:F2}";
-        text.text = message;
-
         if (gestureResult.Score < 0.85f)
         {
-            // Hide the spell result if gesture is unrecognized
             scrollSpellResult.gameObject.SetActive(false);
-            gestureClass = "Unknown";
+            gestureClass = "Nothing";
             IsRecognized = false;
             return;
         }
@@ -74,29 +71,33 @@ public class DrawingRecognizer : MonoBehaviour
     {
         if (scrollSpellResult == null) return;
 
-        scrollSpellResult.transform.position = scroll.transform.position + scroll.transform.TransformDirection(Vector3.forward * 0.3f);
+        scrollSpellResult.transform.position = scroll.transform.position + scroll.transform.TransformDirection(Vector3.forward * 0.4f);
         Renderer spellRenderer = scrollSpellResult.gameObject.GetComponent<Renderer>();
         spellRenderer.enabled = true;
-
+        
         if (gestureClass.StartsWith("square"))
         {
+            message = "Square : Earth";
             scrollSpellResult.SetCurrentSpellElement("earth");
-            spellRenderer.material.color = Color.gray;
+            spellRenderer.material.color = new Color(0.65f, 0.16f, 0.16f);
         }
         else if (gestureClass.StartsWith("triangle"))
         {
+            message = "Triangle : Fire";
             scrollSpellResult.SetCurrentSpellElement("fire");
             spellRenderer.material.color = Color.red;
         }
         else if (gestureClass.StartsWith("circle"))
         {
+            message = "Circle : Water";
             scrollSpellResult.SetCurrentSpellElement("water");
             spellRenderer.material.color = Color.blue;
         }
         else if (gestureClass.StartsWith("spiral"))
         {
+            message = "Spiral : Wind";
             scrollSpellResult.SetCurrentSpellElement("wind");
-            spellRenderer.material.color = Color.green;
+            spellRenderer.material.color = new Color(0.31f, 0.78f, 0.47f);
         }
         else
         {
@@ -104,6 +105,7 @@ public class DrawingRecognizer : MonoBehaviour
             spellRenderer.material.color = Color.white;
         }
 
+        text.text = message;
         scrollSpellResult.gameObject.SetActive(true);
     }
 }
