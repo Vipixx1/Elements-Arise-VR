@@ -1,70 +1,96 @@
-using Meta.WitAi;
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using Material = Magic.Materials.Material;
 
 public class DebugManager : MonoBehaviour
 {
-
-    [SerializeField] private GameObject[] prefabs2;
-
+    private List<SpawnedObject> spawnedObjects = new List<SpawnedObject>();
 
     private void Start()
     {
-        transform.position = new Vector3(0, 5, 0);
-
+        // Automatically track all existing GameObjects with the "Material" tag
+        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Material"))
+        {
+            TrackExistingObject(obj);
+        }
     }
 
     private void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            Instantiate(prefabs2[0],transform.position,Quaternion.identity);
+            RespawnAll();
         }
-        else if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.T))
         {
+            DespawnAll();
+        }
+    }
 
-            Instantiate(prefabs2[1], transform.position, Quaternion.identity);
-        }        else if (Input.GetKeyDown(KeyCode.E))
-        {
+    private void TrackExistingObject(GameObject obj)
+    {
+        PrefabLinker prefabLinker = obj.GetComponent<PrefabLinker>();
 
-            Instantiate(prefabs2[2], transform.position, Quaternion.identity);
-        }        else if (Input.GetKeyDown(KeyCode.R))
+        if (prefabLinker != null && prefabLinker.prefab != null)
         {
+            spawnedObjects.Add(new SpawnedObject(prefabLinker.prefab, obj.transform.position, obj.transform.rotation, obj.transform.localScale, obj));
+        }
+        else
+        {
+            spawnedObjects.Add(new SpawnedObject(null, obj.transform.position, obj.transform.rotation, obj.transform.localScale, obj));
+        }
+    }
 
-            Instantiate(prefabs2[3], transform.position, Quaternion.identity);
-        }        else if (Input.GetKeyDown(KeyCode.T))
+    private void DespawnAll()
+    {
+        foreach (var obj in spawnedObjects)
         {
-
-            Instantiate(prefabs2[4], transform.position, Quaternion.identity);
-        }        else if (Input.GetKeyDown(KeyCode.Y))
-        {
-
-            Instantiate(prefabs2[5], transform.position, Quaternion.identity);
-        }else if (Input.GetKeyDown(KeyCode.U))
-        {
-            foreach (GameObject child in GameObject.FindGameObjectsWithTag("Material"))
+            if (obj.CurrentInstance != null)
             {
-
-                Destroy(child);
+                Destroy(obj.CurrentInstance);
+                obj.CurrentInstance = null;
             }
-        } else if (Input.GetKeyDown(KeyCode.LeftArrow)) { transform.position += new Vector3(-0.5f, 0 , 0);
-
         }
-         else if (Input.GetKeyDown(KeyCode.RightArrow )) { transform.position += new Vector3(0.5f, 0 , 0);
+    }
 
-
+    private void RespawnAll()
+    {
+        foreach (var obj in spawnedObjects)
+        {
+            if (obj.CurrentInstance == null)
+            {
+                if (obj.Prefab != null)
+                {
+                    obj.CurrentInstance = Instantiate(obj.Prefab, obj.InitialPosition, obj.InitialRotation);
+                    obj.CurrentInstance.transform.localScale = obj.InitialScale;
+                }
+                else
+                {
+                    obj.CurrentInstance = new GameObject("Respawned Object");
+                    obj.CurrentInstance.transform.position = obj.InitialPosition;
+                    obj.CurrentInstance.transform.rotation = obj.InitialRotation;
+                    obj.CurrentInstance.transform.localScale = obj.InitialScale;
+                    obj.CurrentInstance.tag = "Material";
+                }
+            }
         }
-         else if (Input.GetKeyDown(KeyCode.UpArrow)) { transform.position += new Vector3(0, 0 , 0.5f);
+    }
 
+    // Helper class to track spawned objects
+    private class SpawnedObject
+    {
+        public GameObject Prefab { get; }
+        public Vector3 InitialPosition { get; }
+        public Quaternion InitialRotation { get; }
+        public Vector3 InitialScale { get; }
+        public GameObject CurrentInstance { get; set; }
 
-        }
-         else if (Input.GetKeyDown(KeyCode.DownArrow)) { transform.position += new Vector3(0, 0 ,-0.5f);
-
+        public SpawnedObject(GameObject prefab, Vector3 position, Quaternion rotation, Vector3 scale, GameObject instance)
+        {
+            Prefab = prefab;
+            InitialPosition = position;
+            InitialRotation = rotation;
+            InitialScale = scale;
+            CurrentInstance = instance;
         }
     }
 }
