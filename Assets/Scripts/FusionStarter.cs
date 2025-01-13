@@ -15,8 +15,10 @@ public class FusionStarter : MonoBehaviour
         if (collision.gameObject.tag == "Hand")
         {
             receiver.FuseSpell();
+            Debug.Log("bonjour firas");
         }
 
+        Debug.Log("bonjour connard");
     }
         
     

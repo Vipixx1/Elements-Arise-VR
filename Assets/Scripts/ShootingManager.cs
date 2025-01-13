@@ -12,8 +12,8 @@ public class ShootingManager : MonoBehaviour
     private bool isRightHandSpellReady = false;
     private bool isLeftHandSpellReady = false;
 
-    private string rightHandElement = null;
-    private string leftHandElement = null;
+    public string rightHandElement = null;
+    public string leftHandElement = null;
 
     private bool isRightHandClosed = false;
     private bool isLeftHandClosed = false;
