@@ -16,6 +16,7 @@ public class ScrollSpellResult : MonoBehaviour
 
     public void OnSelect()
     {
+        //ADD CHECKING THE TAG FOR THE RIGHT OR THE LEFT HAND
         OnSpellReady?.Invoke(currentSpellElement, "RightHand");
         scroll?.EraseScroll();
         this.gameObject.GetComponent<Renderer>().enabled = false;

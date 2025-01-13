@@ -14,6 +14,8 @@ public class ShootingManager : MonoBehaviour
 
     private string rightHandElement = null;
     private string leftHandElement = null;
+    public string RightHandElement { get => rightHandElement; set => rightHandElement = value; }
+    public string LeftHandElement { get => leftHandElement; set => leftHandElement = value; }
 
     private bool isRightHandClosed = false;
     private bool isLeftHandClosed = false;
