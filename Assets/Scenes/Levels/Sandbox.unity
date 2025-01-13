@@ -1676,7 +1676,7 @@ GameObject:
   - component: {fileID: 91228261}
   - component: {fileID: 91228260}
   - component: {fileID: 91228259}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2815,7 +2815,7 @@ GameObject:
   - component: {fileID: 340648060}
   - component: {fileID: 340648059}
   - component: {fileID: 340648058}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4021,7 +4021,7 @@ GameObject:
   - component: {fileID: 587340527}
   - component: {fileID: 587340526}
   - component: {fileID: 587340525}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5192,7 +5192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2934409839681906305, guid: 33edea2e292aff640b4da944eb5026bb, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2934409839681906305, guid: 33edea2e292aff640b4da944eb5026bb, type: 3}
       propertyPath: m_TagString
@@ -6120,7 +6120,7 @@ GameObject:
   - component: {fileID: 1138812829}
   - component: {fileID: 1138812828}
   - component: {fileID: 1138812827}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8691,7 +8691,7 @@ GameObject:
   - component: {fileID: 1633259011}
   - component: {fileID: 1633259010}
   - component: {fileID: 1633259009}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10233,7 +10233,7 @@ GameObject:
   - component: {fileID: 1906240590}
   - component: {fileID: 1906240589}
   - component: {fileID: 1906240588}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spell Desk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
