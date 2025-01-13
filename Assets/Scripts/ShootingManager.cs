@@ -12,10 +12,8 @@ public class ShootingManager : MonoBehaviour
     private bool isRightHandSpellReady = false;
     private bool isLeftHandSpellReady = false;
 
-    private string rightHandElement = null;
-    private string leftHandElement = null;
-    public string RightHandElement { get => rightHandElement; set => rightHandElement = value; }
-    public string LeftHandElement { get => leftHandElement; set => leftHandElement = value; }
+    public string rightHandElement = null;
+    public string leftHandElement = null;
 
     private bool isRightHandClosed = false;
     private bool isLeftHandClosed = false;
@@ -119,5 +117,50 @@ public class ShootingManager : MonoBehaviour
         }
 
         spell.GetComponent<Rigidbody>().AddForce((-handTransform.up*0.4f + handTransform.right*0.6f) * 800);
+    }
+
+
+    public void FuseSpell()
+    {
+
+        List<string> handElements = new List<string> { leftHandElement.ToLower(), rightHandElement.ToLower() };
+
+        if (handElements.Contains("fire") && handElements.Contains("water"))
+        {
+            leftHandElement = "steam";
+            rightHandElement = "steam";
+        }
+
+        else if (handElements.Contains("fire") && handElements.Contains("earth"))
+        {
+            leftHandElement = "volcano";
+            rightHandElement = "volcano";
+        }
+
+
+        else if (handElements.Contains("fire") && handElements.Contains("wind"))
+        {
+            leftHandElement = "thunder";
+            rightHandElement = "thunder";
+        }
+
+        else if (handElements.Contains("earth") && handElements.Contains("water"))
+        {
+            leftHandElement = "plant";
+            rightHandElement = "plant";
+        }
+
+        else if (handElements.Contains("wind") && handElements.Contains("water"))
+        {
+            leftHandElement = "ice";
+            rightHandElement = "ice";
+        }
+
+        else if (handElements.Contains("earth") && handElements.Contains("wind"))
+        {
+            leftHandElement = "sand";
+            rightHandElement = "sand";
+        }
+
     }
 }
