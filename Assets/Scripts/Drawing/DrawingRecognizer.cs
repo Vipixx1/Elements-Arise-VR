@@ -4,6 +4,8 @@ using System.Linq;
 using UnityEngine;
 using PDollarGestureRecognizer;
 using System.IO;
+using Unity.VisualScripting;
+using UnityEngine.Networking;
 
 public class DrawingRecognizer : MonoBehaviour
 {
@@ -17,7 +19,7 @@ public class DrawingRecognizer : MonoBehaviour
     [SerializeField] private Scroll scroll;
     [SerializeField] private ScrollSpellResult scrollSpellResult;
 
-    void Start()
+    void Awake()
     {
         // Load user-defined gestures
         LoadGestures();
@@ -34,13 +36,78 @@ public class DrawingRecognizer : MonoBehaviour
         }
     }
 
+    //
     private void LoadGestures()
     {
-        string folderPath = Path.Combine(Application.dataPath, "Shapes");
-        string[] filePaths = System.IO.Directory.GetFiles(folderPath, "*.xml");
-        foreach (string filePath in filePaths)
-            trainingSet.Add(GestureIO.ReadGestureFromFile(filePath));
+        string folderPath = Path.Combine(Application.streamingAssetsPath, "Shapes");
+        List<string> gestureXmls = new List<string>();
+
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            // Handle Android's StreamingAssets path
+            string manifestPath = Path.Combine(folderPath, "shapes_manifest.txt");
+            string[] fileNames = GetFileListFromManifest(manifestPath);
+
+            foreach (string fileName in fileNames)
+            {
+                string filePath = Path.Combine(folderPath, fileName);
+                string xmlContent = ReadFileFromStreamingAssets(filePath);
+                if (!string.IsNullOrEmpty(xmlContent))
+                {
+                    gestureXmls.Add(xmlContent);
+                }
+            }
+        }
+        else
+        {
+            // Use Directory.GetFiles for other platforms
+            string[] filePaths = Directory.GetFiles(folderPath, "*.xml");
+
+            foreach (string filePath in filePaths)
+            {
+                string xmlContent = File.ReadAllText(filePath);
+                gestureXmls.Add(xmlContent);
+            }
+        }
+
+        // Load gestures from the XML content
+        foreach (string xml in gestureXmls)
+        {
+            trainingSet.Add(GestureIO.ReadGestureFromXML(xml));
+        }
     }
+
+    // Reads a file from StreamingAssets on Android
+    private string ReadFileFromStreamingAssets(string filePath)
+    {
+        UnityWebRequest request = UnityWebRequest.Get(filePath);
+        request.SendWebRequest();
+        while (!request.isDone) { }
+
+        if (request.result == UnityWebRequest.Result.Success)
+        {
+            return request.downloadHandler.text;
+        }
+        else
+        {
+            Debug.LogError($"Failed to read file from {filePath}: {request.error}");
+            return null;
+        }
+    }
+
+    // Reads a file list from the manifest
+    private string[] GetFileListFromManifest(string manifestPath)
+    {
+        string content = ReadFileFromStreamingAssets(manifestPath);
+        if (string.IsNullOrEmpty(content))
+        {
+            Debug.LogError("Manifest file is empty or missing.");
+            return new string[0];
+        }
+        return content.Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+    }
+    //
+
 
     private void RecognizeGesture()
     {
