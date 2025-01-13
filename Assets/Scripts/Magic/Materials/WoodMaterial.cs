@@ -51,7 +51,7 @@ public class WoodMaterial : Material
         Debug.Log(isBurning);
     }
 
-    public override void OnPlant(ObjectData data)
+    public override void OnPlant(ObjectData data, float[] args = null)
     {
         if (!isBurning)
         {
@@ -59,7 +59,7 @@ public class WoodMaterial : Material
         }
     }
 
-    public override void OnIce(ObjectData data)
+    public override void OnIce(ObjectData data, float[] args = null)
     {
         base.OnIce(data);
         isGrowing = false;
@@ -70,7 +70,7 @@ public class WoodMaterial : Material
 
     }
 
-    public override void OnWater(ObjectData data)
+    public override void OnWater(ObjectData data, float[] args = null)
     {
         base.OnWater(data);
         if (data.Humidity > 0 || data.Temperature < 1)

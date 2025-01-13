@@ -10,7 +10,7 @@ public class PuddleMaterial : Material
     private int maxScale;
     private Vector3 initialScaleVector;
     [SerializeField] GameObject icePrefab;
-    bool test = true;
+
 
     private void Awake()
     {
@@ -38,7 +38,7 @@ public class PuddleMaterial : Material
         }
     }
 
-    public override void OnWater(ObjectData data)
+    public override void OnWater(ObjectData data, float[] args = null)
     {
         base.OnWater(data);
         if (maxScale > 0)
@@ -49,16 +49,17 @@ public class PuddleMaterial : Material
 
     }
 
-    public override void OnIce(ObjectData data)
+    public override void OnIce(ObjectData data, float[] args = null)
     {
         base.OnIce(data);
-        if (test)
-        {
-            test = false;
-            Vector3 spawnPos = transform.position + new Vector3(0,0.45f,0);
 
-            GameObject icePaddle = Instantiate(icePrefab, spawnPos,Quaternion.identity);
+        if (args != null)
+        {
+            Vector3 spawnPos = new Vector3(args[0], args[1], args[2]);
+
+            GameObject icePaddle = Instantiate(icePrefab, spawnPos, Quaternion.identity);
         }
+
     }
 
 }

@@ -47,7 +47,7 @@ public class IceMaterial : Material
     }
 
 
-    public override void OnIce(ObjectData data)
+    public override void OnIce(ObjectData data, float[] args = null)
     {
         base.OnIce(data);
         timeDuration = maxTimeDuration;

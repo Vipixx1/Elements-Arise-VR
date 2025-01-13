@@ -59,7 +59,7 @@ public class PlasticMaterial : Material
     }
 
 
-    public override void OnIce(ObjectData data)
+    public override void OnIce(ObjectData data, float[] args = null)
     {
         base.OnIce(data);
         if (data.Humidity > 0 || data.Temperature < 1)
@@ -69,7 +69,7 @@ public class PlasticMaterial : Material
 
     }
 
-    public override void OnWater(ObjectData data)
+    public override void OnWater(ObjectData data, float[] args = null)
     {
         base.OnWater(data);
         if (data.Humidity > 0 || data.Temperature < 1)

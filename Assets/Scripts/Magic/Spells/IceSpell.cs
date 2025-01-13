@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class IceSpell : Spell
@@ -14,7 +15,7 @@ public class IceSpell : Spell
     public override void Catch(ObjectData data)
     {
         base.Catch(data);
-        data.Material.OnIce(data);
+        data.Material.OnIce(data, new float[] { transform.position.x , transform.position.y, transform.position.z} );
 
     }
 }

@@ -4980,6 +4980,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellPrefab: {fileID: 8413826142207088173, guid: 7c84878359d56744e93a26775083d3d2, type: 3}
+  spellMaterials:
+  - {fileID: 2100000, guid: 22fb7cbcda2cc3c4c9060778b7b96d26, type: 2}
+  - {fileID: 2100000, guid: ad3e0782b0ee1f141b394dbe20ca9603, type: 2}
+  - {fileID: 2100000, guid: 1be39c92dcbfa574481ecb067663f3a8, type: 2}
+  - {fileID: 2100000, guid: cab1e5ee984975a4d8b716669a72283d, type: 2}
+  - {fileID: 2100000, guid: 72359b4f6ee61ce44b45e5bcb303a00c, type: 2}
+  - {fileID: 2100000, guid: 19a5ceeb6da29a24b9fdf0d382957ab5, type: 2}
+  - {fileID: 2100000, guid: 4fc9f7553618e7a498354a565befd8d6, type: 2}
+  - {fileID: 2100000, guid: 9842fa3a263b2774480fbf666d9612c2, type: 2}
+  - {fileID: 2100000, guid: 4d14e227796b6ec47a11618654304e08, type: 2}
+  - {fileID: 2100000, guid: 3bcdb0f1b5ff4f448915ae11a3c285c2, type: 2}
   leftHandTransform: {fileID: 144596539}
   rightHandTransform: {fileID: 144596524}
 --- !u!1 &2145307565

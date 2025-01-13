@@ -27,7 +27,7 @@ public class CrystalMaterial : Material
             timeRemaining -= Time.deltaTime;
     }
 
-    public override void OnEarth(ObjectData data)
+    public override void OnEarth(ObjectData data, float[] args = null)
     {
         base.OnEarth(data);
         mat.material.color =new Color32(139, 69, 19,0);
@@ -36,7 +36,7 @@ public class CrystalMaterial : Material
             Glow();
     }
 
-    public override void OnFire(ObjectData data)
+    public override void OnFire(ObjectData data, float[] args = null)
     {
         base.OnFire(data);
         mat.material.color = Color.red;
@@ -45,7 +45,7 @@ public class CrystalMaterial : Material
             Glow();
     }
 
-    public override void OnVolcano(ObjectData data)
+    public override void OnVolcano(ObjectData data, float[] args = null)
     {
         base.OnVolcano(data);
         mat.material.color = Color.black;
@@ -54,7 +54,7 @@ public class CrystalMaterial : Material
             Glow();
     }
 
-    public override void OnIce(ObjectData data)
+    public override void OnIce(ObjectData data, float[] args = null)
     {
         base.OnIce(data);
         mat.material.color = Color.cyan;
@@ -63,7 +63,7 @@ public class CrystalMaterial : Material
             Glow();
     }
 
-    public override void OnPlant(ObjectData data)
+    public override void OnPlant(ObjectData data, float[] args = null)
     {
         base.OnPlant(data);
         mat.material.color = Color.green;
@@ -72,7 +72,7 @@ public class CrystalMaterial : Material
             Glow();
     }
 
-    public override void OnSand(ObjectData data)
+    public override void OnSand(ObjectData data, float[] args = null)
     {
         base.OnSand(data);
         mat.material.color = new Color32(244, 164, 96,0);
@@ -81,7 +81,7 @@ public class CrystalMaterial : Material
             Glow();
     }
 
-    public override void OnSteam(ObjectData data)
+    public override void OnSteam(ObjectData data, float[] args = null)
     {
         base.OnSteam(data);
         mat.material.color = new Color32(135, 206, 235,0);
@@ -90,7 +90,7 @@ public class CrystalMaterial : Material
             Glow();
     }
 
-    public override void OnThunder(ObjectData data)
+    public override void OnThunder(ObjectData data, float[] args = null)
     {
         base.OnThunder(data);
         mat.material.color = Color.yellow;
@@ -99,7 +99,7 @@ public class CrystalMaterial : Material
             Glow();
     }
 
-    public override void OnWater(ObjectData data)
+    public override void OnWater(ObjectData data, float[] args = null)
     {
         base.OnWater(data);
         mat.material.color = Color.blue;
@@ -108,7 +108,7 @@ public class CrystalMaterial : Material
             Glow();
     }
 
-    public override void OnWind(ObjectData data)
+    public override void OnWind(ObjectData data, float[] args = null)
     {
         base.OnWind(data);
         mat.material.color = new Color32(152, 251, 152,0);

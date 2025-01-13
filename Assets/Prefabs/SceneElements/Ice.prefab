@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6293957778919491285}
   - component: {fileID: 6330187059840766921}
   - component: {fileID: 1626093133156453177}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ice
   m_TagString: Material
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialMaxScale: 5
-  maxTimeDuration: 5
+  maxTimeDuration: 10
 --- !u!54 &6330187059840766921
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -158,7 +158,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 768
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0

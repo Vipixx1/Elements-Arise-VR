@@ -14,19 +14,19 @@ public class StoneMaterial : Material
     [SerializeField]
     private float explosionForce;
     
-    public override void OnVolcano(ObjectData data)
+    public override void OnVolcano(ObjectData data, float[] args = null)
     {
         Explode();
 
     }
 
-    public override void OnFire(ObjectData data)
+    public override void OnFire(ObjectData data, float[] args = null)
     {
         if (data.Temperature >= explosionTemp) { Explode(); }
 
     }
 
-    public override void OnSteam(ObjectData data)
+    public override void OnSteam(ObjectData data, float[] args = null)
     {
         if (data.Temperature >= explosionTemp) { Explode(); }
     }

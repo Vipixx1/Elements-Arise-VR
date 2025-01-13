@@ -37,6 +37,7 @@ public class ObjectData : MonoBehaviour
         {
             spell.Catch(this);
         }
+        Destroy(spell.gameObject);
 
 
 
