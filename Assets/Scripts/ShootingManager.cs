@@ -21,8 +21,8 @@ public class ShootingManager : MonoBehaviour
     [SerializeField]
     private GameObject windFieldPrefab;
 
-    public Transform firstWindSpell;
-    public Transform secondWindSpell;
+    public Vector3? firstWindSpell;
+    public Vector3? secondWindSpell;
 
     private void OnEnable()
     {
@@ -127,22 +127,29 @@ public class ShootingManager : MonoBehaviour
     }
 
 
-    void WindFieldPlacement(GameObject spell)
+    public void WindFieldPlacement(Vector3 spellPosition)
     {
 
         bool windFieldReady = false;
 
-        if (firstWindSpell == null || (firstWindSpell != null && secondWindSpell != null))
+        if (firstWindSpell == null)
         {
-            firstWindSpell = spell.transform;
+            firstWindSpell = spellPosition;
             Debug.Log("Placed first wind spot");
             
         }
-        else
+        else if (firstWindSpell != null && secondWindSpell == null)
         {
-            secondWindSpell = spell.transform;
+            secondWindSpell = spellPosition;
             windFieldReady = true;
             Debug.Log("Placed second wind spot");
+        }
+
+        else
+        {
+            firstWindSpell = spellPosition;
+            secondWindSpell = null;
+            Debug.Log("Reset wind spot positions");
         }
 
         if (windFieldReady) {
