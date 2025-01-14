@@ -12,13 +12,13 @@ public class FusionStarter : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
 
-        if (collision.gameObject.tag == "Hand")
+        if (collision.gameObject.tag == "RightHand")
         {
             receiver.FuseSpell();
-            Debug.Log("bonjour firas");
+            
         }
 
-        Debug.Log("bonjour connard");
+        
     }
         
     

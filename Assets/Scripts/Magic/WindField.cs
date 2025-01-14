@@ -22,7 +22,14 @@ public class WindField : MonoBehaviour
         direction = endingPoint - startingPoint;
 
         transform.position = startingPoint + direction/2f;
-        transform.localScale = direction/2f;
+        float angle = Vector3.Angle(startingPoint, endingPoint);
+        transform.Rotate(0,angle,0);
+
+
+
+        Vector3 scale = transform.localScale;
+        scale.x = direction.magnitude / 2f;
+        transform.localScale = scale;
 
     }
 

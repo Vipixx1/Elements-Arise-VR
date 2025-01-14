@@ -141,6 +141,7 @@ public class ShootingManager : MonoBehaviour
         {
             secondWindSpell = spellPosition;
             windFieldReady = true;
+            Destroy(FindAnyObjectByType<WindField>().gameObject);
             Debug.Log("Placed second wind spot");
         }
 
