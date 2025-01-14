@@ -60,12 +60,20 @@ public class ShootingManager : MonoBehaviour
         {
             isRightHandSpellReady = true;
             rightHandElement = element;
+            rightHandTransform.GetComponentInParent<HandVisual>().SetHandColorBySpell(element);
         }
         else if (handTag == "LeftHand")
         {
             isLeftHandSpellReady = true;
             leftHandElement = element;
+            leftHandTransform.GetComponentInParent<HandVisual>().SetHandColorBySpell(element);
         }
+    }
+
+    private void AssignSpellToBothHands(string element)
+    {
+        AssignSpellToHand(element, "LeftHand");
+        AssignSpellToHand(element, "RightHand");
     }
 
     private void ShootSpell(string element, Transform handTransform, int rightOrLeftCoeff)
@@ -116,7 +124,7 @@ public class ShootingManager : MonoBehaviour
                 break;
             
             default:
-                Debug.LogWarning($"Aucun script trouvé pour l'élément {element}. Sort par défaut utilisé.");
+                Debug.LogWarning($"Aucun script trouvï¿½ pour l'ï¿½lï¿½ment {element}. Sort par dï¿½faut utilisï¿½.");
                 spell.AddComponent<FireSpell>();
                 spell.GetComponent<Renderer>().material = spellMaterials[0];
                 break;
@@ -168,39 +176,32 @@ public class ShootingManager : MonoBehaviour
 
         if (handElements.Contains("fire") && handElements.Contains("water"))
         {
-            leftHandElement = "steam";
-            rightHandElement = "steam";
+            AssignSpellToBothHands("steam");
         }
 
         else if (handElements.Contains("fire") && handElements.Contains("earth"))
         {
-            leftHandElement = "volcano";
-            rightHandElement = "volcano";
+            AssignSpellToBothHands("volcano");
         }
-
-
+        
         else if (handElements.Contains("fire") && handElements.Contains("wind"))
         {
-            leftHandElement = "thunder";
-            rightHandElement = "thunder";
+            AssignSpellToBothHands("thunder");
         }
 
         else if (handElements.Contains("earth") && handElements.Contains("water"))
         {
-            leftHandElement = "plant";
-            rightHandElement = "plant";
+            AssignSpellToBothHands("plant");
         }
 
         else if (handElements.Contains("wind") && handElements.Contains("water"))
         {
-            leftHandElement = "ice";
-            rightHandElement = "ice";
+            AssignSpellToBothHands("ice");
         }
 
         else if (handElements.Contains("earth") && handElements.Contains("wind"))
         {
-            leftHandElement = "sand";
-            rightHandElement = "sand";
+            AssignSpellToBothHands("sand");
         }
 
     }
