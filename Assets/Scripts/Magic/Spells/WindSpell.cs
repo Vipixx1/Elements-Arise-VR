@@ -15,4 +15,9 @@ public class WindSpell : Spell
         base.Catch(data);
         data.Material.OnWind(data);
     }
+
+    private void OnDestroy()
+    {
+        FindAnyObjectByType<ShootingManager>().WindFieldPlacement(transform.position);
+    }
 }

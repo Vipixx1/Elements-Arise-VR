@@ -15,8 +15,8 @@ public class WindField : MonoBehaviour
     void Start()
     {
         ShootingManager shootingManager = FindAnyObjectByType<ShootingManager>();
-        Vector3 startingPoint = shootingManager.firstWindSpell.position;
-        Vector3 endingPoint = shootingManager.secondWindSpell.position;
+        Vector3 startingPoint = (Vector3)shootingManager.firstWindSpell;
+        Vector3 endingPoint = (Vector3)shootingManager.secondWindSpell;
         
 
         direction = endingPoint - startingPoint;
