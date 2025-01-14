@@ -9,6 +9,8 @@ public class ScrollSpellResult : MonoBehaviour
     [SerializeField] private Scroll? scroll;
     private Vector3 spawnCoords;
 
+    private string currentHandTag = "";
+
     public void Start()
     {
         spawnCoords = this.gameObject.transform.position;
@@ -16,8 +18,11 @@ public class ScrollSpellResult : MonoBehaviour
 
     public void OnSelect()
     {
-        //ADD CHECKING THE TAG FOR THE RIGHT OR THE LEFT HAND
-        OnSpellReady?.Invoke(currentSpellElement, "RightHand");
+        if (currentHandTag == "")
+        {
+            return;
+        }
+        OnSpellReady?.Invoke(currentSpellElement, currentHandTag);
         scroll?.EraseScroll();
         this.gameObject.GetComponent<Renderer>().enabled = false;
     }
@@ -37,5 +42,21 @@ public class ScrollSpellResult : MonoBehaviour
     public void SetCurrentSpellElement(string element)
     {
         currentSpellElement = element;
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "RightHand" || other.gameObject.tag == "LeftHand")
+        {
+            currentHandTag = other.gameObject.tag;
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "RightHand" || other.gameObject.tag == "LeftHand")
+        {
+            currentHandTag = "";
+        }
     }
 }

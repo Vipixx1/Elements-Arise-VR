@@ -5,22 +5,23 @@ using UnityEngine;
 
 public class Marker : MonoBehaviour
 {
-    [SerializeField] private Transform _tip;
-    [SerializeField] private int _penSize = 25;
-    [SerializeField] private float _tipHeight = 0.03f;
-    [SerializeField] private Color _color = Color.blue;
+    [SerializeField] private Transform rightFinger;
+    [SerializeField] private Transform? leftFinger; 
+    [SerializeField] private int penSize = 25;
+    [SerializeField] private float tipHeight = 0.03f;
+    [SerializeField] private Color color = Color.blue;
 
     [SerializeField] private Scroll scroll; // Reference to Scroll object
 
-    private Color[] _colors;
-    private RaycastHit _touch;
-    private Vector2 _touchPos, _lastTouchPos;
-    private bool _touchedLastFrame;
-    private Quaternion _lastTouchRot;
+    private Color[] colors;
+    private RaycastHit touch;
+    private Vector2 touchPos, lastTouchPos;
+    private bool touchedLastFrame;
+    private Quaternion lastTouchRot;
 
     void Start()
     {
-        _colors = Enumerable.Repeat(_color, _penSize * _penSize).ToArray();
+        colors = Enumerable.Repeat(color, penSize * penSize).ToArray();
     }
 
     void Update()
@@ -30,62 +31,62 @@ public class Marker : MonoBehaviour
 
     private void Draw()
     {
-        _colors = Enumerable.Repeat(_color, _penSize * _penSize).ToArray();
+        colors = Enumerable.Repeat(color, penSize * penSize).ToArray();
 
-        if (Physics.Raycast(_tip.position, _tip.transform.right, out _touch, _tipHeight))
+        if (Physics.Raycast(rightFinger.position, rightFinger.transform.right, out touch, tipHeight) ||
+            Physics.Raycast(leftFinger.position, -leftFinger.transform.right, out touch, tipHeight))
         {
-            if (_touch.transform.CompareTag("Scroll"))
+            if (touch.transform.CompareTag("Scroll"))
             {
                 if (scroll == null)
                 {
-                    scroll = _touch.transform.GetComponent<Scroll>();
+                    scroll = touch.transform.GetComponent<Scroll>();
                 }
 
-                _touchPos = new Vector2(_touch.textureCoord.x, _touch.textureCoord.y);
+                touchPos = new Vector2(touch.textureCoord.x, touch.textureCoord.y);
 
-                var x = (int)(_touchPos.x * scroll.textureSize.x - (_penSize / 2));
-                var y = (int)(_touchPos.y * scroll.textureSize.y - (_penSize / 2));
+                var x = (int)(touchPos.x * scroll.textureSize.x - (penSize / 2));
+                var y = (int)(touchPos.y * scroll.textureSize.y - (penSize / 2));
 
                 if (y < 0 || y > scroll.textureSize.y || x < 0 || x > scroll.textureSize.x) return;
 
-                scroll.DrawPoint(x, y, _penSize, _penSize, _colors);
+                scroll.DrawPoint(x, y, penSize, penSize, colors);
 
-                if (!_touchedLastFrame)
+                if (!touchedLastFrame)
                 {
-                    // Start a new stroke
                     scroll.StartStroke();
                 }
 
-                if (_touchedLastFrame)
+                if (touchedLastFrame)
                 {
                     for (float f = 0.01f; f < 1.00f; f += 0.01f)
                     {
-                        var lerpX = (int)Mathf.Lerp(_lastTouchPos.x, x, f);
-                        var lerpY = (int)Mathf.Lerp(_lastTouchPos.y, y, f);
+                        var lerpX = (int)Mathf.Lerp(lastTouchPos.x, x, f);
+                        var lerpY = (int)Mathf.Lerp(lastTouchPos.y, y, f);
 
-                        scroll.DrawPoint(lerpX, lerpY, _penSize, _penSize, _colors);
+                        scroll.DrawPoint(lerpX, lerpY, penSize, penSize, colors);
                     }
 
-                    transform.rotation = _lastTouchRot;
+                    transform.rotation = lastTouchRot;
                 }
 
                 scroll.texture.Apply();
 
-                _lastTouchPos = new Vector2(x, y);
-                _lastTouchRot = transform.rotation;
-                _touchedLastFrame = true;
+                lastTouchPos = new Vector2(x, y);
+                lastTouchRot = transform.rotation;
+                touchedLastFrame = true;
 
                 return;
             }
         }
 
-        if (_touchedLastFrame)
+        if (touchedLastFrame)
         {
             scroll.FinalizeStroke();
         }
 
         scroll = null;
-        _touchedLastFrame = false;
+        touchedLastFrame = false;
     }
 
 }

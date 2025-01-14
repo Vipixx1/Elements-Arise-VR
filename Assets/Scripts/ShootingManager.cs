@@ -38,7 +38,7 @@ public class ShootingManager : MonoBehaviour
     {
         if (isRightHandClosed && !isClosed && isRightHandSpellReady)
         {
-            ShootSpell(rightHandElement, rightHandTransform);
+            ShootSpell(rightHandElement, rightHandTransform, 1);
             //isRightHandSpellReady = false;
         }
         isRightHandClosed = isClosed;
@@ -48,8 +48,8 @@ public class ShootingManager : MonoBehaviour
     {
         if (isLeftHandClosed && !isClosed && isLeftHandSpellReady)
         {
-            ShootSpell(leftHandElement, leftHandTransform);
-            isLeftHandSpellReady = false;
+            ShootSpell(leftHandElement, leftHandTransform, -1);
+            //isLeftHandSpellReady = false;
         }
         isLeftHandClosed = isClosed;
     }
@@ -68,7 +68,7 @@ public class ShootingManager : MonoBehaviour
         }
     }
 
-    private void ShootSpell(string element, Transform handTransform)
+    private void ShootSpell(string element, Transform handTransform, int rightOrLeftCoeff)
     {
         GameObject spell = Instantiate(spellPrefab, handTransform.position, handTransform.rotation);
 
@@ -122,7 +122,8 @@ public class ShootingManager : MonoBehaviour
                 break;
         }
 
-        spell.GetComponent<Rigidbody>().AddForce((-handTransform.up*0.4f + handTransform.right*0.6f) * 800);
+        // If rightHand, rightOrLeftCoeff = 1, if leftHand, rightOrLeftCoeff = -1
+        spell.GetComponent<Rigidbody>().AddForce(rightOrLeftCoeff * (-handTransform.up*0.4f + handTransform.right*0.6f) * 800);
     }
 
 
