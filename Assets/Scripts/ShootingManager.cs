@@ -18,6 +18,12 @@ public class ShootingManager : MonoBehaviour
     private bool isRightHandClosed = false;
     private bool isLeftHandClosed = false;
 
+    [SerializeField]
+    private GameObject windFieldPrefab;
+
+    public Transform firstWindSpell;
+    public Transform secondWindSpell;
+
     private void OnEnable()
     {
         ScrollSpellResult.OnSpellReady += AssignSpellToHand;
@@ -83,6 +89,7 @@ public class ShootingManager : MonoBehaviour
             case "wind":
                 spell.AddComponent<WindSpell>();
                 spell.GetComponent<Renderer>().material = spellMaterials[3];
+                WindFieldPlacement(spell);
                 break;
             case "ice":
                 spell.AddComponent<IceSpell>();
@@ -119,6 +126,32 @@ public class ShootingManager : MonoBehaviour
         spell.GetComponent<Rigidbody>().AddForce((-handTransform.up*0.4f + handTransform.right*0.6f) * 800);
     }
 
+
+    void WindFieldPlacement(GameObject spell)
+    {
+
+        bool windFieldReady = false;
+
+        if (firstWindSpell == null || (firstWindSpell != null && secondWindSpell != null))
+        {
+            firstWindSpell = spell.transform;
+            Debug.Log("Placed first wind spot");
+            
+        }
+        else
+        {
+            secondWindSpell = spell.transform;
+            windFieldReady = true;
+            Debug.Log("Placed second wind spot");
+        }
+
+        if (windFieldReady) {
+
+            Instantiate(windFieldPrefab);
+            Debug.Log("Placed wind field");
+        }
+
+    }
 
     public void FuseSpell()
     {

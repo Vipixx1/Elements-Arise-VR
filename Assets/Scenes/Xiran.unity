@@ -5264,7 +5264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 746612936677160178, guid: 33edea2e292aff640b4da944eb5026bb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.45
+      value: 2.82
       objectReference: {fileID: 0}
     - target: {fileID: 746612936677160178, guid: 33edea2e292aff640b4da944eb5026bb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5272,7 +5272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 746612936677160178, guid: 33edea2e292aff640b4da944eb5026bb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.3
+      value: -1.27
       objectReference: {fileID: 0}
     - target: {fileID: 746612936677160178, guid: 33edea2e292aff640b4da944eb5026bb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10522,6 +10522,9 @@ MonoBehaviour:
   rightHandTransform: {fileID: 1638936380}
   rightHandElement: 
   leftHandElement: 
+  windFieldPrefab: {fileID: 0}
+  firstWindSpell: {fileID: 0}
+  secondWindSpell: {fileID: 0}
 --- !u!1 &1942217387
 GameObject:
   m_ObjectHideFlags: 0
