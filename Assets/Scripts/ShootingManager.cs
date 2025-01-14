@@ -39,7 +39,7 @@ public class ShootingManager : MonoBehaviour
         if (isRightHandClosed && !isClosed && isRightHandSpellReady)
         {
             ShootSpell(rightHandElement, rightHandTransform);
-            isRightHandSpellReady = false;
+            //isRightHandSpellReady = false;
         }
         isRightHandClosed = isClosed;
     }
@@ -89,7 +89,6 @@ public class ShootingManager : MonoBehaviour
             case "wind":
                 spell.AddComponent<WindSpell>();
                 spell.GetComponent<Renderer>().material = spellMaterials[3];
-                WindFieldPlacement(spell);
                 break;
             case "ice":
                 spell.AddComponent<IceSpell>();
