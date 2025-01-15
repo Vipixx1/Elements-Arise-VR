@@ -42,8 +42,9 @@ public class ObjectData : MonoBehaviour
         if (spell != null)
         {
             spell.Catch(this);
+            spell.DestroySpell();
         }
-        Destroy(spell.gameObject);
+
 
         updateParticleSystem();
 

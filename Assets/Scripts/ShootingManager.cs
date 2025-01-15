@@ -1,3 +1,4 @@
+using Oculus.Interaction;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,6 +24,18 @@ public class ShootingManager : MonoBehaviour
 
     public Vector3? firstWindSpell;
     public Vector3? secondWindSpell;
+
+
+    [SerializeField] private GameObject fireSpell;
+    [SerializeField] private GameObject waterSpell;
+    [SerializeField] private GameObject earthSpell;
+    [SerializeField] private GameObject windSpell;
+    [SerializeField] private GameObject iceSpell;
+    [SerializeField] private GameObject plantSpell;
+    [SerializeField] private GameObject thunderSpell;
+    [SerializeField] private GameObject volcanoSpell;
+    [SerializeField] private GameObject steamSpell;
+    [SerializeField] private GameObject sandSpell;
 
     private void OnEnable()
     {
@@ -78,55 +91,48 @@ public class ShootingManager : MonoBehaviour
 
     private void ShootSpell(string element, Transform handTransform, int rightOrLeftCoeff)
     {
-        GameObject spell = Instantiate(spellPrefab, handTransform.position, handTransform.rotation);
+        GameObject spell;
 
         switch (element.ToLower())
         {
             case "fire":
-                spell.AddComponent<FireSpell>();
-                spell.GetComponent<Renderer>().material = spellMaterials[0];
+                
+                spell = Instantiate(fireSpell, handTransform.position, handTransform.rotation);
                 break;
             case "water":
-                spell.AddComponent<WaterSpell>();
-                spell.GetComponent<Renderer>().material = spellMaterials[1];
+ 
+                spell = Instantiate(waterSpell, handTransform.position, handTransform.rotation);
                 break;
             case "earth":
-                spell.AddComponent<EarthSpell>();
-                spell.GetComponent<Renderer>().material = spellMaterials[2];
+
+                spell = Instantiate(earthSpell, handTransform.position, handTransform.rotation);
                 break;
             case "wind":
-                spell.AddComponent<WindSpell>();
-                spell.GetComponent<Renderer>().material = spellMaterials[3];
+
+                spell = Instantiate(windSpell, handTransform.position, handTransform.rotation);
                 break;
             case "ice":
-                spell.AddComponent<IceSpell>();
-                spell.GetComponent<Renderer>().material = spellMaterials[4];
+                spell = Instantiate(iceSpell, handTransform.position, handTransform.rotation);
                 break;
             case "plant":
-                spell.AddComponent<PlantSpell>();
-                spell.GetComponent<Renderer>().material = spellMaterials[5];
+                spell = Instantiate(plantSpell, handTransform.position, handTransform.rotation);
                 break;
             case "thunder":
-                spell.AddComponent<ThunderSpell>();
-                spell.GetComponent<Renderer>().material = spellMaterials[6];
+                spell = Instantiate(thunderSpell, handTransform.position, handTransform.rotation);
                 break;
             case "volcano":
-                spell.AddComponent<VolcanoSpell>();
-                spell.GetComponent<Renderer>().material = spellMaterials[7];
+                spell = Instantiate(volcanoSpell, handTransform.position, handTransform.rotation);
                 break;
             case "steam":
-                spell.AddComponent<SteamSpell>();
-                spell.GetComponent<Renderer>().material = spellMaterials[8];
+                spell = Instantiate(steamSpell, handTransform.position, handTransform.rotation);
                 break;
             case "sand":
-                spell.AddComponent<SandSpell>();
-                spell.GetComponent<Renderer>().material = spellMaterials[9];
+                spell = Instantiate(sandSpell, handTransform.position, handTransform.rotation);
                 break;
             
             default:
                 Debug.LogWarning($"Aucun script trouv� pour l'�l�ment {element}. Sort par d�faut utilis�.");
-                spell.AddComponent<FireSpell>();
-                spell.GetComponent<Renderer>().material = spellMaterials[0];
+                spell = Instantiate(fireSpell, handTransform.position, handTransform.rotation);
                 break;
         }
 
@@ -150,7 +156,8 @@ public class ShootingManager : MonoBehaviour
         {
             secondWindSpell = spellPosition;
             windFieldReady = true;
-            Destroy(FindAnyObjectByType<WindField>().gameObject);
+            if (FindAnyObjectByType<WindField>() != null)
+                Destroy(FindAnyObjectByType<WindField>().gameObject);
             Debug.Log("Placed second wind spot");
         }
 

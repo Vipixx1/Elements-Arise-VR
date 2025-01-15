@@ -18,4 +18,12 @@ public class Spell : MonoBehaviour
         data.Humidity += humidity;
         Debug.Log(data.Material);
     }
+
+    public void DestroySpell()
+    {
+        foreach (Transform cc in transform) { cc.parent = null; cc.GetComponent<particleScript>().DestroyAfter(); }
+        Destroy(gameObject);
+    }
+
+
 }

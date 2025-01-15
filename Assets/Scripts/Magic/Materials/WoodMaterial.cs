@@ -24,6 +24,9 @@ public class WoodMaterial : Material
         if (isGrowing && scaling < maxScaling)
         {
             scaling += Time.deltaTime;
+        } else
+        {
+            isGrowing = false;
         }
         if (isBurning)
         {
