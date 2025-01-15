@@ -34,17 +34,31 @@ public class Demo : MonoBehaviour {
 		platform = Application.platform;
 		drawArea = new Rect(0, 0, Screen.width - Screen.width / 3, Screen.height);
 
-		//Load pre-made gestures
-		//// TextAsset[] gesturesXml = Resources.LoadAll<TextAsset>("GestureSet/10-stylus-MEDIUM/");
+        //Load pre-made gestures
+        //// TextAsset[] gesturesXml = Resources.LoadAll<TextAsset>("GestureSet/10-stylus-MEDIUM/");
         /*TextAsset[] gesturesXml = Resources.LoadAll<TextAsset>("GestureSet/10-stylus-MEDIUM-test/");
         foreach (TextAsset gestureXml in gesturesXml)
 			trainingSet.Add(GestureIO.ReadGestureFromXML(gestureXml.text));*/
 
-		//Load user custom gestures
-		string[] filePaths = Directory.GetFiles(Application.persistentDataPath, "*.xml");
-		foreach (string filePath in filePaths)
-			trainingSet.Add(GestureIO.ReadGestureFromFile(filePath));
-	}
+        //Load user custom gestures
+        string folderPath = Path.Combine(Application.streamingAssetsPath, "Shapes");
+        List<string> gestureXmls = new List<string>();
+
+        // Use Directory.GetFiles for other platforms
+        string[] filePaths = Directory.GetFiles(folderPath, "*.xml");
+
+        foreach (string filePath in filePaths)
+        {
+            string xmlContent = File.ReadAllText(filePath);
+            gestureXmls.Add(xmlContent);
+        }
+
+        // Load gestures from the XML content
+        foreach (string xml in gestureXmls)
+        {
+            trainingSet.Add(GestureIO.ReadGestureFromXML(xml));
+        }
+    }
 
 	void Update () {
 
@@ -125,17 +139,23 @@ public class Demo : MonoBehaviour {
 		GUI.Label(new Rect(Screen.width - 200, 150, 70, 30), "Add as: ");
 		newGestureName = GUI.TextField(new Rect(Screen.width - 150, 150, 100, 30), newGestureName);
 
-		if (GUI.Button(new Rect(Screen.width - 50, 150, 50, 30), "Add") && points.Count > 0 && newGestureName != "") {
+        if (GUI.Button(new Rect(Screen.width - 50, 150, 50, 30), "Add") && points.Count > 0 && newGestureName != "")
+        {
 
-			string fileName = String.Format("{0}/{1}-{2}.xml", Application.persistentDataPath, newGestureName, DateTime.Now.ToFileTime());
+            //string fileName = String.Format("{0}/{1}-{2}.xml", Application.persistentDataPath, newGestureName, DateTime.Now.ToFileTime());
+            string fileName = String.Format("{0}/{1}.xml", Path.Combine(Application.streamingAssetsPath, "Shapes"), newGestureName);
 
 			#if !UNITY_WEBPLAYER
-				GestureIO.WriteGesture(points.ToArray(), newGestureName, fileName);
+            GestureIO.WriteGesture(points.ToArray(), newGestureName, fileName);
 			#endif
 
-			trainingSet.Add(new Gesture(points.ToArray(), newGestureName));
+            trainingSet.Add(new Gesture(points.ToArray(), newGestureName));
 
-			newGestureName = "";
-		}
+            // Add the new gesture name to shapes_manifest.txt
+            string manifestPath = Path.Combine(Application.streamingAssetsPath, "Shapes", "shapes_manifest.txt");
+            File.AppendAllText(manifestPath, newGestureName + ".xml" + Environment.NewLine);
+
+            newGestureName = "";
+        }
 	}
 }

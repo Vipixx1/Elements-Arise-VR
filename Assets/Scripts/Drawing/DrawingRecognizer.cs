@@ -142,29 +142,65 @@ public class DrawingRecognizer : MonoBehaviour
         Renderer spellRenderer = scrollSpellResult.gameObject.GetComponent<Renderer>();
         spellRenderer.enabled = true;
         
-        if (gestureClass.StartsWith("square"))
+        if (gestureClass.StartsWith("earth"))
         {
-            message = "Square : Earth";
+            message = "Earth";
             scrollSpellResult.SetCurrentSpellElement("earth");
             spellRenderer.material.color = new Color(0.65f, 0.16f, 0.16f);
         }
-        else if (gestureClass.StartsWith("triangle"))
+        else if (gestureClass.StartsWith("fire"))
         {
-            message = "Triangle : Fire";
+            message = "Fire";
             scrollSpellResult.SetCurrentSpellElement("fire");
             spellRenderer.material.color = Color.red;
         }
-        else if (gestureClass.StartsWith("circle"))
+        else if (gestureClass.StartsWith("water"))
         {
-            message = "Circle : Water";
+            message = "Water";
             scrollSpellResult.SetCurrentSpellElement("water");
             spellRenderer.material.color = Color.blue;
         }
-        else if (gestureClass.StartsWith("spiral"))
+        else if (gestureClass.StartsWith("wind"))
         {
-            message = "Spiral : Wind";
+            message = "Wind";
             scrollSpellResult.SetCurrentSpellElement("wind");
             spellRenderer.material.color = new Color(0.31f, 0.78f, 0.47f);
+        }
+        else if (gestureClass.StartsWith("thunder"))
+        {
+            message = "Thunder";
+            scrollSpellResult.SetCurrentSpellElement("thunder");
+            spellRenderer.material.color = Color.yellow;
+        }
+        else if (gestureClass.StartsWith("sand"))
+        {
+            message = "Sand";
+            scrollSpellResult.SetCurrentSpellElement("sand");
+            spellRenderer.material.color = Color.yellow;
+        }
+        else if (gestureClass.StartsWith("volcano"))
+        {
+            message = "Volcano";
+            scrollSpellResult.SetCurrentSpellElement("volcano");
+            spellRenderer.material.color = Color.magenta;
+        }
+        else if (gestureClass.StartsWith("ice"))
+        {
+            message = "Ice";
+            scrollSpellResult.SetCurrentSpellElement("ice");
+            spellRenderer.material.color = Color.cyan;
+        }
+        else if (gestureClass.StartsWith("plant"))
+        {
+            message = "Plant";
+            scrollSpellResult.SetCurrentSpellElement("plant");
+            spellRenderer.material.color = Color.green;
+        }
+        else if (gestureClass.StartsWith("steam"))
+        {
+            message = "Steam";
+            scrollSpellResult.SetCurrentSpellElement("steam");
+            spellRenderer.material.color = Color.grey;
         }
         else
         {
