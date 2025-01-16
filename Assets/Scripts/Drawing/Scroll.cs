@@ -26,6 +26,13 @@ public class Scroll : MonoBehaviour
         {
             EraseScroll();
         }
+
+        if (!Input.GetKey(KeyCode.Backspace) ||
+            !Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit touch)) return;
+        if (touch.transform.GetComponentInChildren<Scroll>().Equals(this))
+        {
+            EraseScroll();
+        }
     }
 
     public void EraseScroll()

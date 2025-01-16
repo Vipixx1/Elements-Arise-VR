@@ -32,9 +32,14 @@ public class Marker : MonoBehaviour
     private void Draw()
     {
         colors = Enumerable.Repeat(color, penSize * penSize).ToArray();
+        
+        bool raycastHit;
+        raycastHit = rightFinger || leftFinger
+            ? Physics.Raycast(rightFinger.position, rightFinger.transform.right, out touch, tipHeight)
+            || Physics.Raycast(leftFinger.position, -leftFinger.transform.right, out touch, tipHeight)
+            : Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out touch) && Input.GetMouseButton(0);
 
-        if (Physics.Raycast(rightFinger.position, rightFinger.transform.right, out touch, tipHeight) ||
-            Physics.Raycast(leftFinger.position, -leftFinger.transform.right, out touch, tipHeight))
+        if (raycastHit)
         {
             if (touch.transform.CompareTag("Scroll"))
             {
