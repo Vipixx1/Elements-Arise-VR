@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 #nullable enable
 
@@ -58,5 +59,10 @@ public class ScrollSpellResult : MonoBehaviour
         {
             currentHandTag = "";
         }
+    }
+
+    public void OnSelectLevel(string title)
+    {
+        SceneManager.LoadScene(title);
     }
 }

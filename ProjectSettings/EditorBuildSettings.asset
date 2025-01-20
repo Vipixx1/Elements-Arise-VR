@@ -11,6 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Level1.unity
     guid: a51bf0d36446a3c4c80789c1da0e176b
+  - enabled: 1
+    path: Assets/Scenes/Victor.unity
+    guid: db892a70d3cb7724fb0a6d18aa5be5a0
+  - enabled: 1
+    path: Assets/Scenes/Levels/Sandboxtest.unity
+    guid: ee8004d1cd156fd48bfe3a34e0926f3a
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 0591bb2cfd9a12646972778015de37ae, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: f7c4cf149baf7e24290156dafbe9c0ce, type: 2}
