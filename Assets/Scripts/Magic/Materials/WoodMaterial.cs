@@ -12,7 +12,7 @@ public class WoodMaterial : Material
 
     private void Start()
     {
-        scaling = transform.localScale.y;
+        scaling = transform.localScale.z;
         maxScaling *= scaling;
     }
 
@@ -39,7 +39,7 @@ public class WoodMaterial : Material
         
         }
         Vector3 newScale = gameObject.transform.lossyScale;
-        newScale.y = scaling;
+        newScale.z = scaling;
         gameObject.transform.localScale = newScale;
 
     
