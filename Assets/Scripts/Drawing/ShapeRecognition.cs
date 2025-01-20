@@ -33,7 +33,7 @@ namespace Drawing
         
             if (Input.GetKeyDown(KeyCode.D))
             {
-                //scroll.EraseScroll();
+                //parchment.EraseScroll();
                 if (DrawableShapesList.Count == 0) return;
                 _drawableShapes.DebugShape(DrawableShapesList[_currentShapeIndex], scroll, _pointSize);
                 _currentShapeIndex = (_currentShapeIndex + 1) % DrawableShapesList.Count;

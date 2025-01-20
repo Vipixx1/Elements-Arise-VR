@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShootingManager : MonoBehaviour
 {
     [SerializeField] private GameObject spellPrefab;
-    [SerializeField] private List<Material> spellMaterials;
+    //[SerializeField] private List<Material> spellMaterials;
 
     [SerializeField] private Transform leftHandTransform;
     [SerializeField] private Transform rightHandTransform;

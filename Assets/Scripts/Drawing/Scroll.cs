@@ -21,7 +21,7 @@ public class Scroll : MonoBehaviour
 
     private void Update()
     {
-        // Clear the scroll when the user presses the Start button
+        // Clear the parchment when the user presses the Start button
         if (OVRInput.Get(OVRInput.Button.Start))
         {
             EraseScroll();

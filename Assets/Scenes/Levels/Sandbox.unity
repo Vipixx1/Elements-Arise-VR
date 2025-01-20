@@ -8598,7 +8598,7 @@ MonoBehaviour:
   rightFinger: {fileID: 1564232908}
   leftFinger: {fileID: 361594232}
   penSize: 25
-  tipHeight: 0.03
+  tipHeight: 0.05
   color: {r: 0, g: 0, b: 1, a: 1}
   scroll: {fileID: 385073457}
 --- !u!4 &1564232908 stripped
@@ -11206,22 +11206,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellPrefab: {fileID: 8413826142207088173, guid: 7c84878359d56744e93a26775083d3d2, type: 3}
-  spellMaterials:
-  - {fileID: 2100000, guid: 22fb7cbcda2cc3c4c9060778b7b96d26, type: 2}
-  - {fileID: 2100000, guid: ad3e0782b0ee1f141b394dbe20ca9603, type: 2}
-  - {fileID: 2100000, guid: 1be39c92dcbfa574481ecb067663f3a8, type: 2}
-  - {fileID: 2100000, guid: cab1e5ee984975a4d8b716669a72283d, type: 2}
-  - {fileID: 2100000, guid: 72359b4f6ee61ce44b45e5bcb303a00c, type: 2}
-  - {fileID: 2100000, guid: 19a5ceeb6da29a24b9fdf0d382957ab5, type: 2}
-  - {fileID: 2100000, guid: 4fc9f7553618e7a498354a565befd8d6, type: 2}
-  - {fileID: 2100000, guid: 9842fa3a263b2774480fbf666d9612c2, type: 2}
-  - {fileID: 2100000, guid: 4d14e227796b6ec47a11618654304e08, type: 2}
-  - {fileID: 2100000, guid: 3bcdb0f1b5ff4f448915ae11a3c285c2, type: 2}
   leftHandTransform: {fileID: 1100095115}
   rightHandTransform: {fileID: 235745439}
   rightHandElement: 
   leftHandElement: 
-  windFieldPrefab: {fileID: 0}
+  windFieldPrefab: {fileID: 4548025522387922375, guid: bd54a01a31f65f145af9c7f667a985bf, type: 3}
+  fireSpell: {fileID: 8413826142207088173, guid: 7e338ccf98ace4e44a5a3457d62f731c, type: 3}
+  waterSpell: {fileID: 8413826142207088173, guid: 4cf874b7fca4756478bbb6137cea5c57, type: 3}
+  earthSpell: {fileID: 8413826142207088173, guid: 54d97d0b559015e469945e76306ca834, type: 3}
+  windSpell: {fileID: 8413826142207088173, guid: b4c41e5342453b944b782fcc6e84cf9c, type: 3}
+  iceSpell: {fileID: 8413826142207088173, guid: 3f6213d432f86934fbc78369d24f1975, type: 3}
+  plantSpell: {fileID: 8413826142207088173, guid: 6df9287042a689141b831453675cc713, type: 3}
+  thunderSpell: {fileID: 8413826142207088173, guid: 8038f23832ba1f94d8bfe0114a596b12, type: 3}
+  volcanoSpell: {fileID: 8413826142207088173, guid: f4183d5271e8ba24ea7a952d75df2b47, type: 3}
+  steamSpell: {fileID: 8413826142207088173, guid: 181bd4092864ced4db93683ee3c091e3, type: 3}
+  sandSpell: {fileID: 8413826142207088173, guid: af16e819dfdd5094298a9c83eed316bf, type: 3}
 --- !u!1 &1942217387
 GameObject:
   m_ObjectHideFlags: 0
