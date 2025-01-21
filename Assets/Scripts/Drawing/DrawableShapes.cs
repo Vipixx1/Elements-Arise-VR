@@ -7,11 +7,13 @@ namespace Drawing
     public class DrawableShapes
     {
 
-        public bool IsShape(DrawableShapeSO shape, Scroll scroll)
+        public bool IsShape(DrawableShapeSO shape, Scroll scroll, Vector2 boundingBoxPosition, Vector2 boundingBoxSize)
         {
             foreach (Vector2 point in shape.MandatoryPoints)
             {
-                if(scroll.texture.GetPixel((int) (point.x * scroll.textureSize.x), (int) (point.y * scroll.textureSize.y)) != Color.blue)
+                int x = (int)(point.x * boundingBoxSize.x) + (int)boundingBoxPosition.x;
+                int y = (int)(point.y * boundingBoxSize.y) + (int)boundingBoxPosition.y;
+                if(scroll.texture.GetPixel(x, y) != Color.blue)
                 {
                     return false;
                 }
@@ -19,7 +21,9 @@ namespace Drawing
         
             foreach (Vector2 point in shape.AvoidPoints)
             {
-                if(scroll.texture.GetPixel((int) (point.x * scroll.textureSize.x), (int) (point.y * scroll.textureSize.y)) == Color.blue)
+                int x = (int)(point.x * boundingBoxSize.x) + (int)boundingBoxPosition.x;
+                int y = (int)(point.y * boundingBoxSize.y) + (int)boundingBoxPosition.y;
+                if(scroll.texture.GetPixel(x, y) == Color.blue)
                 {
                     return false;
                 }
@@ -27,21 +31,36 @@ namespace Drawing
 
             return true;
         }
+
+        public bool IsShape(DrawableShapeSO shape, Scroll scroll)
+        {
+            return IsShape(shape, scroll, new Vector2(0, 0), new Vector2(scroll.textureSize.x, scroll.textureSize.y));
+        }
         
         public void DebugShape(DrawableShapeSO shape, Scroll scroll, int pointSize)
         {
+            DebugShape(shape, scroll, new Vector2(0, 0), new Vector2(scroll.textureSize.x, scroll.textureSize.y), pointSize);
+        }
+        
+        public void DebugShape(DrawableShapeSO shape, Scroll scroll, Vector2 boundingBoxPosition, Vector2 boundingBoxSize, int pointSize)
+        {
             foreach (Vector2 point in shape.MandatoryPoints)
             {
-                scroll.texture.SetPixels((int) (point.x * scroll.textureSize.x), (int) (point.y * scroll.textureSize.y), pointSize, pointSize, Enumerable.Repeat(Color.green, pointSize * pointSize).ToArray());
+                int x = (int)(point.x * boundingBoxSize.x) + (int)boundingBoxPosition.x;
+                int y = (int)(point.y * boundingBoxSize.y) + (int)boundingBoxPosition.y;
+                scroll.texture.SetPixels(x, y, pointSize, pointSize, Enumerable.Repeat(Color.green, pointSize * pointSize).ToArray());
             }
         
             foreach (Vector2 point in shape.AvoidPoints)
             {
-                scroll.texture.SetPixels((int) (point.x * scroll.textureSize.x), (int) (point.y * scroll.textureSize.y), pointSize, pointSize, Enumerable.Repeat(Color.red, pointSize * pointSize).ToArray());
+                int x = (int)(point.x * boundingBoxSize.x) + (int)boundingBoxPosition.x;
+                int y = (int)(point.y * boundingBoxSize.y) + (int)boundingBoxPosition.y;
+                scroll.texture.SetPixels(x, y, pointSize, pointSize, Enumerable.Repeat(Color.red, pointSize * pointSize).ToArray());
             }
             
             scroll.texture.Apply();
         }
+        
         
     }
 }
