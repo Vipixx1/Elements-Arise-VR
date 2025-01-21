@@ -58,7 +58,7 @@ public class WindField : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.attachedRigidbody)
+        if (other.attachedRigidbody && other.gameObject.tag != "Spell")
         {
             other.attachedRigidbody.velocity = Vector3.zero;
         }

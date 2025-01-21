@@ -9,6 +9,7 @@ TagManager:
   - ScrollA
   - LeftHand
   - RightHand
+  - Spell
   layers:
   - Default
   - TransparentFX

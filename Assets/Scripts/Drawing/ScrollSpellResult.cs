@@ -65,4 +65,9 @@ public class ScrollSpellResult : MonoBehaviour
     {
         SceneManager.LoadScene(title);
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
