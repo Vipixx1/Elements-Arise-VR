@@ -11,9 +11,14 @@ public class Spell : MonoBehaviour
     [SerializeField] private float speed;
     public float Speed { get { return speed; } set { speed = value; } }
 
+    [SerializeField] private bool shouldDispawn = true;
+
     public void Start()
     {
-        StartCoroutine(DestroyAfterTime(5f));
+        if (shouldDispawn)
+        {
+            StartCoroutine(DestroyAfterTime(5f));
+        }
     }
 
     private IEnumerator DestroyAfterTime(float time)
