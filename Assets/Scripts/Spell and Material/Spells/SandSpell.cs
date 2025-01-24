@@ -6,6 +6,7 @@ public class SandSpell : Spell
 {
     private void Start()
     {
+        base.Start();
         Humidity = -1;
     }
 

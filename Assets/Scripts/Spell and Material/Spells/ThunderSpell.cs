@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ThunderSpell : Spell
 {
-
-    private void Start()
+    public new void Start()
     {
+        base.Start();
         Temperature = 1;
     }
 

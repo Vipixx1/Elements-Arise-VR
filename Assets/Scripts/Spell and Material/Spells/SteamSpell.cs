@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SteamSpell : Spell
 {
-
-    private void Start()
+    public new void Start()
     {
+        base.Start();
         Humidity = 1;
         Temperature = 1;
     }

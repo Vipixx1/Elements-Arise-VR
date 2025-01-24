@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class WaterSpell : Spell
 {
-    private void Start()
+    public new void Start()
     {
+        base.Start();
         Humidity = 3;
         Temperature = -1;
     }
-
 
     public override void Catch(ObjectData data)
     {

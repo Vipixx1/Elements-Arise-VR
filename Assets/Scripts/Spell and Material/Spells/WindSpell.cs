@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class WindSpell : Spell
 {
-
-    private void Start()
+    public new void Start()
     {
+        base.Start();
         Humidity = -1;
     }
 

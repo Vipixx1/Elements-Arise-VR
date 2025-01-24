@@ -9,8 +9,18 @@ public class Spell : MonoBehaviour
     [SerializeField] private int humidity;
     public int Humidity { get { return humidity; } set { humidity = value; } }
     [SerializeField] private float speed;
-    public float Speed { get { return speed; } set { speed = value; } } 
+    public float Speed { get { return speed; } set { speed = value; } }
 
+    public void Start()
+    {
+        StartCoroutine(DestroyAfterTime(5f));
+    }
+
+    private IEnumerator DestroyAfterTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+        DestroySpell();
+    }
 
     public virtual void Catch(ObjectData data)
     {
@@ -24,6 +34,4 @@ public class Spell : MonoBehaviour
         foreach (Transform cc in transform) { cc.parent = null; cc.GetComponent<particleScript>().DestroyAfter(); }
         Destroy(gameObject);
     }
-
-
 }
