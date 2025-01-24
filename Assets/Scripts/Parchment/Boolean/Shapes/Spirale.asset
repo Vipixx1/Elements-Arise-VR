@@ -13,5 +13,24 @@ MonoBehaviour:
   m_Name: Spirale
   m_EditorClassIdentifier: 
   ShapeName: Spirale
-  MandatoryPoints: []
-  AvoidPoints: []
+  MandatoryPoints:
+  - {x: 0.5, y: 0.1}
+  - {x: 0.5, y: 0.9}
+  - {x: 0.5, y: 0.5}
+  - {x: 0.7, y: 0.9}
+  - {x: 0.3, y: 0.85}
+  - {x: 0.15, y: 0.7}
+  - {x: 0.1, y: 0.5}
+  - {x: 0.15, y: 0.3}
+  - {x: 0.3, y: 0.15}
+  - {x: 0.67, y: 0.2}
+  - {x: 0.67, y: 0.4}
+  AvoidPoints:
+  - {x: 0.9, y: 0.1}
+  - {x: 0.9, y: 0.3}
+  - {x: 0.9, y: 0.5}
+  - {x: 0.9, y: 0.7}
+  - {x: 0.71, y: 0.71}
+  - {x: 0.5, y: 0.7}
+  - {x: 0.3, y: 0.5}
+  - {x: 0.4, y: 0.3}
