@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using PDollarGestureRecognizer;
+using UnityEngine.Events;
 
 public class Scroll : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class Scroll : MonoBehaviour
     // Centralized gesture points
     public List<Point> Points { get; private set; } = new List<Point>();
     private int strokeId = -1; // Keeps track of strokes
+
+    public UnityEvent EraseScrollEvent;
 
     void Start()
     {
@@ -43,6 +46,7 @@ public class Scroll : MonoBehaviour
         Points.Clear();
         strokeId = -1; // Reset stroke ID
         scrollSpellResult.gameObject.GetComponent<Renderer>().enabled = false;
+        EraseScrollEvent?.Invoke();
     }
 
     public void StartStroke()

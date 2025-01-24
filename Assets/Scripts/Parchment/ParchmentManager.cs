@@ -16,6 +16,8 @@ public class ParchmentManager : MonoBehaviour
 
     void Update()
     {
+        if (!parchment) return;
+        
         if (isRightHandActivated && isLeftHandActivated)
         {
             parchment.SetActive(true);

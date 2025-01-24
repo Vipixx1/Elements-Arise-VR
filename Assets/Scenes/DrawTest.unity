@@ -156,6 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47c02a5f1da180f44b05407ab55d7054, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  marker: {fileID: 560796721}
   DrawableShapesList:
   - {fileID: 11400000, guid: 5ca6470951d830a4eaff50937d8b8aa7, type: 2}
   - {fileID: 11400000, guid: 29e0e766c2895e24999e184dd0905d58, type: 2}
@@ -173,6 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fad4adf017ace634ca56a4d1268e85b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scrollSpellResult: {fileID: 599347058}
   texture: {fileID: 0}
   textureSize: {x: 512, y: 512}
 --- !u!64 &1836449
@@ -485,6 +487,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parchment: {fileID: 0}
   camera: {fileID: 0}
+  left_holder: {fileID: 0}
+  right_holder: {fileID: 0}
+  scroll: {fileID: 1836448}
 --- !u!114 &560796721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -949,6 +954,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parchment: {fileID: 0}
   camera: {fileID: 0}
+  left_holder: {fileID: 0}
+  right_holder: {fileID: 0}
+  scroll: {fileID: 1919799189}
 --- !u!114 &757304670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2096,6 +2104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fad4adf017ace634ca56a4d1268e85b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scrollSpellResult: {fileID: 0}
   texture: {fileID: 0}
   textureSize: {x: 500, y: 500}
 --- !u!64 &1919799190

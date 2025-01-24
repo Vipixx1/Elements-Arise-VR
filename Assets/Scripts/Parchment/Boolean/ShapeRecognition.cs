@@ -1,7 +1,9 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Drawing
 {
@@ -14,6 +16,8 @@ namespace Drawing
         private Color _colorAvoid = Color.red;
         private Color[] _point;
         private int _pointSize = 10;
+
+        [SerializeField] private OldMarker marker;
         
         private DrawableShapes _drawableShapes = new DrawableShapes();
         private int _currentShapeIndex = 0;
@@ -29,14 +33,10 @@ namespace Drawing
         { 
             _renderer = GetComponent<Renderer>();
             scroll = GetComponent<Scroll>();
-            ComputeBoundingBoxEveryXSeconds(1f);
+            marker.writingUnityEvent.AddListener(CheckForBoundingBox);
+            scroll.EraseScrollEvent.AddListener(ResetBoundingBox);
+            ResetBoundingBox();
         }
-
-        private void ComputeBoundingBoxEveryXSeconds(float seconds)
-        {
-            InvokeRepeating(nameof(ComputeDrawingBoundingBox), 0f, seconds);
-        }
-        
     
         private void Update()
         {
@@ -54,6 +54,9 @@ namespace Drawing
             
             
             RecognizeShape(_boundingBoxPosition, _boundingBoxSize);
+            
+            Debug.Log("position :" + _boundingBoxPosition.x + " " + _boundingBoxPosition.y);
+            Debug.Log("size :" + _boundingBoxSize.x + " " + _boundingBoxSize.y);
         }
         
         private void RecognizeShape(Vector2 boundingBoxPosition, Vector2 boundingBoxSize)
@@ -82,7 +85,7 @@ namespace Drawing
             scroll.texture.Apply();
         }
         
-        private bool ComputeDrawingBoundingBox(out Vector2 squarePosition, out Vector2 size)
+        /*private bool ComputeDrawingBoundingBox(out Vector2 squarePosition, out Vector2 size)
         {
             int minX = GetMinPixelX();
             int minY = GetMinPixelY();
@@ -101,9 +104,9 @@ namespace Drawing
             int maxY = GetMaxPixelY();
             _boundingBoxPosition = new Vector2(minX, minY);
             _boundingBoxSize = new Vector2(maxX - minX, maxY - minY);
-        }
+        }*/
 
-        private int GetMinPixelX()
+        /*private int GetMinPixelX()
         {
             for (int i = 0; i < scroll.textureSize.x; i++)
             {
@@ -158,6 +161,30 @@ namespace Drawing
             }
 
             return 0;
+        }*/
+
+        private void CheckForBoundingBox(int x, int y, int sizeX, int sizeY)
+        {
+            Vector2 size = new (sizeX, sizeY);
+            Vector2 p2 = _boundingBoxPosition + _boundingBoxSize;
+            _boundingBoxPosition.x = Mathf.Min(x, _boundingBoxPosition.x);
+            _boundingBoxPosition.y = Mathf.Min(y, _boundingBoxPosition.y);
+            p2.x = Mathf.Max(x + size.x, p2.x);
+            p2.y = Mathf.Max(y + size.y, p2.y);
+
+            if (_boundingBoxSize.Equals(Vector2.zero))
+            {
+                _boundingBoxSize = size;
+                return;
+            }
+            
+            _boundingBoxSize = p2 - _boundingBoxPosition;
+        }
+
+        private void ResetBoundingBox()
+        {
+            _boundingBoxPosition = scroll.textureSize;
+            _boundingBoxSize = Vector2.zero;
         }
         
     }

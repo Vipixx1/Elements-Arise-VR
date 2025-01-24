@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class OldMarker : MonoBehaviour
@@ -18,6 +19,8 @@ public class OldMarker : MonoBehaviour
     private Vector2 _touchPos, _lastTouchPos;
     private bool _touchedLastFrame;
     private Quaternion _lastTouchRot;
+
+    public UnityEvent<int, int, int, int> writingUnityEvent;
 
     void Start()
     {
@@ -56,6 +59,7 @@ public class OldMarker : MonoBehaviour
                 if (y < 0 || y > scroll.textureSize.y || x < 0 || x > scroll.textureSize.x) return;
                 
                 scroll.texture.SetPixels(x, y, _penSize, _penSize, _colors);
+                writingUnityEvent.Invoke(x, y, _penSize, _penSize);
 
                 if (_touchedLastFrame)
                 {
@@ -65,6 +69,7 @@ public class OldMarker : MonoBehaviour
                         var lerpX = (int)Mathf.Lerp(_lastTouchPos.x, x, f);
                         var lerpY = (int)Mathf.Lerp(_lastTouchPos.y, y, f);
                         scroll.texture.SetPixels(lerpX, lerpY, _penSize, _penSize, _colors);
+                        writingUnityEvent.Invoke(lerpX, lerpY, _penSize, _penSize);
                     }
 
                     transform.rotation = _lastTouchRot;
