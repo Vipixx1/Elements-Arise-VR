@@ -22,6 +22,7 @@ public class ScrollSpellResult : MonoBehaviour
         {
             return;
         }
+        this.gameObject.GetComponent<Renderer>().enabled = false;
         OnSpellReady?.Invoke(currentSpellElement, currentHandTag);
     }
 
