@@ -6,17 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Levels/Sandbox.unity
-    guid: 415e222861b16f84e860442a2e919e75
-  - enabled: 1
-    path: Assets/Scenes/Levels/Level1.unity
-    guid: a51bf0d36446a3c4c80789c1da0e176b
+    path: Assets/Scenes/Levels/MainMenu.unity
+    guid: 7410fdf30f975b440b06d24b6696db9f
   - enabled: 1
     path: Assets/Scenes/Levels/Level1.unity
     guid: db892a70d3cb7724fb0a6d18aa5be5a0
   - enabled: 1
-    path: Assets/Scenes/Levels/Sandboxtest.unity
-    guid: ee8004d1cd156fd48bfe3a34e0926f3a
+    path: Assets/Scenes/Levels/Sandbox.unity
+    guid: 415e222861b16f84e860442a2e919e75
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 0591bb2cfd9a12646972778015de37ae, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: f7c4cf149baf7e24290156dafbe9c0ce, type: 2}
