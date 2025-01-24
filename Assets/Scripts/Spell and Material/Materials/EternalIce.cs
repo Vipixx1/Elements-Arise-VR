@@ -40,8 +40,8 @@ public class EternalIce : Material
 
     public override void Burning(ObjectData data)
     {
-       base.Burning(data);
-        isMelting=true;
+        base.Burning(data);
+        isMelting = true;
         StopAllCoroutines();
         StartCoroutine(Melting());
 
@@ -56,23 +56,22 @@ public class EternalIce : Material
             scale.x -= elapsedTime;
             scale.y -= elapsedTime;
             scale.z -= elapsedTime;
-
-            if (scale.x > minScale)
+            Debug.Log(scale.x);
+            gameObject.transform.localScale = scale;
+            Debug.Log(gameObject.transform.localScale);
+            yield return null;
+            if (scale.x < minScale)
             {
                 isMelting = false;
             }
-            else
-            {
-                gameObject.transform.localScale = scale;
-                yield return null;
-            }
-        }
 
+        }
+        Debug.Log(gameObject.transform.localScale);
         scale.x = minScale;
         scale.y = minScale;
         scale.z = minScale;
         gameObject.transform.localScale = scale;
-
+        Debug.Log(gameObject.transform.localScale);
         yield return delay;
         yield return StartCoroutine(Growing());
 
@@ -80,7 +79,7 @@ public class EternalIce : Material
 
     IEnumerator Growing()
     {
-        
+        scale = gameObject.transform.localScale;
 
         while (scale.x < 1)
         {
@@ -88,6 +87,7 @@ public class EternalIce : Material
             scale.x += elapsedTime;
             scale.y += elapsedTime;
             scale.z += elapsedTime;
+            gameObject.transform.localScale = scale;
             yield return null;
         }
 

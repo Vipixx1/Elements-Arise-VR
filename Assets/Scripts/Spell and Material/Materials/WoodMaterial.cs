@@ -12,19 +12,20 @@ public class WoodMaterial : Material
 
     private void Start()
     {
-        scaling = transform.localScale.z;
+        scaling = transform.localScale.x;
         maxScaling *= scaling;
     }
 
 
     private void Update()
     {
-       
+
 
         if (isGrowing && scaling < maxScaling)
         {
             scaling += Time.deltaTime;
-        } else
+        }
+        else
         {
             isGrowing = false;
         }
@@ -36,13 +37,13 @@ public class WoodMaterial : Material
             {
                 Destroy(gameObject);
             }
-        
+
         }
         Vector3 newScale = gameObject.transform.lossyScale;
-        newScale.z = scaling;
+        newScale.x = scaling;
         gameObject.transform.localScale = newScale;
 
-    
+
     }
 
 
