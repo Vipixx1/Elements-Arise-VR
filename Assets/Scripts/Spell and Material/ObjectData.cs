@@ -27,7 +27,12 @@ public class ObjectData : MonoBehaviour
 
     public bool electrified;
 
-    private ParticleSystem particleSystem = null;
+    private GameObject temperatureGO;
+    private GameObject humidityGO;
+
+
+
+
 
     private void Update()
     {
@@ -46,41 +51,92 @@ public class ObjectData : MonoBehaviour
         }
 
 
-        updateParticleSystem();
-
+        UpdateHumidityParticle();
+        UpdateTemperatureParticle();
     }
 
-    private void updateParticleSystem()
+    private void UpdateHumidityParticle()
     {
-        if (temperature == 0 && humidity == 0) { Destroy(particleSystem); particleSystem = null; return; }
-        if (particleSystem == null)
-            particleSystem = gameObject.AddComponent<ParticleSystem>();
+        if (humidity == 0 && humidityGO!=null) { Destroy(humidityGO); return; }
+        if (humidityGO == null)
+        {
+            humidityGO = Instantiate(new GameObject(), transform.position, Quaternion.identity);
+            humidityGO.transform.eulerAngles = new Vector3(0, 0, 180);
 
+            humidityGO.AddComponent<ParticleSystem>();
+        }
+        if (humidity > 0)
+            humidityGO.transform.localScale = Vector3.one * 0.1f;
+        else
+        {
+            humidityGO.transform.localScale = Vector3.one * 0.02f;
+        }
+        ParticleSystem particleSystem = humidityGO.GetComponent<ParticleSystem>();
         ParticleSystem.MainModule main = particleSystem.main;
-        UnityEngine.Material mat = Resources.Load("Particle") as UnityEngine.Material;
-        particleSystem.GetComponent<ParticleSystemRenderer>().material = mat;
+        UnityEngine.Material matWat = humidity > 0 ? Resources.Load("orb") as UnityEngine.Material : Resources.Load("smoke") as UnityEngine.Material;
+        particleSystem.GetComponent<ParticleSystemRenderer>().material = matWat;
         ParticleSystem.EmissionModule emission = particleSystem.emission;
-        emission.rateOverTime = Mathf.Abs(temperature) + Mathf.Abs(humidity);
-        main.startRotation3D = true ;
+        emission.rateOverTime = (humidity > 0) ? Mathf.Abs(humidity) * 5 : Mathf.Abs(humidity) * 50;
+        main.startRotation3D = true;
         main.duration = 1;
         var shapeModule = particleSystem.shape;
-        shapeModule.rotation = new Vector3(-90, 0, 0);
         shapeModule.angle = 1;
-        shapeModule.radius = 0.25f;
+        shapeModule.rotation = new Vector3(-90, 0, 0);
+        shapeModule.radius = transform.lossyScale.z * ((humidity > 0) ? 5.5f : 27f);
         shapeModule.scale = new Vector3(1, 1, 0.10f);
         main.gravityModifier = 0.5f;
         float alpha = 1.0f;
-        float ratio = Mathf.Abs(temperature) / ( Mathf.Abs(humidity) + (float)Mathf.Abs(temperature));
+        //float ratio = Mathf.Abs(temperature) / ( Mathf.Abs(humidity) + (float)Mathf.Abs(temperature));
         var grad = new Gradient();
-        Debug.Log(ratio);
-        Color tempColor = (temperature < 0) ? Color.cyan : Color.red;
+        //Debug.Log(ratio);
+        //Color tempColor = (temperature < 0) ? Color.cyan : Color.red;
         Color HumiColor = (humidity < 0) ? Color.yellow : Color.blue;
         grad.SetKeys(
-            new GradientColorKey[] { new GradientColorKey(HumiColor, 1-ratio - 0.001f), new GradientColorKey(tempColor, 1-ratio+0.001f ) },
-            new GradientAlphaKey[] { new GradientAlphaKey(alpha, 0.0f), new GradientAlphaKey(alpha, 1.0f) }
+            new GradientColorKey[] { new GradientColorKey(HumiColor, 1) },
+            new GradientAlphaKey[] { new GradientAlphaKey(alpha, 0.0f) }
         );
         main.startColor = grad;
+    }
 
+    void UpdateTemperatureParticle() { 
+
+        if (temperature == 0 && temperatureGO != null) { Destroy(temperatureGO); return; }
+
+        if (temperatureGO == null)
+        {
+            temperatureGO = Instantiate(new GameObject(), transform.position, Quaternion.identity);
+            temperatureGO.transform.eulerAngles = new Vector3(0, 0, 180);
+            temperatureGO.transform.localScale = Vector3.one * 0.1f;
+            temperatureGO.AddComponent<ParticleSystem>();
+        }
+
+
+
+        ParticleSystem particleSystemtemp = temperatureGO.GetComponent<ParticleSystem>();
+
+        ParticleSystem.MainModule maintemp = particleSystemtemp.main;
+        UnityEngine.Material mattemp = temperature>0 ? Resources.Load("Smoke") as UnityEngine.Material : Resources.Load("snowflake") as UnityEngine.Material;
+        particleSystemtemp.GetComponent<ParticleSystemRenderer>().material = mattemp;
+        ParticleSystem.EmissionModule emissiontemp = particleSystemtemp.emission;
+        emissiontemp.rateOverTime = Mathf.Abs(temperature)*5;
+        maintemp.startRotation3D = true;
+        maintemp.duration = 1;
+        var shapeModuletemp = particleSystemtemp.shape;
+        shapeModuletemp.rotation = (temperature < 0) ?  new Vector3(-90, 0, 0) : new Vector3(90, 0, 0);
+        shapeModuletemp.angle = 1;
+        shapeModuletemp.radius = transform.lossyScale.z * 5.5f;
+        shapeModuletemp.scale = new Vector3(1, 1, 0.10f);
+        maintemp.gravityModifier = (temperature > 0) ? 0 : 0.5f;
+        // float ratio = Mathf.Abs(temperature) / (Mathf.Abs(humidity) + (float)Mathf.Abs(temperature));
+        float alpha = 1.0f;
+        var gradtemp = new Gradient();
+        Color tempColor = (temperature < 0) ? Color.cyan : Color.grey;
+
+        gradtemp.SetKeys(
+            new GradientColorKey[] {  new GradientColorKey(tempColor, 1) },
+            new GradientAlphaKey[] { new GradientAlphaKey(alpha, 1.0f) }
+        );
+        maintemp.startColor = gradtemp;
     }
 }
 
