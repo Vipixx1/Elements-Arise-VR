@@ -11,9 +11,10 @@ public class ScrollSpellResult : MonoBehaviour
 
     private string currentHandTag = "";
 
-    public void Start()
+    public void Awake()
     {
         spawnCoords = this.gameObject.transform.position;
+        Debug.Log("Spawn coords: " + spawnCoords);
     }
 
     public void OnSelect()
@@ -26,13 +27,9 @@ public class ScrollSpellResult : MonoBehaviour
         OnSpellReady?.Invoke(currentSpellElement, currentHandTag);
     }
 
-    public void OnUnselect()
-    {
-        this.gameObject.SetActive(false);
-    }
-
     public void Reset()
     {
+        this.gameObject.SetActive(false);
         this.gameObject.transform.position = spawnCoords;
         this.gameObject.GetComponent<Renderer>().enabled = true;
         this.gameObject.SetActive(true);

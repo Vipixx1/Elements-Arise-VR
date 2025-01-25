@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ParchmentManager : MonoBehaviour
@@ -11,43 +12,46 @@ public class ParchmentManager : MonoBehaviour
     [SerializeField] private GameObject right_holder;
     [SerializeField] private Scroll scroll;
 
-    private bool isRightHandActivated = false;
-    private bool isLeftHandActivated = false;
+    private bool isRightHandPhoto = false;
+    private bool isLeftHandPhoto = false;
 
+    Vector3 baseParchmentScale = new Vector3(1.5f, 1.5f, 1.5f);
+
+
+    private void Start()
+    {
+        baseParchmentScale = parchment.transform.localScale;
+    }
     void Update()
     {
         if (!parchment) return;
-        
-        if (isRightHandActivated && isLeftHandActivated)
+
+        if (isRightHandPhoto && isLeftHandPhoto)
         {
             parchment.SetActive(true);
             parchment.transform.position = camera.transform.position + camera.transform.forward*0.5f;
             parchment.transform.rotation = camera.transform.rotation * Quaternion.Euler(0, 90, -45);
         }
 
-        ScaleScroll();
+        ScaleParchment();
+        
+        if (parchment.transform.localScale.z < 0.5f)
+            scroll.EraseScroll();
     }
 
-    private void ScaleScroll()
+    private void ScaleParchment()
     {
-        Vector3 newScale = scroll.gameObject.transform.localScale;
-        newScale.x = (right_holder.transform.localPosition.z - left_holder.transform.localPosition.z) * 0.1f;
-        scroll.gameObject.transform.localScale = newScale;
-        scroll.gameObject.transform.position = (right_holder.transform.position + left_holder.transform.position) / 2;
-
-        if (scroll.transform.localScale.x < 0.01f)
-        {
-            scroll.EraseScroll();
-        }
+        left_holder.transform.localScale = new Vector3(left_holder.transform.localScale.x, left_holder.transform.localScale.y, baseParchmentScale.z / parchment.transform.localScale.z);
+        right_holder.transform.localScale = new Vector3(right_holder.transform.localScale.x, right_holder.transform.localScale.y, baseParchmentScale.z / parchment.transform.localScale.z);
     }
 
     public void SetRightHand(bool isActivated)
     {
-        isRightHandActivated = isActivated;
+        isRightHandPhoto = isActivated;
     }
 
     public void SetLeftHand(bool isActivated)
     {
-        isLeftHandActivated = isActivated;
+        isLeftHandPhoto = isActivated;
     }
 }

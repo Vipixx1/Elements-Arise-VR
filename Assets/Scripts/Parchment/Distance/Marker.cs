@@ -36,7 +36,7 @@ public class Marker : MonoBehaviour
         bool raycastHit;
         raycastHit = rightFinger || leftFinger
             ? Physics.Raycast(rightFinger.position, rightFinger.transform.right, out touch, tipHeight)
-            || Physics.Raycast(leftFinger.position, -leftFinger.transform.right, out touch, tipHeight)
+            || Physics.Raycast(leftFinger.position, - leftFinger.transform.right, out touch, tipHeight)
             : Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out touch) && Input.GetMouseButton(0);
 
         if (raycastHit)

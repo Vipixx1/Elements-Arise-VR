@@ -9853,6 +9853,7 @@ MonoBehaviour:
   temperature: 1
   humidity: -1
   speed: 0
+  shouldDispawn: 1
 --- !u!82 &109844927205169462
 AudioSource:
   m_ObjectHideFlags: 0

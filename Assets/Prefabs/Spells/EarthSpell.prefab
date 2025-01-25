@@ -9850,3 +9850,4 @@ MonoBehaviour:
   temperature: 0
   humidity: -1
   speed: 0
+  shouldDispawn: 1

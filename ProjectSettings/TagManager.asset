@@ -10,6 +10,7 @@ TagManager:
   - LeftHand
   - RightHand
   - Spell
+  - FusionCollider
   layers:
   - Default
   - TransparentFX
