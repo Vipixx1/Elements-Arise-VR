@@ -2770,7 +2770,7 @@ GameObject:
   - component: {fileID: 717436388}
   - component: {fileID: 717436387}
   m_Layer: 0
-  m_Name: Level1Text
+  m_Name: TitleText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2793,7 +2793,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 36.8, y: 30.7}
+  m_SizeDelta: {x: 70, y: 30.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &717436387
 MonoBehaviour:
@@ -2815,10 +2815,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Elements Arise
+  m_text: elements arise
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a5a5cd02867e38f4a90b9ff29ea4fe8c, type: 2}
+  m_sharedMaterial: {fileID: 4410594614021375726, guid: a5a5cd02867e38f4a90b9ff29ea4fe8c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2907,7 +2907,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: 4410594614021375726, guid: a5a5cd02867e38f4a90b9ff29ea4fe8c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
