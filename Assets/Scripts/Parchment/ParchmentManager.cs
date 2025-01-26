@@ -41,8 +41,11 @@ public class ParchmentManager : MonoBehaviour
 
     private void ScaleParchment()
     {
-        left_holder.transform.localScale = new Vector3(left_holder.transform.localScale.x, left_holder.transform.localScale.y, baseParchmentScale.z / parchment.transform.localScale.z);
-        right_holder.transform.localScale = new Vector3(right_holder.transform.localScale.x, right_holder.transform.localScale.y, baseParchmentScale.z / parchment.transform.localScale.z);
+        float scaleFactor = baseParchmentScale.z / parchment.transform.localScale.z;
+        Vector3 newScale = new(left_holder.transform.localScale.x, left_holder.transform.localScale.y, scaleFactor);
+
+        left_holder.transform.localScale = newScale;
+        right_holder.transform.localScale = newScale;
     }
 
     public void SetRightHand(bool isActivated)
