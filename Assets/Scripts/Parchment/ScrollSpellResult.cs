@@ -24,6 +24,7 @@ public class ScrollSpellResult : MonoBehaviour
             return;
         }
         this.gameObject.GetComponent<Renderer>().enabled = false;
+        this.gameObject.GetComponent<ParticleSystem>().Stop();
         OnSpellReady?.Invoke(currentSpellElement, currentHandTag);
     }
 
@@ -32,6 +33,7 @@ public class ScrollSpellResult : MonoBehaviour
         this.gameObject.SetActive(false);
         this.gameObject.transform.position = spawnCoords;
         this.gameObject.GetComponent<Renderer>().enabled = true;
+        this.gameObject.GetComponent<ParticleSystem>().Play();
         this.gameObject.SetActive(true);
     }
 

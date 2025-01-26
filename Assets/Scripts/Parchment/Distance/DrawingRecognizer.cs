@@ -17,7 +17,17 @@ public class DrawingRecognizer : MonoBehaviour
     private string gestureClass;
 
     [SerializeField] private Scroll scroll;
-    [SerializeField] private ScrollSpellResult scrollSpellResult;
+
+    [SerializeField] private GameObject firePrespell;
+    [SerializeField] private GameObject waterPrespell;
+    [SerializeField] private GameObject earthPrespell;
+    [SerializeField] private GameObject windPrespell;
+    [SerializeField] private GameObject icePrespell;
+    [SerializeField] private GameObject plantPrespell;
+    [SerializeField] private GameObject thunderPrespell;
+    [SerializeField] private GameObject volcanoPrespell;
+    [SerializeField] private GameObject steamPrespell;
+    [SerializeField] private GameObject sandPrespell;
 
     void Awake()
     {
@@ -124,7 +134,7 @@ public class DrawingRecognizer : MonoBehaviour
 
         if (gestureResult.Score < 0.85f)
         {
-            scrollSpellResult.gameObject.SetActive(false);
+            //scrollSpellResult.gameObject.SetActive(false);
             gestureClass = "Nothing";
             IsRecognized = false;
             return;
@@ -136,7 +146,7 @@ public class DrawingRecognizer : MonoBehaviour
 
     private void SpawnElement()
     {
-        if (scrollSpellResult == null) return;
+        /*if (scrollSpellResult == null) return;
 
         scrollSpellResult.transform.position = scroll.transform.position - scroll.transform.TransformDirection(Vector3.forward * 0.25f);
         Renderer spellRenderer = scrollSpellResult.gameObject.GetComponent<Renderer>();
@@ -209,6 +219,6 @@ public class DrawingRecognizer : MonoBehaviour
         }
 
         text.text = message;
-        scrollSpellResult.gameObject.SetActive(true);
+        scrollSpellResult.gameObject.SetActive(true);*/
     }
 }
