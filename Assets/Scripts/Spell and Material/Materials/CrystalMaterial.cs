@@ -124,4 +124,9 @@ public class CrystalMaterial : Material
         mat.material.SetColor("_EmissionColor", mat.material.GetColor("_Color")*10);
         timeRemaining = MaxDuration;
     }
+
+    public bool IsActivated()
+    {
+        return timeRemaining > 0;
+    }
 }

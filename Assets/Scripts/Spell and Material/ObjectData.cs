@@ -31,7 +31,11 @@ public class ObjectData : MonoBehaviour
     private GameObject humidityGO;
 
 
-
+    private void OnDestroy()
+    {
+        if (temperatureGO != null) Destroy(temperatureGO);
+        if (humidityGO != null) Destroy(humidityGO);
+    }
 
 
     private void Update()
@@ -72,13 +76,16 @@ public class ObjectData : MonoBehaviour
             humidityGO.transform.localScale = Vector3.one * 0.02f;
         }
         ParticleSystem particleSystem = humidityGO.GetComponent<ParticleSystem>();
+        particleSystem.Stop();
         ParticleSystem.MainModule main = particleSystem.main;
+        
         UnityEngine.Material matWat = humidity > 0 ? Resources.Load("orb") as UnityEngine.Material : Resources.Load("smoke") as UnityEngine.Material;
         particleSystem.GetComponent<ParticleSystemRenderer>().material = matWat;
         ParticleSystem.EmissionModule emission = particleSystem.emission;
         emission.rateOverTime = (humidity > 0) ? Mathf.Abs(humidity) * 5 : Mathf.Abs(humidity) * 50;
+        
         main.startRotation3D = true;
-        main.duration = 1;
+       
         var shapeModule = particleSystem.shape;
         shapeModule.angle = 1;
         shapeModule.rotation = new Vector3(-90, 0, 0);
@@ -96,6 +103,7 @@ public class ObjectData : MonoBehaviour
             new GradientAlphaKey[] { new GradientAlphaKey(alpha, 0.0f) }
         );
         main.startColor = grad;
+        particleSystem.Play();
     }
 
     void UpdateTemperatureParticle() { 
@@ -113,14 +121,14 @@ public class ObjectData : MonoBehaviour
 
 
         ParticleSystem particleSystemtemp = temperatureGO.GetComponent<ParticleSystem>();
-
+        particleSystemtemp.Stop();
         ParticleSystem.MainModule maintemp = particleSystemtemp.main;
         UnityEngine.Material mattemp = temperature>0 ? Resources.Load("Smoke") as UnityEngine.Material : Resources.Load("snowflake") as UnityEngine.Material;
         particleSystemtemp.GetComponent<ParticleSystemRenderer>().material = mattemp;
         ParticleSystem.EmissionModule emissiontemp = particleSystemtemp.emission;
         emissiontemp.rateOverTime = Mathf.Abs(temperature)*5;
         maintemp.startRotation3D = true;
-        maintemp.duration = 1;
+        
         var shapeModuletemp = particleSystemtemp.shape;
         shapeModuletemp.rotation = (temperature < 0) ?  new Vector3(-90, 0, 0) : new Vector3(90, 0, 0);
         shapeModuletemp.angle = 1;
@@ -137,6 +145,7 @@ public class ObjectData : MonoBehaviour
             new GradientAlphaKey[] { new GradientAlphaKey(alpha, 1.0f) }
         );
         maintemp.startColor = gradtemp;
+        particleSystemtemp.Play();
     }
 }
 
