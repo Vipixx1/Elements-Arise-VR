@@ -14,7 +14,7 @@ public class Scroll : MonoBehaviour
     public List<Point> Points { get; private set; } = new List<Point>();
     private int strokeId = -1; // Keeps track of strokes
 
-    public UnityEvent EraseScrollEvent;
+    //public UnityEvent EraseScrollEvent;
 
     void Start()
     {
@@ -45,8 +45,11 @@ public class Scroll : MonoBehaviour
         r.material.mainTexture = texture;
         Points.Clear();
         strokeId = -1; // Reset stroke ID
-        scrollSpellResult.gameObject.GetComponent<Renderer>().enabled = false;
-        EraseScrollEvent?.Invoke();
+        if (scrollSpellResult.gameObject.GetComponent<Renderer>())
+        {
+            scrollSpellResult.gameObject.GetComponent<Renderer>().enabled = false;
+        }
+        //EraseScrollEvent?.Invoke();
     }
 
     public void StartStroke()
@@ -56,10 +59,20 @@ public class Scroll : MonoBehaviour
 
     public void DrawPoint(int x, int y, int width, int height, Color[] colors)
     {
-        texture.SetPixels(x, y, width, height, colors);
+        // Ensure the drawing starts and ends within the texture's bounds
+        int clampedX = Mathf.Clamp(x, 0, texture.width - 1);
+        int clampedY = Mathf.Clamp(y, 0, texture.height - 1);
 
-        // Add gesture point, invert Y for consistency with PDollar
-        Points.Add(new Point(x, -y, strokeId));
+        int clampedWidth = Mathf.Clamp(width, 0, texture.width - clampedX);
+        int clampedHeight = Mathf.Clamp(height, 0, texture.height - clampedY);
+
+        if (clampedWidth > 0 && clampedHeight > 0)
+        {
+            texture.SetPixels(clampedX, clampedY, clampedWidth, clampedHeight, colors);
+
+            // Add gesture point, invert Y for consistency with PDollar
+            Points.Add(new Point(clampedX, -clampedY, strokeId));
+        }
     }
 
     public void FinalizeStroke()

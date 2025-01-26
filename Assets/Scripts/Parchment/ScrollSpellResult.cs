@@ -23,8 +23,28 @@ public class ScrollSpellResult : MonoBehaviour
         {
             return;
         }
-        this.gameObject.GetComponent<Renderer>().enabled = false;
-        this.gameObject.GetComponent<ParticleSystem>().Stop();
+        if (this.gameObject.GetComponent<Renderer>())
+        {
+            this.gameObject.GetComponent<Renderer>().enabled = false;
+        }
+
+        if (this.gameObject.GetComponent<ParticleSystem>())
+        {
+            this.gameObject.GetComponent<ParticleSystem>().Stop();
+        }
+
+        foreach (Transform child in this.gameObject.transform)
+        {
+            if (child.gameObject.GetComponent<Renderer>())
+            {
+                child.gameObject.GetComponent<Renderer>().enabled = false;
+            }
+
+            if (child.gameObject.GetComponent<ParticleSystem>())
+            {
+                child.gameObject.GetComponent<ParticleSystem>().Stop();
+            }
+        }
         OnSpellReady?.Invoke(currentSpellElement, currentHandTag);
     }
 
@@ -32,14 +52,24 @@ public class ScrollSpellResult : MonoBehaviour
     {
         this.gameObject.SetActive(false);
         this.gameObject.transform.position = spawnCoords;
-        this.gameObject.GetComponent<Renderer>().enabled = true;
-        this.gameObject.GetComponent<ParticleSystem>().Play();
+        if (this.gameObject.GetComponent<Renderer>())
+        {
+            this.gameObject.GetComponent<Renderer>().enabled = true;
+        }
+        if (this.gameObject.GetComponent<ParticleSystem>())
+        {
+            this.gameObject.GetComponent<ParticleSystem>().Play();
+        }
         this.gameObject.SetActive(true);
     }
 
     public void SetCurrentSpellElement(string element)
     {
         currentSpellElement = element;
+    }
+    public string GetCurrentSpellElement()
+    {
+        return currentSpellElement;
     }
 
     public void OnTriggerEnter(Collider other)

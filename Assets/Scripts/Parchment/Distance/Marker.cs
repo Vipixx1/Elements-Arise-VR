@@ -53,7 +53,7 @@ public class Marker : MonoBehaviour
                 var x = (int)(touchPos.x * scroll.textureSize.x - (penSize / 2));
                 var y = (int)(touchPos.y * scroll.textureSize.y - (penSize / 2));
 
-                if (y < 0 || y > scroll.textureSize.y || x < 0 || x > scroll.textureSize.x) return;
+                //if (y < 0 || y > scroll.textureSize.y || x < 0 || x > scroll.textureSize.x) return;
 
                 scroll.DrawPoint(x, y, penSize, penSize, colors);
 
@@ -90,7 +90,7 @@ public class Marker : MonoBehaviour
             scroll.FinalizeStroke();
         }
 
-        scroll = null;
+        //scroll = null;
         touchedLastFrame = false;
     }
 

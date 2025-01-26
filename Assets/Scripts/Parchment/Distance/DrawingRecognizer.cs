@@ -18,16 +18,7 @@ public class DrawingRecognizer : MonoBehaviour
 
     [SerializeField] private Scroll scroll;
 
-    [SerializeField] private GameObject firePrespell;
-    [SerializeField] private GameObject waterPrespell;
-    [SerializeField] private GameObject earthPrespell;
-    [SerializeField] private GameObject windPrespell;
-    [SerializeField] private GameObject icePrespell;
-    [SerializeField] private GameObject plantPrespell;
-    [SerializeField] private GameObject thunderPrespell;
-    [SerializeField] private GameObject volcanoPrespell;
-    [SerializeField] private GameObject steamPrespell;
-    [SerializeField] private GameObject sandPrespell;
+    [SerializeField] private ScrollSpellResult scrollSpellResult;
 
     void Awake()
     {
@@ -38,7 +29,7 @@ public class DrawingRecognizer : MonoBehaviour
     void Update()
     {
         RecognizeGesture();
-
+        
         if (IsRecognized)
         {
             SpawnElement();
@@ -46,7 +37,6 @@ public class DrawingRecognizer : MonoBehaviour
         }
     }
 
-    //
     private void LoadGestures()
     {
         string folderPath = Path.Combine(Application.streamingAssetsPath, "Shapes");
@@ -116,7 +106,6 @@ public class DrawingRecognizer : MonoBehaviour
         }
         return content.Split(new[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
     }
-    //
 
 
     private void RecognizeGesture()
@@ -128,13 +117,12 @@ public class DrawingRecognizer : MonoBehaviour
             return;
         }
 
-
         Gesture candidate = new(scroll.Points.ToArray());
         Result gestureResult = PointCloudRecognizer.Classify(candidate, trainingSet.ToArray());
 
-        if (gestureResult.Score < 0.85f)
+        if (gestureResult.Score < 0.90f)
         {
-            //scrollSpellResult.gameObject.SetActive(false);
+            scrollSpellResult.gameObject.SetActive(false);
             gestureClass = "Nothing";
             IsRecognized = false;
             return;
@@ -146,79 +134,94 @@ public class DrawingRecognizer : MonoBehaviour
 
     private void SpawnElement()
     {
-        /*if (scrollSpellResult == null) return;
+        ParticleSystem selectedParticles = null;
+        ParticleSystem[] allParticles = scrollSpellResult.GetComponentsInChildren<ParticleSystem>();
 
         scrollSpellResult.transform.position = scroll.transform.position - scroll.transform.TransformDirection(Vector3.forward * 0.25f);
-        Renderer spellRenderer = scrollSpellResult.gameObject.GetComponent<Renderer>();
-        spellRenderer.enabled = true;
-        
+        scrollSpellResult.gameObject.SetActive(true);
+
         if (gestureClass.StartsWith("earth"))
         {
             message = "Earth (Square)";
             scrollSpellResult.SetCurrentSpellElement("earth");
-            spellRenderer.material.color = new Color(0.65f, 0.16f, 0.16f);
+            selectedParticles = scrollSpellResult.transform.Find("EarthParticles").GetComponent<ParticleSystem>();
         }
         else if (gestureClass.StartsWith("fire"))
         {
             message = "Fire (Triangle)";
             scrollSpellResult.SetCurrentSpellElement("fire");
-            spellRenderer.material.color = Color.red;
+            selectedParticles = scrollSpellResult.transform.Find("FireParticles").GetComponent<ParticleSystem>();
         }
         else if (gestureClass.StartsWith("water"))
         {
             message = "Water (Circle)";
             scrollSpellResult.SetCurrentSpellElement("water");
-            spellRenderer.material.color = Color.blue;
+            selectedParticles = scrollSpellResult.transform.Find("WaterParticles").GetComponent<ParticleSystem>();
         }
         else if (gestureClass.StartsWith("wind"))
         {
             message = "Wind (Spiral)";
             scrollSpellResult.SetCurrentSpellElement("wind");
-            spellRenderer.material.color = new Color(0.31f, 0.78f, 0.47f);
+            selectedParticles = scrollSpellResult.transform.Find("WindParticles").GetComponent<ParticleSystem>();
         }
         else if (gestureClass.StartsWith("thunder"))
         {
             message = "Thunder (Lightning)";
             scrollSpellResult.SetCurrentSpellElement("thunder");
-            spellRenderer.material.color = Color.yellow;
+            selectedParticles = scrollSpellResult.transform.Find("ThunderParticles").GetComponent<ParticleSystem>();
         }
         else if (gestureClass.StartsWith("sand"))
         {
             message = "Sand (Hourglass)";
             scrollSpellResult.SetCurrentSpellElement("sand");
-            spellRenderer.material.color = Color.yellow;
+            selectedParticles = scrollSpellResult.transform.Find("SandParticles").GetComponent<ParticleSystem>();
         }
         else if (gestureClass.StartsWith("volcano"))
         {
             message = "Volcano (M)";
             scrollSpellResult.SetCurrentSpellElement("volcano");
-            spellRenderer.material.color = Color.magenta;
+            selectedParticles = scrollSpellResult.transform.Find("VolcanoParticles").GetComponent<ParticleSystem>();
         }
         else if (gestureClass.StartsWith("ice"))
         {
             message = "Ice (Diamond)";
             scrollSpellResult.SetCurrentSpellElement("ice");
-            spellRenderer.material.color = Color.cyan;
+            selectedParticles = scrollSpellResult.transform.Find("IceParticles").GetComponent<ParticleSystem>();
         }
         else if (gestureClass.StartsWith("plant"))
         {
             message = "Plant (Leaf)";
             scrollSpellResult.SetCurrentSpellElement("plant");
-            spellRenderer.material.color = Color.green;
+            selectedParticles = scrollSpellResult.transform.Find("PlantParticles").GetComponent<ParticleSystem>();
         }
         else if (gestureClass.StartsWith("steam"))
         {
             message = "Steam (3 Lines)";
             scrollSpellResult.SetCurrentSpellElement("steam");
-            spellRenderer.material.color = Color.grey;
+            selectedParticles = scrollSpellResult.transform.Find("SteamParticles").GetComponent<ParticleSystem>();
         }
         else
         {
             scrollSpellResult.SetCurrentSpellElement("Unknown");
-            spellRenderer.material.color = Color.white;
         }
 
-        text.text = message;
-        scrollSpellResult.gameObject.SetActive(true);*/
+        for (int i = 0; i < allParticles.Length; i++)
+        {
+            if (allParticles[i] != selectedParticles)
+            {
+                allParticles[i].gameObject.SetActive(false);
+                allParticles[i].gameObject.GetComponent<Renderer>().enabled = false;
+                allParticles[i].Stop();
+            }
+        }
+
+        // Play the selected particle system
+        if (selectedParticles != null)
+        {
+            selectedParticles.gameObject.SetActive(true);
+            selectedParticles.gameObject.GetComponent<Renderer>().enabled = true;
+            selectedParticles.Play();
+        }
     }
+
 }

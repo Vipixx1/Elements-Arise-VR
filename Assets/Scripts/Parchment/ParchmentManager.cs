@@ -12,11 +12,19 @@ public class ParchmentManager : MonoBehaviour
     [SerializeField] private GameObject right_holder;
     [SerializeField] private Scroll scroll;
 
-    private bool isRightHandPhoto = false;
-    private bool isLeftHandPhoto = false;
+    private bool isRightHandPhoto1 = false;
+    private bool isLeftHandPhoto1 = false;
+
+    private bool isRightHandPhoto2 = false;
+    private bool isLeftHandPhoto2 = false;
+
+    private bool isRightHandPhoto3 = false;
+    private bool isLeftHandPhoto3 = false;
+
+    private bool isRightHandPhoto4 = false;
+    private bool isLeftHandPhoto4 = false;
 
     Vector3 baseParchmentScale = new Vector3(1.5f, 1.5f, 1.5f);
-
 
     private void Start()
     {
@@ -26,12 +34,13 @@ public class ParchmentManager : MonoBehaviour
     {
         if (!parchment) return;
 
-        if (isRightHandPhoto && isLeftHandPhoto)
+        if (isRightHandPhoto1 && isLeftHandPhoto1 || isRightHandPhoto2 && isLeftHandPhoto2 || isRightHandPhoto3 && isLeftHandPhoto3 || isRightHandPhoto4 && isLeftHandPhoto4)
         {
             parchment.SetActive(true);
             parchment.transform.position = camera.transform.position + camera.transform.forward*0.5f;
             parchment.transform.rotation = camera.transform.rotation * Quaternion.Euler(0, 90, -45);
         }
+
 
         ScaleParchment();
         
@@ -48,13 +57,36 @@ public class ParchmentManager : MonoBehaviour
         right_holder.transform.localScale = newScale;
     }
 
-    public void SetRightHand(bool isActivated)
-    {
-        isRightHandPhoto = isActivated;
+    public void SetRightHand1(bool isActivated)
+    { 
+        isRightHandPhoto1 = isActivated;
     }
-
-    public void SetLeftHand(bool isActivated)
+    public void SetLeftHand1(bool isActivated)
     {
-        isLeftHandPhoto = isActivated;
+        isLeftHandPhoto1 = isActivated;
+    }
+    public void SetRightHand2(bool isActivated)
+    {
+        isRightHandPhoto2 = isActivated;
+    }
+    public void SetLeftHand2(bool isActivated)
+    {
+        isLeftHandPhoto2 = isActivated;
+    }
+    public void SetRightHand3(bool isActivated)
+    {
+        isRightHandPhoto3 = isActivated;
+    }
+    public void SetLeftHand3(bool isActivated)
+    {
+        isLeftHandPhoto3 = isActivated;
+    }
+    public void SetRightHand4(bool isActivated)
+    {
+        isRightHandPhoto4 = isActivated;
+    }
+    public void SetLeftHand4(bool isActivated)
+    {
+        isLeftHandPhoto4 = isActivated;
     }
 }
