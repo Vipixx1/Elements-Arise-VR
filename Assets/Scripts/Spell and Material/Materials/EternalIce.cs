@@ -8,6 +8,7 @@ public class EternalIce : Material
 
     private IEnumerator MeltingCoroutine;
     private bool isMelting = false;
+    private Vector3 maxScale;
     private Vector3 scale;
     private WaitForSeconds delay;
 
@@ -23,6 +24,7 @@ public class EternalIce : Material
     void Start()
     {
         scale = gameObject.transform.lossyScale;
+        maxScale = gameObject.transform.lossyScale;
         MeltingCoroutine = Melting();
         delay = new WaitForSeconds(growingDelay);
 
@@ -81,7 +83,7 @@ public class EternalIce : Material
     {
         scale = gameObject.transform.localScale;
 
-        while (scale.x < 1)
+        while (scale.x < maxScale.x)
         {
             float elapsedTime = Time.deltaTime;
             scale.x += elapsedTime;

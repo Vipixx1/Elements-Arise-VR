@@ -6,6 +6,7 @@ using UnityEngine;
 public class Level2 : MonoBehaviour
 {
     [SerializeField] CrystalMaterial[] crystals;
+    [SerializeField] GameObject secretDoor;
 
     [SerializeField] GameObject door;
 
@@ -23,7 +24,7 @@ public class Level2 : MonoBehaviour
                 check = false;
             }
         }
-
+        if (secretDoor == null) check = true;
         if (check)
         {
             Destroy(door);

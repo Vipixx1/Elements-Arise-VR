@@ -51,7 +51,8 @@ public class WindField : MonoBehaviour
         if (other.attachedRigidbody) { 
             
             ForceField(other.attachedRigidbody);
-
+            other.gameObject.GetComponent<Spell>().StopAllCoroutines();
+            other.attachedRigidbody.useGravity = false;
          }
 
     }
@@ -61,6 +62,9 @@ public class WindField : MonoBehaviour
         if (other.attachedRigidbody && other.gameObject.tag != "Spell")
         {
             other.attachedRigidbody.velocity = Vector3.zero;
+            other.attachedRigidbody.useGravity = true;
         }
+       other.gameObject.GetComponent<Spell>().StartCoroutine(other.gameObject.GetComponent<Spell>().DestroyAfterTime(5f));
     }
+
 }

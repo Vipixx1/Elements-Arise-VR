@@ -13,6 +13,9 @@ public class StoneMaterial : Material
 
     [SerializeField]
     private float explosionForce;
+
+    [SerializeField]
+    private LayerMask layer;
     
     public override void OnVolcano(ObjectData data, float[] args = null)
     {
@@ -34,8 +37,8 @@ public class StoneMaterial : Material
 
     private void Explode()
     {
-        Collider[] colliders = new Collider[20];
-        int numColliders = Physics.OverlapSphereNonAlloc(transform.position, explosionRadius,colliders);
+        Collider[] colliders = new Collider[30];
+        int numColliders = Physics.OverlapSphereNonAlloc(transform.position, explosionRadius,colliders, layer);
 
         for (int i = 0; i < numColliders; i++)
         {

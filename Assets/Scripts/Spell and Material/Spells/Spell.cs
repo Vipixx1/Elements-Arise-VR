@@ -21,7 +21,7 @@ public class Spell : MonoBehaviour
         }
     }
 
-    private IEnumerator DestroyAfterTime(float time)
+    public IEnumerator DestroyAfterTime(float time)
     {
         yield return new WaitForSeconds(time);
         DestroySpell();

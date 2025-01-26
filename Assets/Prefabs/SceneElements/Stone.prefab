@@ -150,6 +150,9 @@ MonoBehaviour:
   explosionTemp: 10
   explosionRadius: 10
   explosionForce: 1000
+  layer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &8251299897018923986
 MonoBehaviour:
   m_ObjectHideFlags: 0
