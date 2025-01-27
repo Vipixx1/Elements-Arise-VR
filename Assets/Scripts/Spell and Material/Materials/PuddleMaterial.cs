@@ -1,6 +1,7 @@
 using Meta.WitAi;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using Material = Magic.Materials.Material;
 
@@ -55,7 +56,7 @@ public class PuddleMaterial : Material
 
         if (args != null)
         {
-            Vector3 spawnPos = new Vector3(args[0], args[1], args[2]);
+            Vector3 spawnPos = new Vector3(args[0], transform.position.y + transform.localScale.y/2 + icePrefab.transform.localScale.y/2, args[2]);
 
             GameObject icePaddle = Instantiate(icePrefab, spawnPos, Quaternion.identity);
         }

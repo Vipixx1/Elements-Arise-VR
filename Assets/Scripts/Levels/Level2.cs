@@ -36,6 +36,10 @@ public class Level2 : MonoBehaviour
             foreach (Transform carpet in floor.transform)
             {
                 SetInteractable(carpet.gameObject);
+                foreach (Transform carpet2 in floor.transform)
+                {
+                    SetInteractable(carpet2.gameObject);
+                }
             }
         }
     }
