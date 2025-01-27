@@ -25,6 +25,11 @@ public class Level2 : MonoBehaviour
             }
         }
         if (secretDoor == null) check = true;
+        if(door.gameObject.GetComponent<Rigidbody>().GetAccumulatedForce() != Vector3.zero)
+        {
+            Debug.Log("explosion");
+            check = true;
+        }
         if (check)
         {
             Destroy(door);
