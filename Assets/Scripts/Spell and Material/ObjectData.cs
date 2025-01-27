@@ -37,6 +37,11 @@ public class ObjectData : MonoBehaviour
         if (humidityGO != null) Destroy(humidityGO);
     }
 
+    private void Start()
+    {
+        UpdateHumidityParticle();
+        UpdateTemperatureParticle();
+    }
 
     private void Update()
     {
@@ -52,16 +57,17 @@ public class ObjectData : MonoBehaviour
         {
             spell.Catch(this);
             spell.DestroySpell();
+            UpdateHumidityParticle();
+            UpdateTemperatureParticle();
         }
 
 
-        UpdateHumidityParticle();
-        UpdateTemperatureParticle();
+
     }
 
     private void UpdateHumidityParticle()
     {
-        if (humidity == 0 && humidityGO!=null) { Destroy(humidityGO); return; }
+        if (humidity == 0 ) { if (humidityGO != null) Destroy(humidityGO); return; }
         if (humidityGO == null)
         {
             humidityGO = Instantiate(new GameObject(), transform.position, Quaternion.identity);
@@ -82,7 +88,7 @@ public class ObjectData : MonoBehaviour
         UnityEngine.Material matWat = humidity > 0 ? Resources.Load("orb") as UnityEngine.Material : Resources.Load("smoke") as UnityEngine.Material;
         particleSystem.GetComponent<ParticleSystemRenderer>().material = matWat;
         ParticleSystem.EmissionModule emission = particleSystem.emission;
-        emission.rateOverTime = (humidity > 0) ? Mathf.Abs(humidity) * 5 : Mathf.Abs(humidity) * 50;
+        emission.rateOverTime = (humidity > 0) ? Mathf.Clamp(Mathf.Abs(humidity),0,5) * 5 : Mathf.Clamp(Mathf.Abs(humidity), 0, 5) * 50;
         
         main.startRotation3D = true;
        
@@ -108,7 +114,7 @@ public class ObjectData : MonoBehaviour
 
     void UpdateTemperatureParticle() { 
 
-        if (temperature == 0 && temperatureGO != null) { Destroy(temperatureGO); return; }
+        if (temperature == 0 ) { if (temperatureGO != null) Destroy(temperatureGO); return; }
 
         if (temperatureGO == null)
         {
@@ -126,7 +132,7 @@ public class ObjectData : MonoBehaviour
         UnityEngine.Material mattemp = temperature>0 ? Resources.Load("Smoke") as UnityEngine.Material : Resources.Load("snowflake") as UnityEngine.Material;
         particleSystemtemp.GetComponent<ParticleSystemRenderer>().material = mattemp;
         ParticleSystem.EmissionModule emissiontemp = particleSystemtemp.emission;
-        emissiontemp.rateOverTime = Mathf.Abs(temperature)*5;
+        emissiontemp.rateOverTime = Mathf.Clamp(Mathf.Abs(temperature), 0, 5)*5;
         maintemp.startRotation3D = true;
         
         var shapeModuletemp = particleSystemtemp.shape;
