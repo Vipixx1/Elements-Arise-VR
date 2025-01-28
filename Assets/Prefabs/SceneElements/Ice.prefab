@@ -67,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 72359b4f6ee61ce44b45e5bcb303a00c, type: 2}
+  - {fileID: 2100000, guid: 3ee924edca4bf3348b0ee23c01d7cd2d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -106,6 +106,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 6293957778919491285}
   electrified: 0
+  hasParticle: 0
 --- !u!114 &6293957778919491285
 MonoBehaviour:
   m_ObjectHideFlags: 0
