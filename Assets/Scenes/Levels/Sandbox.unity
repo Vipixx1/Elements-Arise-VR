@@ -388,6 +388,10 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6614421114425985276, guid: dacc732e3161f044f99d4b4f5e01c5c4, type: 3}
+      propertyPath: hasParticle
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5490,6 +5494,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Material
       objectReference: {fileID: 0}
+    - target: {fileID: 4049116822717478147, guid: c2c67ecbc29356440b8c848c42ce847a, type: 3}
+      propertyPath: hasParticle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4740369777911649623, guid: c2c67ecbc29356440b8c848c42ce847a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5
@@ -6073,6 +6081,10 @@ PrefabInstance:
     - target: {fileID: 3318408086992586317, guid: c2c67ecbc29356440b8c848c42ce847a, type: 3}
       propertyPath: m_TagString
       value: Material
+      objectReference: {fileID: 0}
+    - target: {fileID: 4049116822717478147, guid: c2c67ecbc29356440b8c848c42ce847a, type: 3}
+      propertyPath: hasParticle
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4740369777911649623, guid: c2c67ecbc29356440b8c848c42ce847a, type: 3}
       propertyPath: m_LocalScale.x
@@ -11371,6 +11383,10 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 362a775dabb6e8944bd311dba23e4ef7, type: 2}
     - target: {fileID: 5121315023200904139, guid: dacc732e3161f044f99d4b4f5e01c5c4, type: 3}
       propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6614421114425985276, guid: dacc732e3161f044f99d4b4f5e01c5c4, type: 3}
+      propertyPath: hasParticle
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -36497,6 +36513,10 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8251299897018923986, guid: e68c43eee6d803a419134bb49187284d, type: 3}
+      propertyPath: hasParticle
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -37247,6 +37267,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7932259815835254130, guid: e68c43eee6d803a419134bb49187284d, type: 3}
       propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8251299897018923986, guid: e68c43eee6d803a419134bb49187284d, type: 3}
+      propertyPath: hasParticle
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -48314,6 +48338,10 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6614421114425985276, guid: dacc732e3161f044f99d4b4f5e01c5c4, type: 3}
+      propertyPath: hasParticle
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -48439,6 +48467,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7932259815835254130, guid: e68c43eee6d803a419134bb49187284d, type: 3}
       propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8251299897018923986, guid: e68c43eee6d803a419134bb49187284d, type: 3}
+      propertyPath: hasParticle
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -49614,6 +49646,10 @@ PrefabInstance:
     - target: {fileID: 3070509126883686968, guid: 33edea2e292aff640b4da944eb5026bb, type: 3}
       propertyPath: m_Constraints
       value: 122
+      objectReference: {fileID: 0}
+    - target: {fileID: 3187348473789290374, guid: 33edea2e292aff640b4da944eb5026bb, type: 3}
+      propertyPath: hasParticle
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -98642,6 +98678,10 @@ PrefabInstance:
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8251299897018923986, guid: e68c43eee6d803a419134bb49187284d, type: 3}
+      propertyPath: hasParticle
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -110829,6 +110869,10 @@ PrefabInstance:
     - target: {fileID: 2801053398965674485, guid: 5578a26a44a07a648be5a2b55c91c4cc, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3313193217979231453, guid: 5578a26a44a07a648be5a2b55c91c4cc, type: 3}
+      propertyPath: hasParticle
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5150503099792141148, guid: 5578a26a44a07a648be5a2b55c91c4cc, type: 3}
       propertyPath: m_Name

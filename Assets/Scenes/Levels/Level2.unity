@@ -5247,6 +5247,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 20180273}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &21811866
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5411,6 +5412,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 22967560}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &27435181
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5597,6 +5599,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 27943746}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &30431428
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5831,6 +5834,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 36603910}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &37140440
 GameObject:
   m_ObjectHideFlags: 0
@@ -10819,6 +10823,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 40483610}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &44340527
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11049,6 +11054,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 51256502}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &62874348 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7779381877309823848, guid: 2f6c4572e07a60b43b00e1c4f489a806, type: 3}
@@ -11267,6 +11273,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 74228661}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &79052403
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11959,6 +11966,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 135175532}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &139889560 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7779381877309823848, guid: 2f6c4572e07a60b43b00e1c4f489a806, type: 3}
@@ -12745,6 +12753,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 172136012}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &179436013
 GameObject:
   m_ObjectHideFlags: 0
@@ -12882,6 +12891,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 190046213}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &192284361
 GameObject:
   m_ObjectHideFlags: 0
@@ -18467,6 +18477,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 240456084}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &241315729
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23681,6 +23692,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 255931342}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &256546964
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23851,6 +23863,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 263280071}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &268815730
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23953,6 +23966,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 268815733}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &270628277
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24433,6 +24447,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 288987269}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &300047104 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7779381877309823848, guid: 2f6c4572e07a60b43b00e1c4f489a806, type: 3}
@@ -24544,6 +24559,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 304157438}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &306534707
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29814,6 +29830,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 335458422}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &335954810
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29916,6 +29933,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 335954813}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &339488435
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30218,6 +30236,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 365968967}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &388607856
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30543,6 +30562,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 394813925}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &399618299
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31186,6 +31206,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 430633479}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &434501009 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 916917378494744782, guid: 98f5378049f9b5745a77677f581b32b1, type: 3}
@@ -31365,6 +31386,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 451226278}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &457711735
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31619,6 +31641,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 457901158}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &461258225 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4032360403437576351, guid: 72b77ef41bd5a0440aaf1a93ea9b19c0, type: 3}
@@ -37192,6 +37215,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 487700149}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &488180428
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37294,6 +37318,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 488180431}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &501566779 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7779381877309823848, guid: 2f6c4572e07a60b43b00e1c4f489a806, type: 3}
@@ -37328,6 +37353,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 501566783}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &505764614
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37434,6 +37460,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 505764617}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &506836202
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38521,6 +38548,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 569513753}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &571874328
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38623,6 +38651,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 571874331}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &590326585
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38934,6 +38963,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 605499429}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &605952361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39386,6 +39416,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 609201405}
   electrified: 0
+  hasParticle: 0
 --- !u!4 &616099183 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 746612936677160178, guid: 33edea2e292aff640b4da944eb5026bb, type: 3}
@@ -39588,6 +39619,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 619055309}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &631807137
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39748,6 +39780,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 639636116}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &645509973
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40036,6 +40069,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 654786755}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &655366125 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1378172779303584491, guid: fd2de4bd876f4ac4980370e624362931, type: 3}
@@ -40231,6 +40265,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 656554482}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &657493742 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 916917378494744782, guid: 98f5378049f9b5745a77677f581b32b1, type: 3}
@@ -40486,6 +40521,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 660893992}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &661810241
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40740,6 +40776,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 673943888}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &685604766
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41091,6 +41128,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 708889952}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &710544064
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46310,6 +46348,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 727266245}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &730180985
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46929,6 +46968,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 749545273}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &750031234
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47152,6 +47192,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 752886885}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &754135328
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47821,6 +47862,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 769161817}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &771938270
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47923,6 +47965,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 771938273}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &781876385
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48359,6 +48402,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 792344626}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &809153961
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48456,6 +48500,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 809153966}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &813633671
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48694,6 +48739,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 817263271}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &817808737
 GameObject:
   m_ObjectHideFlags: 0
@@ -49113,6 +49159,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 826934599}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &828656920
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49433,6 +49480,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 833553432}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &834165315
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50010,6 +50058,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 856953818}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &858547598
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50174,6 +50223,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 860707728}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &868654719
 GameObject:
   m_ObjectHideFlags: 0
@@ -50351,6 +50401,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 870404504}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &872372757
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50457,6 +50508,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 872372760}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &874025719
 GameObject:
   m_ObjectHideFlags: 0
@@ -51088,6 +51140,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 899252842}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &901343519
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51190,6 +51243,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 901343522}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &908552734
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51506,6 +51560,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 927615619}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &940832338
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51674,6 +51729,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 945320991}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &950313803
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51894,6 +51950,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 951862526}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &952622762
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51979,6 +52036,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 952622768}
   electrified: 0
+  hasParticle: 0
 --- !u!114 &952622768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52093,6 +52151,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 954105596}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &960567268
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52195,6 +52254,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 960567271}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &965177002
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52323,6 +52383,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 965177007}
   electrified: 0
+  hasParticle: 0
 --- !u!114 &965177007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52483,6 +52544,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 977630055}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &982407879
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52589,6 +52651,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 982407882}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &983339183
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52691,6 +52754,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 983339186}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &986073720
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57939,6 +58003,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1015460424}
   electrified: 0
+  hasParticle: 0
 --- !u!114 &1015460424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58057,6 +58122,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1025135834}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &1026254077 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7779381877309823848, guid: 2f6c4572e07a60b43b00e1c4f489a806, type: 3}
@@ -58091,6 +58157,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1026254082}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &1026372559
 GameObject:
   m_ObjectHideFlags: 0
@@ -58358,6 +58425,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1035481196}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &1036470888
 GameObject:
   m_ObjectHideFlags: 0
@@ -58505,6 +58573,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1036578042}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1040739454
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58673,6 +58742,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1044663438}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1051290709
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58997,6 +59067,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1061002930}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &1061857209
 GameObject:
   m_ObjectHideFlags: 0
@@ -59264,6 +59335,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1064980520}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1066678148
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59366,6 +59438,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1066678151}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1072255168
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -75183,6 +75256,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1137281458}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1137299648
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -75289,6 +75363,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1137299651}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &1141954907
 GameObject:
   m_ObjectHideFlags: 0
@@ -80364,6 +80439,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1150579021}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1162202220
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -81119,6 +81195,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1181030420}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1185105757
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -81457,6 +81534,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1204450996}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1206727609
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -81700,6 +81778,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1224783192}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1231600490
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -81802,6 +81881,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1231600493}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1234580129
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -81904,6 +81984,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1234580132}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &1237467013
 GameObject:
   m_ObjectHideFlags: 0
@@ -82379,6 +82460,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1260443553}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &1261102094
 GameObject:
   m_ObjectHideFlags: 0
@@ -88810,6 +88892,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1280449151}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &1281008817
 GameObject:
   m_ObjectHideFlags: 0
@@ -88952,6 +89035,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1281956699}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1287654099
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -89122,6 +89206,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1292834890}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &1296919881
 GameObject:
   m_ObjectHideFlags: 0
@@ -89446,6 +89531,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1305685061}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &1312949651
 GameObject:
   m_ObjectHideFlags: 0
@@ -89600,6 +89686,10 @@ PrefabInstance:
     - target: {fileID: 6916867120113568947, guid: e68c43eee6d803a419134bb49187284d, type: 3}
       propertyPath: m_Name
       value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 8251299897018923986, guid: e68c43eee6d803a419134bb49187284d, type: 3}
+      propertyPath: hasParticle
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -89950,6 +90040,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1329074406}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1329430241
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -90052,6 +90143,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1329430244}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1330058718
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -90154,6 +90246,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1330058721}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1342095088
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -90584,6 +90677,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1364417119}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &1366157311
 GameObject:
   m_ObjectHideFlags: 0
@@ -90969,6 +91063,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1372527326}
   electrified: 0
+  hasParticle: 0
 --- !u!114 &1372527326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91135,6 +91230,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1373154222}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1373218373
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -91237,6 +91333,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1373218376}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1383010027
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -91339,6 +91436,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1383010030}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &1390376138 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7779381877309823848, guid: 2f6c4572e07a60b43b00e1c4f489a806, type: 3}
@@ -91446,6 +91544,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1395567376}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &1400621452
 GameObject:
   m_ObjectHideFlags: 0
@@ -92007,6 +92106,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1407532002}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1408972969
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -92109,6 +92209,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1408972972}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &1423300004
 GameObject:
   m_ObjectHideFlags: 0
@@ -92617,6 +92718,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1432404180}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &1433269110
 GameObject:
   m_ObjectHideFlags: 0
@@ -92965,6 +93067,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1445262537}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1448002596
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -93133,6 +93236,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1451854759}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1452938019
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -93239,6 +93343,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1452938022}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1453406567
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -93341,6 +93446,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1453406570}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &1462772223
 GameObject:
   m_ObjectHideFlags: 0
@@ -93751,6 +93857,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1463547665}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1465776705
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -93853,6 +93960,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1465776708}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1470238096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -94413,6 +94521,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1486608663}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1499040182
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -94576,6 +94685,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1500409353}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1511844442
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -95115,6 +95225,10 @@ PrefabInstance:
       value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 1962833831549835783, guid: 72b77ef41bd5a0440aaf1a93ea9b19c0, type: 3}
+      propertyPath: hasParticle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1962833831549835783, guid: 72b77ef41bd5a0440aaf1a93ea9b19c0, type: 3}
       propertyPath: temperature
       value: -1000
       objectReference: {fileID: 0}
@@ -95408,6 +95522,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1531432283}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1534726635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -95567,6 +95682,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1550395057}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1552846771
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -95822,6 +95938,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1563338881}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &1563554205
 GameObject:
   m_ObjectHideFlags: 0
@@ -101169,6 +101286,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1574911472}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1577312764
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -101417,6 +101535,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1586897644}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1589018146
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -111642,6 +111761,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1597339884}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1600115003
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -111958,6 +112078,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1601990078}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &1603004750
 GameObject:
   m_ObjectHideFlags: 0
@@ -112106,6 +112227,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1614661398}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1621314062
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -112208,6 +112330,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1621314065}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1629498445
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -112486,6 +112609,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1640039482}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1646910267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -112837,6 +112961,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1672462618}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1688947026
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -112922,6 +113047,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1688947032}
   electrified: 0
+  hasParticle: 0
 --- !u!114 &1688947032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112956,6 +113082,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1696265003}
   electrified: 0
+  hasParticle: 0
 --- !u!114 &1696265003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113229,6 +113356,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1698393805}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &1702708542
 GameObject:
   m_ObjectHideFlags: 0
@@ -113322,6 +113450,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1706421095}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1711681423
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -113600,6 +113729,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1713050526}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1734755004
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -113710,6 +113840,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1734755007}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1739195249
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -113812,6 +113943,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1739195252}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1741483414
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -113918,6 +114050,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1741483417}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1744951642
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -114024,6 +114157,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1744951646}
   electrified: 0
+  hasParticle: 1
 --- !u!114 &1744951646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114139,6 +114273,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1746106053}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1746560290
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -119364,6 +119499,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1773233185}
   electrified: 0
+  hasParticle: 0
 --- !u!114 &1773233185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119627,6 +119763,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1775240899}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1780144544
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -119729,6 +119866,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1780144547}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &1793388914
 GameObject:
   m_ObjectHideFlags: 0
@@ -120088,6 +120226,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1822782442}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1837750736
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -120198,6 +120337,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1837750739}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &1837860272 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 916917378494744782, guid: 98f5378049f9b5745a77677f581b32b1, type: 3}
@@ -120381,6 +120521,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1844711416}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &1849648391 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7779381877309823848, guid: 2f6c4572e07a60b43b00e1c4f489a806, type: 3}
@@ -120415,6 +120556,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1849648395}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &1858818317
 GameObject:
   m_ObjectHideFlags: 0
@@ -121042,6 +121184,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1863804810}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &1864632779
 GameObject:
   m_ObjectHideFlags: 0
@@ -121286,6 +121429,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1881910590}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1885884536
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -121388,6 +121532,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1885884539}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1903528077
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -121494,6 +121639,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1903528080}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1904341795
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -121668,6 +121814,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1905469003}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1905545158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -121770,6 +121917,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1905545161}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1906398752
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -121872,6 +122020,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1906398755}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1908709708
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -121974,6 +122123,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1908709711}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1910658419
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -122071,6 +122221,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1910658424}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1913535427
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -122168,6 +122319,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1913535432}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &1914788658 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 916917378494744782, guid: 98f5378049f9b5745a77677f581b32b1, type: 3}
@@ -122190,6 +122342,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1914788663}
   electrified: 0
+  hasParticle: 0
 --- !u!114 &1914788663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122373,6 +122526,10 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 126
       objectReference: {fileID: 0}
+    - target: {fileID: 3187348473789290374, guid: 33edea2e292aff640b4da944eb5026bb, type: 3}
+      propertyPath: hasParticle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5143169125909570770, guid: 33edea2e292aff640b4da944eb5026bb, type: 3}
       propertyPath: m_Size.x
       value: 1
@@ -122496,6 +122653,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1928748626}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1936152142
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -122598,6 +122756,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1936152145}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1939840682
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -122700,6 +122859,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1939840685}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &1942527875
 GameObject:
   m_ObjectHideFlags: 0
@@ -122858,6 +123018,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1948035134}
   electrified: 0
+  hasParticle: 0
 --- !u!114 &1948035134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123081,6 +123242,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1960583732}
   electrified: 0
+  hasParticle: 0
 --- !u!114 &1960583732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123406,6 +123568,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1962779775}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &1962780929 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6916867120113568947, guid: e68c43eee6d803a419134bb49187284d, type: 3}
@@ -123604,6 +123767,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1980839509}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1981896158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -128791,6 +128955,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 2002328882}
   electrified: 0
+  hasParticle: 0
 --- !u!114 &2002328882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128932,6 +129097,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 2007030550}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &2011744840
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -129034,6 +129200,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 2011744843}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &2013823054
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -129289,6 +129456,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 2018197720}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &2028152958
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -129386,6 +129554,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 2028152963}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &2034559716 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7779381877309823848, guid: 2f6c4572e07a60b43b00e1c4f489a806, type: 3}
@@ -129408,6 +129577,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 2034559721}
   electrified: 0
+  hasParticle: 0
 --- !u!114 &2034559721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129691,6 +129861,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 2047701016}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &2048627712
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -129915,6 +130086,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 2055362564}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &2059483913
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -135042,6 +135214,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 2069146955}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &2070643790
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -135144,6 +135317,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 2070643793}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &2070770750
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -135250,6 +135424,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 2070770753}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &2075414460
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -140412,6 +140587,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 2081442194}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &2085638210 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7779381877309823848, guid: 2f6c4572e07a60b43b00e1c4f489a806, type: 3}
@@ -140446,6 +140622,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 2085638214}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &2086291079
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -140750,6 +140927,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 2091799115}
   electrified: 0
+  hasParticle: 0
 --- !u!114 &2091799115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140882,6 +141060,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 2101267340}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &2103216954
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -140984,6 +141163,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 2103216957}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &2113598242
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -141090,6 +141270,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 2113598245}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &2114676766
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -141192,6 +141373,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 2114676769}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &2123642230 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 916917378494744782, guid: 98f5378049f9b5745a77677f581b32b1, type: 3}
@@ -141377,6 +141559,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 2134092541}
   electrified: 0
+  hasParticle: 0
 --- !u!1 &2134365274
 GameObject:
   m_ObjectHideFlags: 0
