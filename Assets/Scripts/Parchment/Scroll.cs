@@ -26,10 +26,10 @@ public class Scroll : MonoBehaviour
     private void Update()
     {
         // Clear the parchment when the user presses the Start button
-        if (OVRInput.Get(OVRInput.Button.Start))
+        /*if (OVRInput.Get(OVRInput.Button.Start))
         {
             EraseScroll();
-        }
+        }*/
 
         if (!Input.GetKey(KeyCode.Backspace) ||
             !Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit touch)) return;
