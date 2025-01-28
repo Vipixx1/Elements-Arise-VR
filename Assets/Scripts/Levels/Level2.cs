@@ -18,18 +18,14 @@ public class Level2 : MonoBehaviour
         bool check = true;
 
         foreach (var crystal in crystals)
-        {
-            if (!crystal.IsActivated())
-            {
-                check = false;
-            }
-        }
-        if (secretDoor == null) check = true;
-        if(door.gameObject.GetComponent<Rigidbody>().GetAccumulatedForce() != Vector3.zero)
-        {
-            Debug.Log("explosion");
+            if (!crystal.IsActivated()) check = false;
+
+        if (secretDoor == null) 
             check = true;
-        }
+
+        if(door.gameObject.GetComponent<Rigidbody>().GetAccumulatedForce() != Vector3.zero)
+            check = true;
+
         if (check)
         {
             Destroy(door);
@@ -43,7 +39,6 @@ public class Level2 : MonoBehaviour
             }
         }
     }
-
 
     void SetInteractable(GameObject item)
     {
