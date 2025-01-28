@@ -30974,6 +30974,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3686128166624438111, guid: 314f6e1da20902f4ba50509fa6eb8fa8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 673637987}
+    - targetCorrespondingSourceObject: {fileID: 2699256751460116924, guid: 314f6e1da20902f4ba50509fa6eb8fa8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1950460204}
     - targetCorrespondingSourceObject: {fileID: 869462151857947959, guid: 314f6e1da20902f4ba50509fa6eb8fa8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2093023618}
@@ -30989,6 +30992,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1812979318310986122, guid: 314f6e1da20902f4ba50509fa6eb8fa8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 399618318}
+    - targetCorrespondingSourceObject: {fileID: 2699256751340540044, guid: 314f6e1da20902f4ba50509fa6eb8fa8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 741306920}
     - targetCorrespondingSourceObject: {fileID: 8549669565259683013, guid: 314f6e1da20902f4ba50509fa6eb8fa8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 399618320}
@@ -46991,6 +46997,50 @@ MonoBehaviour:
   _targetPoint: {fileID: 0}
   _faceTargetDirection: 0
   _eyeLevel: 0
+--- !u!1 &741306914 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2699256751340540044, guid: 314f6e1da20902f4ba50509fa6eb8fa8, type: 3}
+  m_PrefabInstance: {fileID: 399618299}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &741306917 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2699256751340540039, guid: 314f6e1da20902f4ba50509fa6eb8fa8, type: 3}
+  m_PrefabInstance: {fileID: 399618299}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741306914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f62acf90e41ded439f14c4e15871abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &741306920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741306914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5def3f23e42f6834e91e1c00588e9b6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _teleporter: {fileID: 741306917}
+  _whenTeleporting:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1421118108}
+        m_TargetAssemblyTypeName: Audio.PlayerAudio, Assembly-CSharp
+        m_MethodName: PlayTpSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &746438308
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -89063,6 +89113,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1942527876}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5550776016039436609, guid: f39a9d103c4129b42a53567f6cd8356a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1421118108}
     - targetCorrespondingSourceObject: {fileID: 7192818547691322728, guid: f39a9d103c4129b42a53567f6cd8356a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1280370073}
@@ -92820,6 +92873,30 @@ MonoBehaviour:
   material: {fileID: 1412063782}
   electrified: 0
   hasParticle: 0
+--- !u!1 &1421118107 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5550776016039436609, guid: f39a9d103c4129b42a53567f6cd8356a, type: 3}
+  m_PrefabInstance: {fileID: 1280370063}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1421118108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421118107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b55403f499bbcb4e8df689ac935c404, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tpSound:
+    Guid:
+      Data1: 253371238
+      Data2: 1134609002
+      Data3: -1302924376
+      Data4: -2001383858
+    Path: event:/Player/Movements/teleportation
 --- !u!1 &1423300004
 GameObject:
   m_ObjectHideFlags: 0
@@ -123756,6 +123833,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxDuration: 10
   spellType: 8
+--- !u!1 &1950460198 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2699256751460116924, guid: 314f6e1da20902f4ba50509fa6eb8fa8, type: 3}
+  m_PrefabInstance: {fileID: 399618299}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1950460201 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2699256751460116919, guid: 314f6e1da20902f4ba50509fa6eb8fa8, type: 3}
+  m_PrefabInstance: {fileID: 399618299}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950460198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f62acf90e41ded439f14c4e15871abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1950460204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950460198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5def3f23e42f6834e91e1c00588e9b6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _teleporter: {fileID: 1950460201}
+  _whenTeleporting:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1421118108}
+        m_TargetAssemblyTypeName: Audio.PlayerAudio, Assembly-CSharp
+        m_MethodName: PlayTpSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1952877579
 PrefabInstance:
   m_ObjectHideFlags: 0

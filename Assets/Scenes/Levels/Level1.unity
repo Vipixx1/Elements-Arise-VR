@@ -40634,6 +40634,50 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &660767199 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2699256751340540044, guid: 314f6e1da20902f4ba50509fa6eb8fa8, type: 3}
+  m_PrefabInstance: {fileID: 850720699}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &660767200 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2699256751340540039, guid: 314f6e1da20902f4ba50509fa6eb8fa8, type: 3}
+  m_PrefabInstance: {fileID: 850720699}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660767199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f62acf90e41ded439f14c4e15871abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &660767201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660767199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5def3f23e42f6834e91e1c00588e9b6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _teleporter: {fileID: 660767200}
+  _whenTeleporting:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1568244566}
+        m_TargetAssemblyTypeName: Audio.PlayerAudio, Assembly-CSharp
+        m_MethodName: PlayTpSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &664405508
 GameObject:
   m_ObjectHideFlags: 0
@@ -51650,6 +51694,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3686128166624438111, guid: 314f6e1da20902f4ba50509fa6eb8fa8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2139882504}
+    - targetCorrespondingSourceObject: {fileID: 2699256751460116924, guid: 314f6e1da20902f4ba50509fa6eb8fa8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 871663925}
     - targetCorrespondingSourceObject: {fileID: 869462151857947959, guid: 314f6e1da20902f4ba50509fa6eb8fa8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1402729009}
@@ -51665,6 +51712,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1812979318310986122, guid: 314f6e1da20902f4ba50509fa6eb8fa8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 850720718}
+    - targetCorrespondingSourceObject: {fileID: 2699256751340540044, guid: 314f6e1da20902f4ba50509fa6eb8fa8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 660767201}
     - targetCorrespondingSourceObject: {fileID: 8549669565259683013, guid: 314f6e1da20902f4ba50509fa6eb8fa8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 850720720}
@@ -51990,6 +52040,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6603488554207994483, guid: 98f5378049f9b5745a77677f581b32b1, type: 3}
   m_PrefabInstance: {fileID: 858547598}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &871663923 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2699256751460116924, guid: 314f6e1da20902f4ba50509fa6eb8fa8, type: 3}
+  m_PrefabInstance: {fileID: 850720699}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &871663924 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2699256751460116919, guid: 314f6e1da20902f4ba50509fa6eb8fa8, type: 3}
+  m_PrefabInstance: {fileID: 850720699}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871663923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f62acf90e41ded439f14c4e15871abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &871663925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871663923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5def3f23e42f6834e91e1c00588e9b6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _teleporter: {fileID: 871663924}
+  _whenTeleporting:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1568244566}
+        m_TargetAssemblyTypeName: Audio.PlayerAudio, Assembly-CSharp
+        m_MethodName: PlayTpSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &887525048
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -82600,6 +82694,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1859738798}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5550776016039436609, guid: f39a9d103c4129b42a53567f6cd8356a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1568244566}
     - targetCorrespondingSourceObject: {fileID: 7192818547691311414, guid: f39a9d103c4129b42a53567f6cd8356a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1467045703}
@@ -98063,6 +98160,30 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1551915568}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1568244565 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5550776016039436609, guid: f39a9d103c4129b42a53567f6cd8356a, type: 3}
+  m_PrefabInstance: {fileID: 1467045692}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1568244566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568244565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b55403f499bbcb4e8df689ac935c404, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tpSound:
+    Guid:
+      Data1: 253371238
+      Data2: 1134609002
+      Data3: -1302924376
+      Data4: -2001383858
+    Path: event:/Player/Movements/teleportation
 --- !u!1 &1568540066
 GameObject:
   m_ObjectHideFlags: 0
