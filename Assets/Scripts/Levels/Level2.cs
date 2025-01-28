@@ -15,26 +15,29 @@ public class Level2 : MonoBehaviour
 
     private void Update()
     {
-        bool check = true;
-
-        foreach (var crystal in crystals)
-            if (!crystal.IsActivated()) check = false;
-
-        if (secretDoor == null) 
-            check = true;
-
-        if(door.gameObject.GetComponent<Rigidbody>().GetAccumulatedForce() != Vector3.zero)
-            check = true;
-
-        if (check)
+        if (door != null)
         {
-            Destroy(door);
-            foreach (Transform carpet in floor.transform)
+            bool check = true;
+
+            foreach (var crystal in crystals)
+                if (!crystal.IsActivated()) check = false;
+
+            if (secretDoor == null)
+                check = true;
+
+            if (door.gameObject.GetComponent<Rigidbody>().GetAccumulatedForce() != Vector3.zero)
+                check = true;
+
+            if (check)
             {
-                SetInteractable(carpet.gameObject);
-                foreach (Transform carpet2 in floor.transform)
+                Destroy(door);
+                foreach (Transform carpet in floor.transform)
                 {
-                    SetInteractable(carpet2.gameObject);
+                    SetInteractable(carpet.gameObject);
+                    foreach (Transform carpet2 in carpet.transform)
+                    {
+                        SetInteractable(carpet2.gameObject);
+                    }
                 }
             }
         }
