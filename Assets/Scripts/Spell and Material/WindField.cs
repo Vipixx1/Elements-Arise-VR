@@ -11,6 +11,9 @@ public class WindField : MonoBehaviour
     [SerializeField]
     private float strength = 3f;
 
+    [SerializeField]
+    private ParticleSystem trails;
+
 
     void Start()
     {
@@ -31,6 +34,8 @@ public class WindField : MonoBehaviour
         scale.x = direction.magnitude;
         transform.localScale = scale;
 
+        trails.startLifetime = 0.11f * scale.x;
+        trails.gameObject.transform.position = startingPoint + new Vector3(0,direction.y/2,0) ;
     }
 
     
