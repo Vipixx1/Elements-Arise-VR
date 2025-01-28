@@ -78,6 +78,7 @@ public class ObjectData : MonoBehaviour
         if (humidityGO == null)
         {
             humidityGO = Instantiate(new GameObject(), transform.position, Quaternion.identity);
+            humidityGO.transform.parent = transform;
             humidityGO.transform.eulerAngles = new Vector3(0, 0, 180);
 
             humidityGO.AddComponent<ParticleSystem>();
@@ -126,6 +127,7 @@ public class ObjectData : MonoBehaviour
         if (temperatureGO == null)
         {
             temperatureGO = Instantiate(new GameObject(), transform.position, Quaternion.identity);
+            temperatureGO.transform.parent = transform;
             temperatureGO.transform.eulerAngles = new Vector3(0, 0, 180);
             temperatureGO.transform.localScale = Vector3.one * 0.1f;
             temperatureGO.AddComponent<ParticleSystem>();
