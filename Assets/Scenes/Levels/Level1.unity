@@ -20024,11 +20024,11 @@ MonoBehaviour:
   sandSpell: {fileID: 8413826142207088173, guid: af16e819dfdd5094298a9c83eed316bf, type: 3}
   testEvent:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -365200363
+      Data2: 1175032218
+      Data3: 1943599264
+      Data4: -897778494
+    Path: event:/Test
 --- !u!1 &512956065
 GameObject:
   m_ObjectHideFlags: 0
@@ -51468,6 +51468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorOfRoom2: {fileID: 169014333}
   planks:
+  - {fileID: 706203203}
   - {fileID: 1751249334}
   - {fileID: 1106380585}
   - {fileID: 1531230389}

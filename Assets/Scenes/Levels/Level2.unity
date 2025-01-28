@@ -89960,16 +89960,28 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3389306924798607962, guid: e68c43eee6d803a419134bb49187284d, type: 3}
+      propertyPath: m_Size.x
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3389306924798607962, guid: e68c43eee6d803a419134bb49187284d, type: 3}
       propertyPath: m_Size.y
-      value: 1
+      value: 1.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 3389306924798607962, guid: e68c43eee6d803a419134bb49187284d, type: 3}
+      propertyPath: m_Size.z
+      value: 1.15
       objectReference: {fileID: 0}
     - target: {fileID: 3389306924798607962, guid: e68c43eee6d803a419134bb49187284d, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3389306924798607962, guid: e68c43eee6d803a419134bb49187284d, type: 3}
+      propertyPath: m_Center.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3389306924798607962, guid: e68c43eee6d803a419134bb49187284d, type: 3}
       propertyPath: m_Center.y
-      value: 0
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 5333911305581500085, guid: e68c43eee6d803a419134bb49187284d, type: 3}
       propertyPath: m_Mesh
