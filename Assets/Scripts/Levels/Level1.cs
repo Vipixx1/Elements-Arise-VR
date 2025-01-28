@@ -1,17 +1,19 @@
 using Oculus.Interaction.Locomotion;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Level1 : MonoBehaviour
 {
-    [SerializeField] GameObject floor;
+    [SerializeField] GameObject floorOfRoom2;
+    [SerializeField] GameObject[] planks;
 
     private void Update()
     {
-        if (transform.childCount == 0)
+        if (!planks.Any())
         {
-            foreach (Transform carpet in floor.transform)
+            foreach (Transform carpet in floorOfRoom2.transform)
             {
                 SetInteractable(carpet.gameObject);
             }
