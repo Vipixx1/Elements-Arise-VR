@@ -30,6 +30,7 @@ public class ObjectData : MonoBehaviour
     private GameObject temperatureGO;
     private GameObject humidityGO;
 
+    [SerializeField] bool hasParticle = false;
 
     private void OnDestroy()
     {
@@ -39,8 +40,11 @@ public class ObjectData : MonoBehaviour
 
     private void Start()
     {
-        UpdateHumidityParticle();
-        UpdateTemperatureParticle();
+        if (hasParticle)
+        {
+            UpdateHumidityParticle();
+            UpdateTemperatureParticle();
+        }
     }
 
     private void Update()
@@ -57,8 +61,11 @@ public class ObjectData : MonoBehaviour
         {
             spell.Catch(this);
             spell.DestroySpell();
-            UpdateHumidityParticle();
-            UpdateTemperatureParticle();
+            if (hasParticle)
+            {
+                UpdateHumidityParticle();
+                UpdateTemperatureParticle();
+            }
         }
 
 

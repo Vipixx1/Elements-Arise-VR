@@ -9,6 +9,7 @@ public class PuddleMaterial : Material
 {
     [SerializeField] private int initialMaxScale;
     private int maxScale;
+    [SerializeField] private Vector3 minScale = Vector3.zero;
     private Vector3 initialScaleVector;
     [SerializeField] GameObject icePrefab;
 
@@ -24,18 +25,21 @@ public class PuddleMaterial : Material
     public override void Burning(ObjectData data)
     {
         base.Burning(data);
-        if (maxScale < initialMaxScale*2)
+        if (transform.localScale.x > minScale.x && transform.localScale.y > minScale.y && transform.localScale.z > minScale.z)
         {
-            maxScale +=1;
-        }
+            if (maxScale < initialMaxScale * 2)
+            {
+                maxScale += 1;
+            }
 
 
-        transform.localScale -= initialScaleVector/ initialMaxScale;
-        Debug.Log(maxScale);
+            transform.localScale -= initialScaleVector / initialMaxScale;
+            Debug.Log(maxScale);
 
-        if (maxScale == initialMaxScale*2)
-        {
-            Destroy(gameObject);
+            if (maxScale == initialMaxScale * 2)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 

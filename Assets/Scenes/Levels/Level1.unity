@@ -696,6 +696,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 53149340}
   electrified: 0
+  hasParticle: 1
 --- !u!114 &53149340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -931,6 +932,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 76455615}
   electrified: 0
+  hasParticle: 1
 --- !u!114 &76455615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1156,6 +1158,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 112867961}
   electrified: 0
+  hasParticle: 1
 --- !u!114 &112867961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8292,6 +8295,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 375450482}
   electrified: 0
+  hasParticle: 1
 --- !u!114 &375450482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13660,6 +13664,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 391892560}
   electrified: 0
+  hasParticle: 1
 --- !u!114 &391892560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19707,6 +19712,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 502578059}
   electrified: 0
+  hasParticle: 1
 --- !u!1 &502725836
 GameObject:
   m_ObjectHideFlags: 0
@@ -53021,6 +53027,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1049951994}
   electrified: 0
+  hasParticle: 1
 --- !u!114 &1049951994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53252,6 +53259,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1072593880}
   electrified: 0
+  hasParticle: 1
 --- !u!114 &1072593880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58226,6 +58234,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1106380589}
   electrified: 0
+  hasParticle: 1
 --- !u!54 &1106380591
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -64150,6 +64159,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1193333478}
   electrified: 0
+  hasParticle: 1
 --- !u!54 &1193333480
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -74337,6 +74347,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1269892614}
   electrified: 0
+  hasParticle: 1
 --- !u!114 &1269892614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80002,6 +80013,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1418991600}
   electrified: 0
+  hasParticle: 1
 --- !u!114 &1418991600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80339,6 +80351,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1431397366}
   electrified: 0
+  hasParticle: 1
 --- !u!54 &1431397368
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -87339,6 +87352,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1531230393}
   electrified: 0
+  hasParticle: 1
 --- !u!54 &1531230395
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -97427,6 +97441,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1573125891}
   electrified: 0
+  hasParticle: 1
 --- !u!114 &1573125891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103475,6 +103490,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1744951646}
   electrified: 0
+  hasParticle: 1
 --- !u!114 &1744951646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103736,6 +103752,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1751249338}
   electrified: 0
+  hasParticle: 1
 --- !u!54 &1751249340
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -120246,6 +120263,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1939983115}
   electrified: 0
+  hasParticle: 1
 --- !u!114 &1939983115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120386,6 +120404,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1948035134}
   electrified: 0
+  hasParticle: 0
 --- !u!114 &1948035134
 MonoBehaviour:
   m_ObjectHideFlags: 0
