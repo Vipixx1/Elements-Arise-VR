@@ -265,6 +265,13 @@ MonoBehaviour:
   volcanoSpell: {fileID: 8413826142207088173, guid: f4183d5271e8ba24ea7a952d75df2b47, type: 3}
   steamSpell: {fileID: 8413826142207088173, guid: 181bd4092864ced4db93683ee3c091e3, type: 3}
   sandSpell: {fileID: 8413826142207088173, guid: af16e819dfdd5094298a9c83eed316bf, type: 3}
+  testEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1 &18927456
 GameObject:
   m_ObjectHideFlags: 0
@@ -89024,7 +89031,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1380890925}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14c5c7f699c3b7047a50dcd1a19e1908, type: 3}
   m_Name: 
