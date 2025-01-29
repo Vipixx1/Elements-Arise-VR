@@ -38,6 +38,8 @@ public class ShootingManager : MonoBehaviour
     [SerializeField] private GameObject steamSpell;
     [SerializeField] private GameObject sandSpell;
 
+    [SerializeField] private EventReference shootEventReference;
+
     private void OnEnable()
     {
         ScrollSpellResult.OnSpellReady += AssignSpellToHand;
@@ -143,6 +145,8 @@ public class ShootingManager : MonoBehaviour
 
         // If rightHand, rightOrLeftCoeff = 1, if leftHand, rightOrLeftCoeff = -1
         spell.GetComponent<Rigidbody>().AddForce(rightOrLeftCoeff * (-handTransform.up*0.4f + handTransform.right*0.6f) * 800);
+        
+        RuntimeManager.PlayOneShotAttached(shootEventReference, (rightOrLeftCoeff == 1 ? rightHandTransform : leftHandTransform).gameObject);
     }
 
 

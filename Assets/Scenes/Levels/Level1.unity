@@ -20071,6 +20071,13 @@ MonoBehaviour:
   volcanoSpell: {fileID: 8413826142207088173, guid: f4183d5271e8ba24ea7a952d75df2b47, type: 3}
   steamSpell: {fileID: 8413826142207088173, guid: 181bd4092864ced4db93683ee3c091e3, type: 3}
   sandSpell: {fileID: 8413826142207088173, guid: af16e819dfdd5094298a9c83eed316bf, type: 3}
+  shootEventReference:
+    Guid:
+      Data1: -1961459736
+      Data2: 1130337142
+      Data3: 1712064191
+      Data4: 641362532
+    Path: event:/Magic/Throw
 --- !u!1 &512956065
 GameObject:
   m_ObjectHideFlags: 0

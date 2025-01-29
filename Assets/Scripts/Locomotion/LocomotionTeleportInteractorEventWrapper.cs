@@ -42,7 +42,8 @@ namespace Locomotion
    
         private void HandleTeleported(LocomotionEvent locomotionEvent)
         {
-            _whenTeleporting.Invoke();
+            if(locomotionEvent.Translation != LocomotionEvent.TranslationType.None)
+                _whenTeleporting.Invoke();
         }
         
     }

@@ -45,10 +45,10 @@ public class ParchmentManager : MonoBehaviour
         baseParchmentScale = parchment.transform.localScale;
 
         parchmentOpenInstance = RuntimeManager.CreateInstance(parchmentOpen);
-        RuntimeManager.AttachInstanceToGameObject(parchmentOpenInstance, gameObject);
+        RuntimeManager.AttachInstanceToGameObject(parchmentOpenInstance, parchment);
         
         parchmentCloseInstance = RuntimeManager.CreateInstance(parchmentClose);
-        RuntimeManager.AttachInstanceToGameObject(parchmentCloseInstance, gameObject);
+        RuntimeManager.AttachInstanceToGameObject(parchmentCloseInstance, parchment);
     }
 
     void Update()
@@ -57,13 +57,17 @@ public class ParchmentManager : MonoBehaviour
 
         if (isRightHandPhoto1 && isLeftHandPhoto1 || isRightHandPhoto2 && isLeftHandPhoto2 || isRightHandPhoto3 && isLeftHandPhoto3 || isRightHandPhoto4 && isLeftHandPhoto4)
         {
+            parchment.transform.position = camera.transform.position + camera.transform.forward*0.5f;
+            parchment.transform.rotation = camera.transform.rotation * Quaternion.Euler(0, 90, -45);
+            
             if (!parchment.activeSelf)
             {
                 parchment.SetActive(true);
-                RuntimeManager.PlayOneShotAttached(parchmentSpawn, gameObject);
+                RuntimeManager.PlayOneShotAttached(parchmentSpawn, scroll.gameObject);
             }
-            parchment.transform.position = camera.transform.position + camera.transform.forward*0.5f;
-            parchment.transform.rotation = camera.transform.rotation * Quaternion.Euler(0, 90, -45);
+            
+            RuntimeManager.AttachInstanceToGameObject(parchmentCloseInstance, parchment);
+            RuntimeManager.AttachInstanceToGameObject(parchmentOpenInstance, parchment);
         }
 
 
