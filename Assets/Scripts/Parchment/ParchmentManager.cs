@@ -1,7 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMOD.Studio;
+using FMODUnity;
 using Unity.VisualScripting;
 using UnityEngine;
+using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 public class ParchmentManager : MonoBehaviour
 {
@@ -26,17 +30,38 @@ public class ParchmentManager : MonoBehaviour
 
     Vector3 baseParchmentScale = new Vector3(1.5f, 1.5f, 1.5f);
 
+    [SerializeField] private EventReference parchmentOpen;
+    private EventInstance parchmentOpenInstance;
+    
+    [SerializeField] private EventReference parchmentClose;
+    private EventInstance parchmentCloseInstance;
+    
+    [SerializeField] private EventReference parchmentSpawn;
+
+    private float previousScaleFactor;
+
     private void Start()
     {
         baseParchmentScale = parchment.transform.localScale;
+
+        parchmentOpenInstance = RuntimeManager.CreateInstance(parchmentOpen);
+        RuntimeManager.AttachInstanceToGameObject(parchmentOpenInstance, gameObject);
+        
+        parchmentCloseInstance = RuntimeManager.CreateInstance(parchmentClose);
+        RuntimeManager.AttachInstanceToGameObject(parchmentCloseInstance, gameObject);
     }
+
     void Update()
     {
         if (!parchment) return;
 
         if (isRightHandPhoto1 && isLeftHandPhoto1 || isRightHandPhoto2 && isLeftHandPhoto2 || isRightHandPhoto3 && isLeftHandPhoto3 || isRightHandPhoto4 && isLeftHandPhoto4)
         {
-            parchment.SetActive(true);
+            if (!parchment.activeSelf)
+            {
+                parchment.SetActive(true);
+                RuntimeManager.PlayOneShotAttached(parchmentSpawn, gameObject);
+            }
             parchment.transform.position = camera.transform.position + camera.transform.forward*0.5f;
             parchment.transform.rotation = camera.transform.rotation * Quaternion.Euler(0, 90, -45);
         }
@@ -55,7 +80,64 @@ public class ParchmentManager : MonoBehaviour
 
         left_holder.transform.localScale = newScale;
         right_holder.transform.localScale = newScale;
+
+        PlayParchmentSound(scaleFactor);
+        
+        previousScaleFactor = scaleFactor;
     }
+
+    private void PlayParchmentSound(float scaleFactor)
+    {
+        //scaleFactor va de 1 (parchemin ouvert) à 10 (parchemin fermé)
+        bool isOpening = scaleFactor < previousScaleFactor;
+        bool isMoving = Math.Abs(scaleFactor - previousScaleFactor) > .05f;
+        
+        EventInstance currentInstance, otherInstance;
+        if (isOpening)
+        {
+            currentInstance = parchmentOpenInstance;
+            otherInstance = parchmentCloseInstance;
+        }
+        else
+        {
+            currentInstance = parchmentCloseInstance;
+            otherInstance = parchmentOpenInstance;
+        }
+        
+        if (Math.Abs(scaleFactor - 1f) < .01f || Math.Abs(scaleFactor - 10f) < .01f)
+        {
+            currentInstance.setParameterByName("stop", 1);
+            otherInstance.setParameterByName("stop", 1);
+            return;
+        }
+
+        if (isMoving)
+        {
+            if (!IsPlaying(currentInstance))
+            {
+                currentInstance.setParameterByName("stop", 0);
+                currentInstance.start();
+            }
+            
+            if (IsPlaying(otherInstance)){
+                otherInstance.stop(STOP_MODE.ALLOWFADEOUT);
+                otherInstance.setParameterByName("stop", 0);
+            }
+        }
+        else
+        {
+            otherInstance.stop(STOP_MODE.ALLOWFADEOUT);
+            otherInstance.setParameterByName("stop", 0);
+            currentInstance.stop(STOP_MODE.ALLOWFADEOUT);
+            currentInstance.setParameterByName("stop", 0);
+        }
+    }
+    
+    bool IsPlaying(EventInstance instance) {
+        instance.getPlaybackState(out PLAYBACK_STATE state);
+        return state != PLAYBACK_STATE.STOPPED;
+    }
+    
 
     public void SetRightHand1(bool isActivated)
     { 

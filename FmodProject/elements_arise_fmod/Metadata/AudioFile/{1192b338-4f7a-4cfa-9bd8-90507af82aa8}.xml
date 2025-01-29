@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{1192b338-4f7a-4cfa-9bd8-90507af82aa8}">
 		<property name="assetPath">
-			<value>tp_darker.wav</value>
+			<value>SFX/Player/TP/tp_darker.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>

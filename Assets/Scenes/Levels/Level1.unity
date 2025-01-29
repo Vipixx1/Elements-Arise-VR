@@ -779,6 +779,27 @@ MonoBehaviour:
   left_holder: {fileID: 942936427}
   right_holder: {fileID: 1705075290}
   scroll: {fileID: 1869199676}
+  parchmentOpen:
+    Guid:
+      Data1: 812965466
+      Data2: 1118530385
+      Data3: -1131473501
+      Data4: -931153207
+    Path: event:/Parchemin/Open
+  parchmentClose:
+    Guid:
+      Data1: -759432266
+      Data2: 1078491564
+      Data3: 172228737
+      Data4: 966393330
+    Path: event:/Parchemin/Close
+  parchmentSpawn:
+    Guid:
+      Data1: -671934346
+      Data2: 1147332155
+      Data3: -1262042476
+      Data4: -1691689045
+    Path: event:/Parchemin/Spawn
 --- !u!114 &60093607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14215,6 +14236,27 @@ MonoBehaviour:
   left_holder: {fileID: 131020705}
   right_holder: {fileID: 1762807532}
   scroll: {fileID: 1463165615}
+  parchmentOpen:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  parchmentClose:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  parchmentSpawn:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!114 &416363791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20022,13 +20064,6 @@ MonoBehaviour:
   volcanoSpell: {fileID: 8413826142207088173, guid: f4183d5271e8ba24ea7a952d75df2b47, type: 3}
   steamSpell: {fileID: 8413826142207088173, guid: 181bd4092864ced4db93683ee3c091e3, type: 3}
   sandSpell: {fileID: 8413826142207088173, guid: af16e819dfdd5094298a9c83eed316bf, type: 3}
-  testEvent:
-    Guid:
-      Data1: -365200363
-      Data2: 1175032218
-      Data3: 1943599264
-      Data4: -897778494
-    Path: event:/Test
 --- !u!1 &512956065
 GameObject:
   m_ObjectHideFlags: 0
@@ -82674,7 +82709,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7192818547683320682, guid: f39a9d103c4129b42a53567f6cd8356a, type: 3}
     m_RemovedGameObjects:
     - {fileID: 1271611216998555569, guid: f39a9d103c4129b42a53567f6cd8356a, type: 3}
     m_AddedGameObjects:
@@ -82697,6 +82733,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5550776016039436609, guid: f39a9d103c4129b42a53567f6cd8356a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1568244566}
+    - targetCorrespondingSourceObject: {fileID: 7192818547691322728, guid: f39a9d103c4129b42a53567f6cd8356a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1467045707}
     - targetCorrespondingSourceObject: {fileID: 7192818547691311414, guid: f39a9d103c4129b42a53567f6cd8356a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1467045703}
@@ -82947,6 +82986,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1467045707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467045700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!1 &1468166151
 GameObject:
   m_ObjectHideFlags: 0

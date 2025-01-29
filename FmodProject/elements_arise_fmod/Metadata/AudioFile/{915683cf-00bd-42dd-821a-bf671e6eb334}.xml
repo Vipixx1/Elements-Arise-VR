@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{27468bb9-2c87-442d-8a3c-919bc98f8ec9}">
+	<object class="AudioFile" id="{915683cf-00bd-42dd-821a-bf671e6eb334}">
 		<property name="assetPath">
-			<value>fire_take_in_hand.wav</value>
+			<value>SFX/Parchment/parchemin_close.wav</value>
 		</property>
 		<property name="frequencyInKHz">
-			<value>44.0999985</value>
+			<value>48</value>
 		</property>
 		<property name="channelCount">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<property name="length">
-			<value>1.6169160997732426</value>
+			<value>1.45</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{f866daa0-1bae-486a-8fcb-4d729371a8cf}</destination>

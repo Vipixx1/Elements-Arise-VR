@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EventFolder" id="{3eaded80-01dc-4dc3-a33d-a624a15b2282}">
+		<property name="name">
+			<value>Parchemin</value>
+		</property>
+		<relationship name="folder">
+			<destination>{276bf817-9af9-40ee-af37-75ae825f15cb}</destination>
+		</relationship>
+	</object>
+</objects>

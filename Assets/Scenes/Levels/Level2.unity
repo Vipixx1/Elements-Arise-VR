@@ -31936,6 +31936,27 @@ MonoBehaviour:
   left_holder: {fileID: 1105065775}
   right_holder: {fileID: 506836203}
   scroll: {fileID: 1864632780}
+  parchmentOpen:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  parchmentClose:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  parchmentSpawn:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!114 &466744785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114172,13 +114193,6 @@ MonoBehaviour:
   volcanoSpell: {fileID: 8413826142207088173, guid: f4183d5271e8ba24ea7a952d75df2b47, type: 3}
   steamSpell: {fileID: 8413826142207088173, guid: 181bd4092864ced4db93683ee3c091e3, type: 3}
   sandSpell: {fileID: 8413826142207088173, guid: af16e819dfdd5094298a9c83eed316bf, type: 3}
-  testEvent:
-    Guid:
-      Data1: -365200363
-      Data2: 1175032218
-      Data3: 1943599264
-      Data4: -897778494
-    Path: event:/Test
 --- !u!1 &1706421091 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7779381877309823848, guid: 2f6c4572e07a60b43b00e1c4f489a806, type: 3}
@@ -120698,6 +120712,27 @@ MonoBehaviour:
   left_holder: {fileID: 199493003}
   right_holder: {fileID: 1079241875}
   scroll: {fileID: 842215248}
+  parchmentOpen:
+    Guid:
+      Data1: 812965466
+      Data2: 1118530385
+      Data3: -1131473501
+      Data4: -931153207
+    Path: event:/Parchemin/Open
+  parchmentClose:
+    Guid:
+      Data1: -759432266
+      Data2: 1078491564
+      Data3: 172228737
+      Data4: 966393330
+    Path: event:/Parchemin/Close
+  parchmentSpawn:
+    Guid:
+      Data1: -671934346
+      Data2: 1147332155
+      Data3: -1262042476
+      Data4: -1691689045
+    Path: event:/Parchemin/Spawn
 --- !u!114 &1793388918
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -38,9 +38,6 @@ public class ShootingManager : MonoBehaviour
     [SerializeField] private GameObject steamSpell;
     [SerializeField] private GameObject sandSpell;
 
-    [SerializeField] private EventReference testEvent;
-    private EventInstance testEventInstance;
-
     private void OnEnable()
     {
         ScrollSpellResult.OnSpellReady += AssignSpellToHand;
@@ -146,8 +143,6 @@ public class ShootingManager : MonoBehaviour
 
         // If rightHand, rightOrLeftCoeff = 1, if leftHand, rightOrLeftCoeff = -1
         spell.GetComponent<Rigidbody>().AddForce(rightOrLeftCoeff * (-handTransform.up*0.4f + handTransform.right*0.6f) * 800);
-
-        PlayShootingSound(element);
     }
 
 
@@ -221,14 +216,5 @@ public class ShootingManager : MonoBehaviour
             AssignSpellToBothHands("sand");
         }
 
-    }
-
-    private void PlayShootingSound(string element)
-    {
-        /*testEventInstance = RuntimeManager.CreateInstance(testEvent);
-        RuntimeManager.AttachInstanceToGameObject(testEventInstance, rightHandTransform);
-        testEventInstance.start();
-        testEventInstance.release();*/
-        RuntimeManager.PlayOneShotAttached(testEvent, rightHandTransform.gameObject);
     }
 }
