@@ -265,7 +265,7 @@ MonoBehaviour:
   volcanoSpell: {fileID: 8413826142207088173, guid: f4183d5271e8ba24ea7a952d75df2b47, type: 3}
   steamSpell: {fileID: 8413826142207088173, guid: 181bd4092864ced4db93683ee3c091e3, type: 3}
   sandSpell: {fileID: 8413826142207088173, guid: af16e819dfdd5094298a9c83eed316bf, type: 3}
-  testEvent:
+  shootEventReference:
     Guid:
       Data1: 0
       Data2: 0
@@ -43690,6 +43690,27 @@ MonoBehaviour:
   left_holder: {fileID: 1828339885}
   right_holder: {fileID: 1311713086}
   scroll: {fileID: 1543512963}
+  parchmentOpen:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  parchmentClose:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  parchmentSpawn:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!114 &822019411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43708,6 +43729,13 @@ MonoBehaviour:
   tipHeight: 0.05
   color: {r: 0, g: 0, b: 0, a: 1}
   scroll: {fileID: 1543512963}
+  markerSoundEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1 &829582624
 GameObject:
   m_ObjectHideFlags: 0
@@ -49380,6 +49408,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 837059404523973201, guid: f54a99f0821b0a548995b8f3d12e73d4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 866860799}
+    - targetCorrespondingSourceObject: {fileID: 837059404523973201, guid: f54a99f0821b0a548995b8f3d12e73d4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 866860802}
   m_SourcePrefab: {fileID: 100100000, guid: f54a99f0821b0a548995b8f3d12e73d4, type: 3}
 --- !u!1 &866860798 stripped
 GameObject:
@@ -49434,6 +49465,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 60241947683287275, guid: f54a99f0821b0a548995b8f3d12e73d4, type: 3}
   m_PrefabInstance: {fileID: 866860797}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &866860802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866860798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 809cb1477125a0b4b93f9c835c577da8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  temperature: 0
+  humidity: 0
+  mass: 0
+  material: {fileID: 866860799}
+  electrified: 0
+  hasParticle: 1
 --- !u!1001 &883914582
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50349,6 +50398,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5284757934704894881, guid: b10b81dcbb50ce341802c2a3982e45ba, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1019654939}
+    - targetCorrespondingSourceObject: {fileID: 5284757934704894881, guid: b10b81dcbb50ce341802c2a3982e45ba, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1019654942}
   m_SourcePrefab: {fileID: 100100000, guid: b10b81dcbb50ce341802c2a3982e45ba, type: 3}
 --- !u!1 &1019654938 stripped
 GameObject:
@@ -50403,6 +50455,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4763941972957427995, guid: b10b81dcbb50ce341802c2a3982e45ba, type: 3}
   m_PrefabInstance: {fileID: 1019654937}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1019654942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019654938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 809cb1477125a0b4b93f9c835c577da8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  temperature: 0
+  humidity: 0
+  mass: 0
+  material: {fileID: 1019654939}
+  electrified: 0
+  hasParticle: 1
 --- !u!1 &1021518333
 GameObject:
   m_ObjectHideFlags: 0
@@ -77664,6 +77734,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8186948787001174463, guid: dd7b4e5998bbd0b449bc31fa23bcf2e7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1263498264}
+    - targetCorrespondingSourceObject: {fileID: 8186948787001174463, guid: dd7b4e5998bbd0b449bc31fa23bcf2e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1263498267}
   m_SourcePrefab: {fileID: 100100000, guid: dd7b4e5998bbd0b449bc31fa23bcf2e7, type: 3}
 --- !u!1 &1263498263 stripped
 GameObject:
@@ -77718,6 +77791,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8851317261688206085, guid: dd7b4e5998bbd0b449bc31fa23bcf2e7, type: 3}
   m_PrefabInstance: {fileID: 1263498262}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1263498267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263498263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 809cb1477125a0b4b93f9c835c577da8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  temperature: 0
+  humidity: 0
+  mass: 0
+  material: {fileID: 1263498264}
+  electrified: 0
+  hasParticle: 1
 --- !u!1 &1272624727
 GameObject:
   m_ObjectHideFlags: 0
@@ -89127,6 +89218,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6279181142241701014, guid: f51c07a75b5f40d429bdcd028b5d926b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1396983292}
+    - targetCorrespondingSourceObject: {fileID: 6279181142241701014, guid: f51c07a75b5f40d429bdcd028b5d926b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1396983295}
   m_SourcePrefab: {fileID: 100100000, guid: f51c07a75b5f40d429bdcd028b5d926b, type: 3}
 --- !u!1 &1396983291 stripped
 GameObject:
@@ -89181,6 +89275,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6660807727403873836, guid: f51c07a75b5f40d429bdcd028b5d926b, type: 3}
   m_PrefabInstance: {fileID: 1396983290}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1396983295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396983291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 809cb1477125a0b4b93f9c835c577da8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  temperature: 0
+  humidity: 0
+  mass: 0
+  material: {fileID: 1396983292}
+  electrified: 0
+  hasParticle: 1
 --- !u!1 &1423507388
 GameObject:
   m_ObjectHideFlags: 0
@@ -100515,6 +100627,27 @@ MonoBehaviour:
   left_holder: {fileID: 2098726384}
   right_holder: {fileID: 659045720}
   scroll: {fileID: 2068494850}
+  parchmentOpen:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  parchmentClose:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  parchmentSpawn:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!114 &1662088152
 MonoBehaviour:
   m_ObjectHideFlags: 0
