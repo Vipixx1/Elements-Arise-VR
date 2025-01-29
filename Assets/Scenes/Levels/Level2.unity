@@ -31066,11 +31066,6 @@ SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 869462150883743412, guid: 314f6e1da20902f4ba50509fa6eb8fa8, type: 3}
   m_PrefabInstance: {fileID: 399618299}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &399618308 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 869462150021453144, guid: 314f6e1da20902f4ba50509fa6eb8fa8, type: 3}
-  m_PrefabInstance: {fileID: 399618299}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &399618309 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 869462151857947959, guid: 314f6e1da20902f4ba50509fa6eb8fa8, type: 3}
@@ -113250,6 +113245,16 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6603488554207994483, guid: 98f5378049f9b5745a77677f581b32b1, type: 3}
   m_PrefabInstance: {fileID: 1630478547}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1635078301 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 869462150446302935, guid: 314f6e1da20902f4ba50509fa6eb8fa8, type: 3}
+  m_PrefabInstance: {fileID: 399618299}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1635078302 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8549669564981053684, guid: 314f6e1da20902f4ba50509fa6eb8fa8, type: 3}
+  m_PrefabInstance: {fileID: 399618299}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1640039479
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -120745,12 +120750,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f08efdd6824d2ef4287ce5d6ba55a02d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rightFinger: {fileID: 399618314}
-  leftFinger: {fileID: 399618308}
+  rightFinger: {fileID: 1635078302}
+  leftFinger: {fileID: 1635078301}
   penSize: 20
-  tipHeight: 0.05
+  tipHeight: 0.1
   color: {r: 0, g: 0, b: 0, a: 1}
   scroll: {fileID: 842215248}
+  markerSoundEvent:
+    Guid:
+      Data1: 720713378
+      Data2: 1312540856
+      Data3: -1794401113
+      Data4: -1930875654
+    Path: event:/Parchemin/marker
 --- !u!1 &1795662643
 GameObject:
   m_ObjectHideFlags: 0

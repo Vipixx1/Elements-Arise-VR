@@ -54,9 +54,6 @@ namespace Drawing
             
             
             RecognizeShape(_boundingBoxPosition, _boundingBoxSize);
-            
-            Debug.Log("position :" + _boundingBoxPosition.x + " " + _boundingBoxPosition.y);
-            Debug.Log("size :" + _boundingBoxSize.x + " " + _boundingBoxSize.y);
         }
         
         private void RecognizeShape(Vector2 boundingBoxPosition, Vector2 boundingBoxSize)

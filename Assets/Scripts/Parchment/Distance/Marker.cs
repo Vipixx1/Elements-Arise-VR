@@ -1,12 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using FMOD.Studio;
+using FMODUnity;
 using UnityEngine;
+using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 public class Marker : MonoBehaviour
 {
     [SerializeField] private Transform rightFinger;
-    [SerializeField] private Transform? leftFinger; 
+    [SerializeField] private Transform leftFinger; 
     [SerializeField] private int penSize = 25;
     [SerializeField] private float tipHeight = 0.03f;
     [SerializeField] private Color color = Color.blue;
@@ -19,9 +23,22 @@ public class Marker : MonoBehaviour
     private bool touchedLastFrame;
     private Quaternion lastTouchRot;
 
+    [SerializeField] private EventReference markerSoundEvent;
+    private EventInstance markerSoundEventInstance;
+
     void Start()
     {
         colors = Enumerable.Repeat(color, penSize * penSize).ToArray();
+        markerSoundEventInstance = RuntimeManager.CreateInstance(markerSoundEvent);
+        RuntimeManager.AttachInstanceToGameObject(markerSoundEventInstance, scroll.gameObject);
+        markerSoundEventInstance.setParameterByName("changing_direction", 0);
+        markerSoundEventInstance.setParameterByName("end", 0);
+    }
+
+    private void OnDestroy()
+    {
+        markerSoundEventInstance.stop(STOP_MODE.ALLOWFADEOUT);
+        markerSoundEventInstance.release();
     }
 
     void Update()
@@ -47,7 +64,7 @@ public class Marker : MonoBehaviour
                 {
                     scroll = touch.transform.GetComponent<Scroll>();
                 }
-
+                
                 touchPos = new Vector2(touch.textureCoord.x, touch.textureCoord.y);
 
                 var x = (int)(touchPos.x * scroll.textureSize.x - (penSize / 2));
@@ -60,6 +77,8 @@ public class Marker : MonoBehaviour
                 if (!touchedLastFrame)
                 {
                     scroll.StartStroke();
+                    markerSoundEventInstance.setParameterByName("end", 0);
+                    markerSoundEventInstance.start();
                 }
 
                 if (touchedLastFrame)
@@ -73,7 +92,16 @@ public class Marker : MonoBehaviour
                     }
 
                     transform.rotation = lastTouchRot;
+                    
+                    float changing_direction = Vector2.Angle(lastTouchPos.normalized, new Vector2(x, y).normalized);
+                    markerSoundEventInstance.setParameterByName("changing_direction", changing_direction > 3f ? 1 : 0);
+                    
+                    float speed = Vector2.Distance(lastTouchPos, new Vector2(x, y));
+                    markerSoundEventInstance.setParameterByName("speed", speed / 100f);
                 }
+                
+                /*float speed = Vector2.Distance(lastTouchPos, new Vector2(x, y));
+                markerSoundEventInstance.setParameterByName("speed", );*/
 
                 scroll.texture.Apply();
 
@@ -84,10 +112,11 @@ public class Marker : MonoBehaviour
                 return;
             }
         }
-
+        
         if (touchedLastFrame)
         {
             scroll.FinalizeStroke();
+            markerSoundEventInstance.setParameterByName("end", 1);
         }
 
         //scroll = null;

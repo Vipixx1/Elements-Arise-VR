@@ -812,12 +812,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f08efdd6824d2ef4287ce5d6ba55a02d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rightFinger: {fileID: 850720714}
-  leftFinger: {fileID: 850720708}
+  rightFinger: {fileID: 783400571}
+  leftFinger: {fileID: 1194638237}
   penSize: 20
-  tipHeight: 0.05
+  tipHeight: 0.1
   color: {r: 0, g: 0, b: 0, a: 1}
   scroll: {fileID: 1869199676}
+  markerSoundEvent:
+    Guid:
+      Data1: 720713378
+      Data2: 1312540856
+      Data3: -1794401113
+      Data4: -1930875654
+    Path: event:/Parchemin/marker
 --- !u!1 &71412955 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 916917378494744782, guid: 98f5378049f9b5745a77677f581b32b1, type: 3}
@@ -46407,6 +46414,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9051238300485817969, guid: 2f6c4572e07a60b43b00e1c4f489a806, type: 3}
   m_PrefabInstance: {fileID: 782271160}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &783400571 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8549669564981053684, guid: 314f6e1da20902f4ba50509fa6eb8fa8, type: 3}
+  m_PrefabInstance: {fileID: 850720699}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &809153961
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51571,6 +51583,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 869462151194653010, guid: 314f6e1da20902f4ba50509fa6eb8fa8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.01544
+      objectReference: {fileID: 0}
+    - target: {fileID: 869462151194653010, guid: 314f6e1da20902f4ba50509fa6eb8fa8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.00173
+      objectReference: {fileID: 0}
+    - target: {fileID: 869462151194653010, guid: 314f6e1da20902f4ba50509fa6eb8fa8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.00001
+      objectReference: {fileID: 0}
     - target: {fileID: 869462151857947959, guid: 314f6e1da20902f4ba50509fa6eb8fa8, type: 3}
       propertyPath: m_TagString
       value: LeftHand
@@ -51819,11 +51843,6 @@ MonoBehaviour:
 --- !u!137 &850720707 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 869462150883743412, guid: 314f6e1da20902f4ba50509fa6eb8fa8, type: 3}
-  m_PrefabInstance: {fileID: 850720699}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &850720708 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 869462150021453144, guid: 314f6e1da20902f4ba50509fa6eb8fa8, type: 3}
   m_PrefabInstance: {fileID: 850720699}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &850720709 stripped
@@ -64849,6 +64868,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!4 &1194638237 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 869462150446302935, guid: 314f6e1da20902f4ba50509fa6eb8fa8, type: 3}
+  m_PrefabInstance: {fileID: 850720699}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1208131095
 GameObject:
   m_ObjectHideFlags: 0

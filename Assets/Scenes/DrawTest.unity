@@ -179,9 +179,6 @@ MonoBehaviour:
   scrollSpellResult: {fileID: 599347058}
   texture: {fileID: 0}
   textureSize: {x: 512, y: 512}
-  EraseScrollEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!64 &1836449
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -495,6 +492,27 @@ MonoBehaviour:
   left_holder: {fileID: 0}
   right_holder: {fileID: 0}
   scroll: {fileID: 1836448}
+  parchmentOpen:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  parchmentClose:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  parchmentSpawn:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!114 &560796721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -965,6 +983,27 @@ MonoBehaviour:
   left_holder: {fileID: 0}
   right_holder: {fileID: 0}
   scroll: {fileID: 1919799189}
+  parchmentOpen:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  parchmentClose:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  parchmentSpawn:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!114 &757304670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -983,6 +1022,13 @@ MonoBehaviour:
   tipHeight: 0.03
   color: {r: 0, g: 0, b: 1, a: 1}
   scroll: {fileID: 1919799189}
+  markerSoundEvent:
+    Guid:
+      Data1: 720713378
+      Data2: 1312540856
+      Data3: -1794401113
+      Data4: -1930875654
+    Path: event:/Parchemin/marker
 --- !u!1 &923756230
 GameObject:
   m_ObjectHideFlags: 0
@@ -2115,9 +2161,6 @@ MonoBehaviour:
   scrollSpellResult: {fileID: 0}
   texture: {fileID: 0}
   textureSize: {x: 500, y: 500}
-  EraseScrollEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!64 &1919799190
 MeshCollider:
   m_ObjectHideFlags: 0
