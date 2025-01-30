@@ -14,7 +14,7 @@ public class Scroll : MonoBehaviour
     public List<Point> Points { get; private set; } = new List<Point>();
     private int strokeId = -1; // Keeps track of strokes
 
-    //public UnityEvent EraseScrollEvent;
+    public UnityEvent EraseScrollEvent;
 
     void Start()
     {
@@ -49,7 +49,7 @@ public class Scroll : MonoBehaviour
         {
             scrollSpellResult.gameObject.GetComponent<Renderer>().enabled = false;
         }
-        //EraseScrollEvent?.Invoke();
+        EraseScrollEvent?.Invoke();
     }
 
     public void StartStroke()

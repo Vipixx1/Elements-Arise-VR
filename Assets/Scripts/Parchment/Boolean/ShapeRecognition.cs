@@ -34,7 +34,7 @@ namespace Drawing
             _renderer = GetComponent<Renderer>();
             scroll = GetComponent<Scroll>();
             marker.writingUnityEvent.AddListener(CheckForBoundingBox);
-            //scroll.EraseScrollEvent.AddListener(ResetBoundingBox);
+            scroll.EraseScrollEvent.AddListener(ResetBoundingBox);
             ResetBoundingBox();
         }
     
