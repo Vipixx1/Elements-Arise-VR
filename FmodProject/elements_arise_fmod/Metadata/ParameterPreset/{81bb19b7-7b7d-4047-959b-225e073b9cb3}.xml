@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{81bb19b7-7b7d-4047-959b-225e073b9cb3}">
+		<property name="name">
+			<value>element</value>
+		</property>
+		<relationship name="folder">
+			<destination>{104331f6-59c5-49d0-b6c5-2eb591adc598}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{52c792e2-bd50-4f13-9a3d-80e89363f270}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{52c792e2-bd50-4f13-9a3d-80e89363f270}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>10</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>FIRE</value>
+			<value>EARTH</value>
+			<value>ICE</value>
+			<value>PLANT</value>
+			<value>SAND</value>
+			<value>STEAM</value>
+			<value>THUNDER</value>
+			<value>VOLCANO</value>
+			<value>WATER</value>
+			<value>WIND</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
