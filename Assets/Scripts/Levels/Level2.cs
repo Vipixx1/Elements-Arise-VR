@@ -45,7 +45,7 @@ public class Level2 : MonoBehaviour
             bool check = true;
 
             foreach (var crystal in crystals)
-                if (!crystal.IsActivated()) check = false;
+                if (!crystal.IsActivated) check = false;
 
             if (secretDoor == null)
                 check = true;

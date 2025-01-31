@@ -6,7 +6,7 @@ using Material = Magic.Materials.Material;
 
 public class CrystalMaterial : Material
 {
-    bool isActivated = false;
+    public bool IsActivated { get => timeRemaining > 0; }
     [SerializeField] float MaxDuration = 20;
     [SerializeField] SpellType spellType;
     float timeRemaining;
@@ -19,21 +19,22 @@ public class CrystalMaterial : Material
         baseMaterial = mat.material;
     }
 
-
     private void Update()
     {
         if (timeRemaining < 0)
         {
-            //mat.material.SetColor("_EmissionColor", mat.material.GetColor("_Color") * 0);
             mat.material.color = baseMaterial.color;
-        } else 
+        }
+        else
+        {
             timeRemaining -= Time.deltaTime;
+        }
     }
 
     public override void OnEarth(ObjectData data, float[] args = null)
     {
         base.OnEarth(data, args);
-        mat.material.color = new Color32(139, 69, 19,0);
+        mat.material.color = new Color32(139, 69, 19, 0);
         mat.material.SetColor("_EmissionColor", mat.material.GetColor("_Color") * 0);
         if (spellType == SpellType.EARTH)
             Glow();
@@ -78,7 +79,7 @@ public class CrystalMaterial : Material
     public override void OnSand(ObjectData data, float[] args = null)
     {
         base.OnSand(data, args);
-        mat.material.color = new Color32(244, 164, 96,0);
+        mat.material.color = new Color32(244, 164, 96, 0);
         mat.material.SetColor("_EmissionColor", mat.material.GetColor("_Color") * 0);
         if (spellType == SpellType.SAND)
             Glow();
@@ -87,7 +88,7 @@ public class CrystalMaterial : Material
     public override void OnSteam(ObjectData data, float[] args = null)
     {
         base.OnSteam(data, args);
-        mat.material.color = new Color32(135, 206, 235,0);
+        mat.material.color = new Color32(135, 206, 235, 0);
         mat.material.SetColor("_EmissionColor", mat.material.GetColor("_Color") * 0);
         if (spellType == SpellType.STEAM)
             Glow();
@@ -114,12 +115,11 @@ public class CrystalMaterial : Material
     public override void OnWind(ObjectData data, float[] args = null)
     {
         base.OnWind(data, args);
-        mat.material.color = new Color32(152, 251, 152,0);
+        mat.material.color = new Color32(152, 251, 152, 0);
         mat.material.SetColor("_EmissionColor", mat.material.GetColor("_Color") * 0);
         if (spellType == SpellType.WIND)
             Glow();
     }
-
 
     private void Glow()
     {
@@ -127,8 +127,4 @@ public class CrystalMaterial : Material
         timeRemaining = MaxDuration;
     }
 
-    public bool IsActivated()
-    {
-        return timeRemaining > 0;
-    }
 }

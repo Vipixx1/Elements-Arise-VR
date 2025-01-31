@@ -9,7 +9,7 @@ public class Sandbox: MonoBehaviour
 {
     [SerializeField] DrawingRecognizer drawingRecognizer;
 
-    private void Start()
+    private void Awake()
     {
         drawingRecognizer.CanDrawFire = true;
         drawingRecognizer.CanDrawWater = true;
