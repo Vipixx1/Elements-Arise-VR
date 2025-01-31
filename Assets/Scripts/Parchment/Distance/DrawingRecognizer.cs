@@ -17,8 +17,19 @@ public class DrawingRecognizer : MonoBehaviour
     private string gestureClass;
 
     [SerializeField] private Scroll scroll;
-
     [SerializeField] private ScrollSpellResult scrollSpellResult;
+
+    public bool CanDrawFire { get; set; } = false;
+    public bool CanDrawWater { get; set; } = false;
+    public bool CanDrawEarth { get; set; } = false;
+    public bool CanDrawWind { get; set; } = false;
+    public bool CanDrawThunder { get; set; } = false;
+    public bool CanDrawSand { get; set; } = false;
+    public bool CanDrawVolcano { get; set; } = false;
+    public bool CanDrawIce { get; set; } = false;
+    public bool CanDrawPlant { get; set; } = false;
+    public bool CanDrawSteam { get; set; } = false;
+
 
     void Awake()
     {
@@ -140,61 +151,61 @@ public class DrawingRecognizer : MonoBehaviour
         scrollSpellResult.transform.position = scroll.transform.position - scroll.transform.TransformDirection(Vector3.forward * 0.25f);
         scrollSpellResult.gameObject.SetActive(true);
 
-        if (gestureClass.StartsWith("earth"))
+        if (gestureClass.StartsWith("earth") && CanDrawEarth)
         {
             message = "Earth (Square)";
             scrollSpellResult.SetCurrentSpellElement("earth");
             selectedParticles = scrollSpellResult.transform.Find("EarthParticles").GetComponent<ParticleSystem>();
         }
-        else if (gestureClass.StartsWith("fire"))
+        else if (gestureClass.StartsWith("fire") && CanDrawFire)
         {
             message = "Fire (Triangle)";
             scrollSpellResult.SetCurrentSpellElement("fire");
             selectedParticles = scrollSpellResult.transform.Find("FireParticles").GetComponent<ParticleSystem>();
         }
-        else if (gestureClass.StartsWith("water"))
+        else if (gestureClass.StartsWith("water") && CanDrawWater)
         {
             message = "Water (Circle)";
             scrollSpellResult.SetCurrentSpellElement("water");
             selectedParticles = scrollSpellResult.transform.Find("WaterParticles").GetComponent<ParticleSystem>();
         }
-        else if (gestureClass.StartsWith("wind"))
+        else if (gestureClass.StartsWith("wind") && CanDrawWind)
         {
             message = "Wind (Spiral)";
             scrollSpellResult.SetCurrentSpellElement("wind");
             selectedParticles = scrollSpellResult.transform.Find("WindParticles").GetComponent<ParticleSystem>();
         }
-        else if (gestureClass.StartsWith("thunder"))
+        else if (gestureClass.StartsWith("thunder") && CanDrawThunder)
         {
             message = "Thunder (Lightning)";
             scrollSpellResult.SetCurrentSpellElement("thunder");
             selectedParticles = scrollSpellResult.transform.Find("ThunderParticles").GetComponent<ParticleSystem>();
         }
-        else if (gestureClass.StartsWith("sand"))
+        else if (gestureClass.StartsWith("sand") && CanDrawSand)
         {
             message = "Sand (Hourglass)";
             scrollSpellResult.SetCurrentSpellElement("sand");
             selectedParticles = scrollSpellResult.transform.Find("SandParticles").GetComponent<ParticleSystem>();
         }
-        else if (gestureClass.StartsWith("volcano"))
+        else if (gestureClass.StartsWith("volcano") && CanDrawVolcano)
         {
             message = "Volcano (M)";
             scrollSpellResult.SetCurrentSpellElement("volcano");
             selectedParticles = scrollSpellResult.transform.Find("VolcanoParticles").GetComponent<ParticleSystem>();
         }
-        else if (gestureClass.StartsWith("ice"))
+        else if (gestureClass.StartsWith("ice") && CanDrawIce)
         {
             message = "Ice (Diamond)";
             scrollSpellResult.SetCurrentSpellElement("ice");
             selectedParticles = scrollSpellResult.transform.Find("IceParticles").GetComponent<ParticleSystem>();
         }
-        else if (gestureClass.StartsWith("plant"))
+        else if (gestureClass.StartsWith("plant") && CanDrawPlant)
         {
             message = "Plant (Leaf)";
             scrollSpellResult.SetCurrentSpellElement("plant");
             selectedParticles = scrollSpellResult.transform.Find("PlantParticles").GetComponent<ParticleSystem>();
         }
-        else if (gestureClass.StartsWith("steam"))
+        else if (gestureClass.StartsWith("steam") && CanDrawSteam)
         {
             message = "Steam (3 Lines)";
             scrollSpellResult.SetCurrentSpellElement("steam");
@@ -203,6 +214,7 @@ public class DrawingRecognizer : MonoBehaviour
         else
         {
             scrollSpellResult.SetCurrentSpellElement("Unknown");
+            scrollSpellResult.gameObject.SetActive(false);
         }
 
         for (int i = 0; i < allParticles.Length; i++)

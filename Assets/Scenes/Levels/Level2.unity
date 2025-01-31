@@ -12835,6 +12835,9 @@ MonoBehaviour:
   secretDoor: {fileID: 965177004}
   door: {fileID: 2002328877}
   floor: {fileID: 1080574932}
+  drawingRecognizer: {fileID: 1793388916}
+  questionMarkImage: {fileID: 1425536806}
+  iceImage: {fileID: 109661153}
 --- !u!114 &169014336
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FusionStarter : MonoBehaviour
 {
-    [SerializeField]private ShootingManager receiver;
+    [SerializeField] private ShootingManager receiver;
 
     private void OnCollisionEnter(Collision collision)
     {

@@ -26,7 +26,6 @@ public class ShootingManager : MonoBehaviour
     public Vector3? firstWindSpell;
     public Vector3? secondWindSpell;
 
-
     [SerializeField] private GameObject fireSpell;
     [SerializeField] private GameObject waterSpell;
     [SerializeField] private GameObject earthSpell;
@@ -39,6 +38,8 @@ public class ShootingManager : MonoBehaviour
     [SerializeField] private GameObject sandSpell;
 
     [SerializeField] private EventReference shootEventReference;
+
+    public static event System.Action<string> OnSpellFusion;
 
     private void OnEnable()
     {
@@ -103,19 +104,15 @@ public class ShootingManager : MonoBehaviour
         switch (element.ToLower())
         {
             case "fire":
-                
                 spell = Instantiate(fireSpell, handTransform.position, handTransform.rotation);
                 break;
             case "water":
- 
                 spell = Instantiate(waterSpell, handTransform.position, handTransform.rotation);
                 break;
             case "earth":
-
                 spell = Instantiate(earthSpell, handTransform.position, handTransform.rotation);
                 break;
             case "wind":
-
                 spell = Instantiate(windSpell, handTransform.position, handTransform.rotation);
                 break;
             case "ice":
@@ -136,9 +133,8 @@ public class ShootingManager : MonoBehaviour
             case "sand":
                 spell = Instantiate(sandSpell, handTransform.position, handTransform.rotation);
                 break;
-            
             default:
-                Debug.LogWarning($"Aucun script trouv� pour l'�l�ment {element}. Sort par d�faut utilis�.");
+                //Debug.LogWarning($"Aucun script trouv� pour l'�l�ment {element}. Sort par d�faut utilis�.");
                 spell = Instantiate(fireSpell, handTransform.position, handTransform.rotation);
                 break;
         }
@@ -152,7 +148,6 @@ public class ShootingManager : MonoBehaviour
 
     public void WindFieldPlacement(Vector3 spellPosition)
     {
-
         bool windFieldReady = false;
 
         if (firstWindSpell == null)
@@ -187,36 +182,41 @@ public class ShootingManager : MonoBehaviour
 
     public void FuseSpell()
     {
-
         List<string> handElements = new List<string> { leftHandElement.ToLower(), rightHandElement.ToLower() };
 
         if (handElements.Contains("fire") && handElements.Contains("water"))
         {
+            OnSpellFusion.Invoke("steam");
             AssignSpellToBothHands("steam");
         }
 
         else if (handElements.Contains("fire") && handElements.Contains("earth"))
         {
+            OnSpellFusion.Invoke("volcano");
             AssignSpellToBothHands("volcano");
         }
         
         else if (handElements.Contains("fire") && handElements.Contains("wind"))
         {
+            OnSpellFusion.Invoke("thunder");
             AssignSpellToBothHands("thunder");
         }
 
         else if (handElements.Contains("earth") && handElements.Contains("water"))
         {
+
             AssignSpellToBothHands("plant");
         }
 
         else if (handElements.Contains("wind") && handElements.Contains("water"))
-        {
+        {   
+            OnSpellFusion.Invoke("ice");
             AssignSpellToBothHands("ice");
         }
 
         else if (handElements.Contains("earth") && handElements.Contains("wind"))
         {
+            OnSpellFusion.Invoke("sand");
             AssignSpellToBothHands("sand");
         }
 

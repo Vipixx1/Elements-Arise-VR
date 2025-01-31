@@ -11,10 +11,12 @@ public class CrystalMaterial : Material
     [SerializeField] SpellType spellType;
     float timeRemaining;
     Renderer mat;
+    UnityEngine.Material baseMaterial;
 
     private void Start()
     {
         mat = GetComponent<Renderer>();
+        baseMaterial = mat.material;
     }
 
 
@@ -22,15 +24,16 @@ public class CrystalMaterial : Material
     {
         if (timeRemaining < 0)
         {
-            mat.material.SetColor("_EmissionColor", mat.material.GetColor("_Color") * 0);
+            //mat.material.SetColor("_EmissionColor", mat.material.GetColor("_Color") * 0);
+            mat.material.color = baseMaterial.color;
         } else 
             timeRemaining -= Time.deltaTime;
     }
 
     public override void OnEarth(ObjectData data, float[] args = null)
     {
-        base.OnEarth(data);
-        mat.material.color =new Color32(139, 69, 19,0);
+        base.OnEarth(data, args);
+        mat.material.color = new Color32(139, 69, 19,0);
         mat.material.SetColor("_EmissionColor", mat.material.GetColor("_Color") * 0);
         if (spellType == SpellType.EARTH)
             Glow();
@@ -38,7 +41,7 @@ public class CrystalMaterial : Material
 
     public override void OnFire(ObjectData data, float[] args = null)
     {
-        base.OnFire(data);
+        base.OnFire(data, args);
         mat.material.color = Color.red;
         mat.material.SetColor("_EmissionColor", mat.material.GetColor("_Color") * 0);
         if (spellType == SpellType.FIRE)
@@ -47,7 +50,7 @@ public class CrystalMaterial : Material
 
     public override void OnVolcano(ObjectData data, float[] args = null)
     {
-        base.OnVolcano(data);
+        base.OnVolcano(data, args);
         mat.material.color = Color.black;
         mat.material.SetColor("_EmissionColor", mat.material.GetColor("_Color") * 0);
         if (spellType == SpellType.VOLCANO)
@@ -56,7 +59,7 @@ public class CrystalMaterial : Material
 
     public override void OnIce(ObjectData data, float[] args = null)
     {
-        base.OnIce(data);
+        base.OnIce(data, args);
         mat.material.color = Color.cyan;
         mat.material.SetColor("_EmissionColor", mat.material.GetColor("_Color") * 0);
         if (spellType == SpellType.ICE)
@@ -65,7 +68,7 @@ public class CrystalMaterial : Material
 
     public override void OnPlant(ObjectData data, float[] args = null)
     {
-        base.OnPlant(data);
+        base.OnPlant(data, args);
         mat.material.color = Color.green;
         mat.material.SetColor("_EmissionColor", mat.material.GetColor("_Color") * 0);
         if (spellType == SpellType.PLANT)
@@ -74,7 +77,7 @@ public class CrystalMaterial : Material
 
     public override void OnSand(ObjectData data, float[] args = null)
     {
-        base.OnSand(data);
+        base.OnSand(data, args);
         mat.material.color = new Color32(244, 164, 96,0);
         mat.material.SetColor("_EmissionColor", mat.material.GetColor("_Color") * 0);
         if (spellType == SpellType.SAND)
@@ -83,7 +86,7 @@ public class CrystalMaterial : Material
 
     public override void OnSteam(ObjectData data, float[] args = null)
     {
-        base.OnSteam(data);
+        base.OnSteam(data, args);
         mat.material.color = new Color32(135, 206, 235,0);
         mat.material.SetColor("_EmissionColor", mat.material.GetColor("_Color") * 0);
         if (spellType == SpellType.STEAM)
@@ -92,7 +95,7 @@ public class CrystalMaterial : Material
 
     public override void OnThunder(ObjectData data, float[] args = null)
     {
-        base.OnThunder(data);
+        base.OnThunder(data, args);
         mat.material.color = Color.yellow;
         mat.material.SetColor("_EmissionColor", mat.material.GetColor("_Color") * 0);
         if (spellType == SpellType.THUNDER)
@@ -101,7 +104,7 @@ public class CrystalMaterial : Material
 
     public override void OnWater(ObjectData data, float[] args = null)
     {
-        base.OnWater(data);
+        base.OnWater(data, args);
         mat.material.color = Color.blue;
         mat.material.SetColor("_EmissionColor", mat.material.GetColor("_Color") * 0);
         if (spellType == SpellType.WATER)
@@ -110,7 +113,7 @@ public class CrystalMaterial : Material
 
     public override void OnWind(ObjectData data, float[] args = null)
     {
-        base.OnWind(data);
+        base.OnWind(data, args);
         mat.material.color = new Color32(152, 251, 152,0);
         mat.material.SetColor("_EmissionColor", mat.material.GetColor("_Color") * 0);
         if (spellType == SpellType.WIND)
@@ -120,8 +123,7 @@ public class CrystalMaterial : Material
 
     private void Glow()
     {
-        Debug.Log("oui");
-        mat.material.SetColor("_EmissionColor", mat.material.GetColor("_Color")*10);
+        mat.material.SetColor("_EmissionColor", mat.material.GetColor("_Color") * 10);
         timeRemaining = MaxDuration;
     }
 

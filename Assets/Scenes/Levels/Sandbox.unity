@@ -89106,8 +89106,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1380890927}
-  - component: {fileID: 1380890926}
   - component: {fileID: 1380890928}
+  - component: {fileID: 1380890929}
   m_Layer: 0
   m_Name: Level Manager
   m_TagString: Untagged
@@ -89115,18 +89115,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1380890926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1380890925}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14c5c7f699c3b7047a50dcd1a19e1908, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1380890927
 Transform:
   m_ObjectHideFlags: 0
@@ -89156,6 +89144,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menu: {fileID: 1208995953}
   playerPos: {fileID: 1082852566}
+--- !u!114 &1380890929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380890925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a208a355864f8e47b132479c28cba38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drawingRecognizer: {fileID: 822019409}
 --- !u!1001 &1396983290
 PrefabInstance:
   m_ObjectHideFlags: 0

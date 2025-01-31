@@ -7,11 +7,36 @@ public class Level2 : MonoBehaviour
 {
     [SerializeField] CrystalMaterial[] crystals;
     [SerializeField] GameObject secretDoor;
-
     [SerializeField] GameObject door;
 
     [SerializeField] GameObject floor;
 
+    [SerializeField] DrawingRecognizer drawingRecognizer;
+
+    [SerializeField] GameObject questionMarkImage;
+    [SerializeField] GameObject iceImage;
+
+    private void OnEnable()
+    {
+        ShootingManager.OnSpellFusion += EnableDrawingFusion;
+    }
+
+    private void Start()
+    {
+        drawingRecognizer.CanDrawFire = true;
+        drawingRecognizer.CanDrawWater = true;
+        drawingRecognizer.CanDrawEarth = true;
+        drawingRecognizer.CanDrawWind = true;
+        drawingRecognizer.CanDrawThunder = false;
+        drawingRecognizer.CanDrawSand = false;
+        drawingRecognizer.CanDrawVolcano = false;
+        drawingRecognizer.CanDrawIce = false;
+        drawingRecognizer.CanDrawPlant = false;
+        drawingRecognizer.CanDrawSteam = false;
+
+        questionMarkImage.SetActive(true);
+        iceImage.SetActive(false);
+    }
 
     private void Update()
     {
@@ -46,5 +71,15 @@ public class Level2 : MonoBehaviour
     void SetInteractable(GameObject item)
     {
         item.GetComponent<TeleportInteractable>().AllowTeleport = true;
+    }
+
+    void EnableDrawingFusion(string element)
+    {
+        if (element == "ice")
+        {
+            questionMarkImage.SetActive(false);
+            iceImage.SetActive(true);
+            drawingRecognizer.CanDrawIce = true;
+        }
     }
 }
