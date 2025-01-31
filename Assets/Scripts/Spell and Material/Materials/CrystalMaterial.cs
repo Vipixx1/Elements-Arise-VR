@@ -1,130 +1,120 @@
 using Magic.Materials;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Material = Magic.Materials.Material;
 
 public class CrystalMaterial : Material
 {
-    public bool IsActivated { get => timeRemaining > 0; }
-    [SerializeField] float MaxDuration = 20;
-    [SerializeField] SpellType spellType;
-    float timeRemaining;
-    Renderer mat;
-    UnityEngine.Material baseMaterial;
+    public bool IsActivated => timeRemaining > 0;
+
+    [SerializeField] private float maxDuration = 15f;
+    [SerializeField] private SpellType spellType;
+
+    private Renderer crystalRenderer;
+    private MaterialPropertyBlock propertyBlock;
+
+    private Color baseColor;
+    private Color spellColor;
+
+    private float timeRemaining = 0f;
+
+    private static readonly float BlinkDuration = 1.0f;
+    private static readonly float BlinkInterval = 0.1f;
 
     private void Start()
     {
-        mat = GetComponent<Renderer>();
-        baseMaterial = mat.material;
+        crystalRenderer = GetComponent<Renderer>();
+        propertyBlock = new MaterialPropertyBlock();
+
+        // Initialize base color from the material
+        crystalRenderer.GetPropertyBlock(propertyBlock);
+        baseColor = crystalRenderer.sharedMaterial.color;
+        ResetCrystal();
     }
 
     private void Update()
     {
-        if (timeRemaining < 0)
-        {
-            mat.material.color = baseMaterial.color;
-        }
-        else
+        if (IsActivated)
         {
             timeRemaining -= Time.deltaTime;
+            Debug.Log(timeRemaining);
+
+            if (timeRemaining <= 0)
+            {
+                ResetCrystal();
+            }
         }
     }
 
-    public override void OnEarth(ObjectData data, float[] args = null)
+    public override void OnEarth(ObjectData data, float[] args = null) => ActivateCrystal(new Color32(139, 69, 19, 200), SpellType.EARTH);
+
+    public override void OnFire(ObjectData data, float[] args = null) => ActivateCrystal(Color.red, SpellType.FIRE);
+
+    public override void OnVolcano(ObjectData data, float[] args = null) => ActivateCrystal(new Color32(60, 0, 0, 255), SpellType.VOLCANO);
+
+    public override void OnIce(ObjectData data, float[] args = null) => ActivateCrystal(Color.cyan, SpellType.ICE);
+
+    public override void OnPlant(ObjectData data, float[] args = null) => ActivateCrystal(Color.green, SpellType.PLANT);
+
+    public override void OnSand(ObjectData data, float[] args = null) => ActivateCrystal(new Color32(244, 164, 96, 200), SpellType.SAND);
+
+    public override void OnSteam(ObjectData data, float[] args = null) => ActivateCrystal(new Color32(130, 130, 130, 200), SpellType.STEAM);
+
+    public override void OnThunder(ObjectData data, float[] args = null) => ActivateCrystal(Color.yellow, SpellType.THUNDER);
+
+    public override void OnWater(ObjectData data, float[] args = null) => ActivateCrystal(Color.blue, SpellType.WATER);
+
+    public override void OnWind(ObjectData data, float[] args = null) => ActivateCrystal(new Color32(0, 255, 130, 200), SpellType.WIND);
+
+    private void ActivateCrystal(Color color, SpellType type)
     {
-        base.OnEarth(data, args);
-        mat.material.color = new Color32(139, 69, 19, 0);
-        mat.material.SetColor("_EmissionColor", mat.material.GetColor("_Color") * 0);
-        if (spellType == SpellType.EARTH)
-            Glow();
+        spellColor = color;
+        timeRemaining = 0f;
+
+        StopAllCoroutines(); // Stop any ongoing effects to avoid conflicts
+        StartCoroutine(BlinkEffect());
+        if (spellType == type)
+        {
+            timeRemaining = maxDuration;
+            StartCoroutine(GlowEffect());
+        }
     }
 
-    public override void OnFire(ObjectData data, float[] args = null)
+    private IEnumerator BlinkEffect()
     {
-        base.OnFire(data, args);
-        mat.material.color = Color.red;
-        mat.material.SetColor("_EmissionColor", mat.material.GetColor("_Color") * 0);
-        if (spellType == SpellType.FIRE)
-            Glow();
+        float elapsed = 0f;
+
+        while (elapsed < BlinkDuration)
+        {
+            SetCrystalColor(spellColor);
+            yield return new WaitForSeconds(BlinkInterval);
+            SetCrystalColor(baseColor);
+            yield return new WaitForSeconds(BlinkInterval);
+
+            elapsed += BlinkInterval * 2;
+        }
     }
 
-    public override void OnVolcano(ObjectData data, float[] args = null)
+    private IEnumerator GlowEffect()
     {
-        base.OnVolcano(data, args);
-        mat.material.color = Color.black;
-        mat.material.SetColor("_EmissionColor", mat.material.GetColor("_Color") * 0);
-        if (spellType == SpellType.VOLCANO)
-            Glow();
+        timeRemaining = maxDuration;
+        yield return new WaitForSeconds(BlinkDuration);
+
+        // Glow for the remaining duration
+        SetCrystalColor(spellColor);
+        yield return new WaitForSeconds(maxDuration - BlinkDuration);
     }
 
-    public override void OnIce(ObjectData data, float[] args = null)
+    private void ResetCrystal()
     {
-        base.OnIce(data, args);
-        mat.material.color = Color.cyan;
-        mat.material.SetColor("_EmissionColor", mat.material.GetColor("_Color") * 0);
-        if (spellType == SpellType.ICE)
-            Glow();
+        SetCrystalColor(baseColor);
+        crystalRenderer.SetPropertyBlock(propertyBlock);
     }
 
-    public override void OnPlant(ObjectData data, float[] args = null)
+    private void SetCrystalColor(Color color)
     {
-        base.OnPlant(data, args);
-        mat.material.color = Color.green;
-        mat.material.SetColor("_EmissionColor", mat.material.GetColor("_Color") * 0);
-        if (spellType == SpellType.PLANT)
-            Glow();
+        crystalRenderer.GetPropertyBlock(propertyBlock);
+        propertyBlock.SetColor("_Color", color);
+        crystalRenderer.SetPropertyBlock(propertyBlock);
     }
-
-    public override void OnSand(ObjectData data, float[] args = null)
-    {
-        base.OnSand(data, args);
-        mat.material.color = new Color32(244, 164, 96, 0);
-        mat.material.SetColor("_EmissionColor", mat.material.GetColor("_Color") * 0);
-        if (spellType == SpellType.SAND)
-            Glow();
-    }
-
-    public override void OnSteam(ObjectData data, float[] args = null)
-    {
-        base.OnSteam(data, args);
-        mat.material.color = new Color32(135, 206, 235, 0);
-        mat.material.SetColor("_EmissionColor", mat.material.GetColor("_Color") * 0);
-        if (spellType == SpellType.STEAM)
-            Glow();
-    }
-
-    public override void OnThunder(ObjectData data, float[] args = null)
-    {
-        base.OnThunder(data, args);
-        mat.material.color = Color.yellow;
-        mat.material.SetColor("_EmissionColor", mat.material.GetColor("_Color") * 0);
-        if (spellType == SpellType.THUNDER)
-            Glow();
-    }
-
-    public override void OnWater(ObjectData data, float[] args = null)
-    {
-        base.OnWater(data, args);
-        mat.material.color = Color.blue;
-        mat.material.SetColor("_EmissionColor", mat.material.GetColor("_Color") * 0);
-        if (spellType == SpellType.WATER)
-            Glow();
-    }
-
-    public override void OnWind(ObjectData data, float[] args = null)
-    {
-        base.OnWind(data, args);
-        mat.material.color = new Color32(152, 251, 152, 0);
-        mat.material.SetColor("_EmissionColor", mat.material.GetColor("_Color") * 0);
-        if (spellType == SpellType.WIND)
-            Glow();
-    }
-
-    private void Glow()
-    {
-        mat.material.SetColor("_EmissionColor", mat.material.GetColor("_Color") * 10);
-        timeRemaining = MaxDuration;
-    }
-
 }

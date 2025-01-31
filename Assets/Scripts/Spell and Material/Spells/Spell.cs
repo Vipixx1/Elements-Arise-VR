@@ -31,7 +31,6 @@ public class Spell : MonoBehaviour
     {
         data.Temperature += temperature;
         data.Humidity += humidity;
-        Debug.Log(data.Material);
     }
 
     public void DestroySpell()
