@@ -44,9 +44,6 @@ public class ShootingManager : MonoBehaviour
     private void OnEnable()
     {
         ScrollSpellResult.OnSpellReady += AssignSpellToHand;
-#if  UNITY_EDITOR
-        AssignSpellToHand("fire", "RightHand");
-#endif
         
     }
 
@@ -204,7 +201,7 @@ public class ShootingManager : MonoBehaviour
 
         else if (handElements.Contains("earth") && handElements.Contains("water"))
         {
-
+            OnSpellFusion.Invoke("plant");
             AssignSpellToBothHands("plant");
         }
 

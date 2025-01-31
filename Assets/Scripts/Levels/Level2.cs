@@ -6,8 +6,9 @@ using UnityEngine;
 public class Level2 : MonoBehaviour
 {
     [SerializeField] CrystalMaterial[] crystals;
-    [SerializeField] GameObject secretDoor;
     [SerializeField] GameObject door;
+
+    [SerializeField] GameObject plank;
 
     [SerializeField] GameObject floor;
 
@@ -19,6 +20,11 @@ public class Level2 : MonoBehaviour
     private void OnEnable()
     {
         ShootingManager.OnSpellFusion += EnableDrawingFusion;
+    }
+
+    private void OnDisable()
+    {
+        ShootingManager.OnSpellFusion -= EnableDrawingFusion;
     }
 
     private void Start()
@@ -47,7 +53,7 @@ public class Level2 : MonoBehaviour
             foreach (var crystal in crystals)
                 if (!crystal.IsActivated) check = false;
 
-            if (secretDoor == null)
+            if (plank == null)
                 check = true;
 
             if (door.gameObject.GetComponent<Rigidbody>().GetAccumulatedForce() != Vector3.zero)
@@ -55,14 +61,10 @@ public class Level2 : MonoBehaviour
 
             if (check)
             {
-                Destroy(door);
+                if (door != null) Destroy(door);
                 foreach (Transform carpet in floor.transform)
                 {
                     SetInteractable(carpet.gameObject);
-                    foreach (Transform carpet2 in carpet.transform)
-                    {
-                        SetInteractable(carpet2.gameObject);
-                    }
                 }
             }
         }

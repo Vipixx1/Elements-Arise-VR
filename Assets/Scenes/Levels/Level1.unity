@@ -374,23 +374,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9104281762484906198, guid: 76dc94dbef5a3404f89e12be649fb7f2, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9104281762484906198, guid: 76dc94dbef5a3404f89e12be649fb7f2, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9104281762484906198, guid: 76dc94dbef5a3404f89e12be649fb7f2, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9104281762484906198, guid: 76dc94dbef5a3404f89e12be649fb7f2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.900001
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 9104281762484906198, guid: 76dc94dbef5a3404f89e12be649fb7f2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 9104281762484906198, guid: 76dc94dbef5a3404f89e12be649fb7f2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -423,6 +423,10 @@ PrefabInstance:
     - target: {fileID: 9104281762484906198, guid: 76dc94dbef5a3404f89e12be649fb7f2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9104281762484906198, guid: 76dc94dbef5a3404f89e12be649fb7f2, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1523,35 +1527,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 998137702962600507, guid: 486ef80a673f6c941a1a7252af6a5de0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.1
+      value: -11.5
       objectReference: {fileID: 0}
     - target: {fileID: 998137702962600507, guid: 486ef80a673f6c941a1a7252af6a5de0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1
+      value: 0.90000004
       objectReference: {fileID: 0}
     - target: {fileID: 998137702962600507, guid: 486ef80a673f6c941a1a7252af6a5de0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 998137702962600507, guid: 486ef80a673f6c941a1a7252af6a5de0, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7001391
+      value: 0.6675718
       objectReference: {fileID: 0}
     - target: {fileID: 998137702962600507, guid: 486ef80a673f6c941a1a7252af6a5de0, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.099021345
+      value: 0.23312648
       objectReference: {fileID: 0}
     - target: {fileID: 998137702962600507, guid: 486ef80a673f6c941a1a7252af6a5de0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7001391
+      value: -0.6675718
       objectReference: {fileID: 0}
     - target: {fileID: 998137702962600507, guid: 486ef80a673f6c941a1a7252af6a5de0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.099021345
+      value: 0.23312648
       objectReference: {fileID: 0}
     - target: {fileID: 998137702962600507, guid: 486ef80a673f6c941a1a7252af6a5de0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 163.9
+      value: 141.5
       objectReference: {fileID: 0}
     - target: {fileID: 998137702962600507, guid: 486ef80a673f6c941a1a7252af6a5de0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -99061,7 +99065,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 568653527279986074, guid: c65426a375c90574a95eaaf4840e9481, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.25
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 568653527279986074, guid: c65426a375c90574a95eaaf4840e9481, type: 3}
       propertyPath: m_LocalPosition.y
@@ -115959,7 +115963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae1cb11c9ce1db04f97203de24b5aed9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxDuration: 20
+  maxDuration: 15
   spellType: 0
 --- !u!1 &1950835606
 GameObject:
