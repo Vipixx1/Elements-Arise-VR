@@ -1,3 +1,6 @@
+using System;
+using FMOD.Studio;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,7 +10,9 @@ public class ScrollSpellResult : MonoBehaviour
 {
     public static event System.Action<string, string> OnSpellReady;
     [SerializeField] private string currentSpellElement = "fire";
+    [SerializeField] private EventReference collectSoundEvent;
     private Vector3 spawnCoords;
+    
 
     private string currentHandTag = "";
 
@@ -19,6 +24,7 @@ public class ScrollSpellResult : MonoBehaviour
 
     public void OnSelect()
     {
+
         if (currentHandTag == "")
         {
             return;
@@ -45,7 +51,18 @@ public class ScrollSpellResult : MonoBehaviour
                 child.gameObject.GetComponent<ParticleSystem>().Stop();
             }
         }
+
+        PlayCollectSound(currentSpellElement);
         OnSpellReady?.Invoke(currentSpellElement, currentHandTag);
+    }
+
+    private void PlayCollectSound(string spell)
+    {
+        EventInstance collectSoundInstance = RuntimeManager.CreateInstance(collectSoundEvent);
+        collectSoundInstance.setParameterByNameWithLabel("element", spell.ToUpper());
+        RuntimeManager.AttachInstanceToGameObject(collectSoundInstance, gameObject);
+        collectSoundInstance.start();
+        collectSoundInstance.release();
     }
 
     public void Reset()
@@ -77,6 +94,7 @@ public class ScrollSpellResult : MonoBehaviour
         if (other.gameObject.tag == "RightHand" || other.gameObject.tag == "LeftHand")
         {
             currentHandTag = other.gameObject.tag;
+            Debug.Log("ENTER : " + currentHandTag);
         }
     }
 
@@ -85,6 +103,7 @@ public class ScrollSpellResult : MonoBehaviour
         if (other.gameObject.tag == "RightHand" || other.gameObject.tag == "LeftHand")
         {
             currentHandTag = "";
+            Debug.Log("EXIT");
         }
     }
 

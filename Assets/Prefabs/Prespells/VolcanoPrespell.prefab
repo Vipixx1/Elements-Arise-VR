@@ -276,6 +276,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSpellElement: volcano
+  collectSoundEvent:
+    Guid:
+      Data1: -1870428154
+      Data2: 1100039742
+      Data3: -416242029
+      Data4: -368073695
+    Path: event:/Magic/Collect
 --- !u!199 &7739497849283612239
 ParticleSystemRenderer:
   serializedVersion: 6

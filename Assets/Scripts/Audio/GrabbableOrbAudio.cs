@@ -2,7 +2,6 @@ using System;
 using System.Reflection;
 using FMOD.Studio;
 using FMODUnity;
-using Meta.XR.Editor.Tags;
 using UnityEngine;
 using STOP_MODE = FMOD.Studio.STOP_MODE;
 
@@ -12,7 +11,7 @@ namespace Audio
     public class GrabbableOrbAudio : MonoBehaviour
     {
         [SerializeField] private EventReference orbSoundEvent;
-        [SerializeField] private Tag[] acceptedTags;
+        [SerializeField] private string[] acceptedTags;
         private EventInstance orbSoundInstance;
 
         private Collider _currentCollider = null;
@@ -28,6 +27,7 @@ namespace Audio
         private void OnEnable()
         {
             _currentCollider = null;
+            if (orbSoundInstance.hasHandle()) orbSoundInstance.release();
             orbSoundInstance = RuntimeManager.CreateInstance(orbSoundEvent);
             RuntimeManager.AttachInstanceToGameObject(orbSoundInstance, transform.gameObject);
         }
@@ -42,7 +42,7 @@ namespace Audio
         private void OnTriggerEnter(Collider other)
         {
             if (_currentCollider) return;
-            foreach (Tag acceptedTag in acceptedTags)
+            foreach (string acceptedTag in acceptedTags)
             {
                 if (!other.CompareTag(acceptedTag))
                     continue;

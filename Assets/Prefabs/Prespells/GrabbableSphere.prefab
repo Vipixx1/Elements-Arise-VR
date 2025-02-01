@@ -53,8 +53,8 @@ MonoBehaviour:
       Data4: 1887073823
     Path: event:/UI/Orb
   acceptedTags:
-  - name: LeftHand
-  - name: RightHand
+  - LeftHand
+  - RightHand
 --- !u!135 &220914178962612037
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -74,7 +74,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5427607640243815767
 GameObject:
@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 2095824544053621977}
   - component: {fileID: 3061786374242125757}
   - component: {fileID: 1692393763039455006}
+  - component: {fileID: 6169485030095466888}
   - component: {fileID: 3413535028632365640}
   - component: {fileID: 3083324729780096145}
   - component: {fileID: 4049552293486667135}
@@ -192,6 +193,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &6169485030095466888
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5427607640243815767}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.75
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3413535028632365640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,3 +363,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSpellElement: 
+  collectSoundEvent:
+    Guid:
+      Data1: -1870428154
+      Data2: 1100039742
+      Data3: -416242029
+      Data4: -368073695
+    Path: event:/Magic/Collect

@@ -276,6 +276,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSpellElement: plant
+  collectSoundEvent:
+    Guid:
+      Data1: -1870428154
+      Data2: 1100039742
+      Data3: -416242029
+      Data4: -368073695
+    Path: event:/Magic/Collect
 --- !u!199 &1934095260286917449
 ParticleSystemRenderer:
   serializedVersion: 6
