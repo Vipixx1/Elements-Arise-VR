@@ -20,11 +20,12 @@ public class InGameMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) || OVRInput.Get(OVRInput.Button.Start))
         {
             menu.SetActive(!menu.activeSelf);
+
+            // Position the menu in front of the player
             menu.transform.position = playerPos.transform.position + playerPos.transform.forward * 0.5f;
-            Quaternion rotation = menu.transform.rotation;
-            rotation.y = playerPos.transform.rotation.y;
-            rotation = rotation * Quaternion.Euler(0, -90, 0);
-            menu.transform.rotation = rotation;
+
+            // Make the menu face the player, then rotate it 90° clockwise (right)
+            menu.transform.rotation = Quaternion.LookRotation(menu.transform.position - playerPos.transform.position, Vector3.up) * Quaternion.Euler(0, -90, 0);
         }
     }
 }
