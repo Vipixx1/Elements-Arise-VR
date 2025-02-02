@@ -331,11 +331,11 @@ PrefabInstance:
     - target: {fileID: 3083324729780096145, guid: 76dc94dbef5a3404f89e12be649fb7f2, type: 3}
       propertyPath: _rigidbody
       value: 
-      objectReference: {fileID: 1696283437}
+      objectReference: {fileID: 18128425}
     - target: {fileID: 3413535028632365640, guid: 76dc94dbef5a3404f89e12be649fb7f2, type: 3}
       propertyPath: _rigidbody
       value: 
-      objectReference: {fileID: 1696283437}
+      objectReference: {fileID: 18128425}
     - target: {fileID: 4049552293486667135, guid: 76dc94dbef5a3404f89e12be649fb7f2, type: 3}
       propertyPath: _whenSelect.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -433,9 +433,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5427607640243815767, guid: 76dc94dbef5a3404f89e12be649fb7f2, type: 3}
-      insertIndex: 3
-      addedObject: {fileID: 1696283437}
-    - targetCorrespondingSourceObject: {fileID: 5427607640243815767, guid: 76dc94dbef5a3404f89e12be649fb7f2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1696283445}
     - targetCorrespondingSourceObject: {fileID: 5427607640243815767, guid: 76dc94dbef5a3404f89e12be649fb7f2, type: 3}
@@ -445,6 +442,11 @@ PrefabInstance:
 --- !u!4 &18128424 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9104281762484906198, guid: 76dc94dbef5a3404f89e12be649fb7f2, type: 3}
+  m_PrefabInstance: {fileID: 18128423}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &18128425 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 1692393763039455006, guid: 76dc94dbef5a3404f89e12be649fb7f2, type: 3}
   m_PrefabInstance: {fileID: 18128423}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &27435181
@@ -1177,7 +1179,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Take this.
+  m_text: 'Your journey is
+
+    starting now'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -1204,8 +1208,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32
-  m_fontSizeBase: 32
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6393,7 +6397,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 473379747484844161, guid: 486ef80a673f6c941a1a7252af6a5de0, type: 3}
       propertyPath: m_Name
-      value: Parchment Text (1)
+      value: 'Parchment Text '
       objectReference: {fileID: 0}
     - target: {fileID: 998137702962600507, guid: 486ef80a673f6c941a1a7252af6a5de0, type: 3}
       propertyPath: m_LocalScale.x
@@ -8381,9 +8385,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'to your liking ?
+  m_text: 'Will you be able
 
-    Probably not...'
+    to escape ?'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -8416,7 +8420,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 2
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -24626,9 +24630,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Your journey has
-
-    just begun.'
+  m_text: Grab this
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -24655,13 +24657,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25.9
-  m_fontSizeBase: 25.9
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 2
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -80907,9 +80909,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Welcome traveller.
+  m_text: 'Welcome to your
 
-    Is this room'
+    new room...'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -87471,11 +87473,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 998137702962600507, guid: 486ef80a673f6c941a1a7252af6a5de0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 998137702962600507, guid: 486ef80a673f6c941a1a7252af6a5de0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.318
+      value: -5.271
       objectReference: {fileID: 0}
     - target: {fileID: 998137702962600507, guid: 486ef80a673f6c941a1a7252af6a5de0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -93690,33 +93692,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a2a8ad34501e41489a51bb6cba4bb93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!54 &1696283437
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1696283429}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!199 &1696283444
 ParticleSystemRenderer:
   serializedVersion: 6
