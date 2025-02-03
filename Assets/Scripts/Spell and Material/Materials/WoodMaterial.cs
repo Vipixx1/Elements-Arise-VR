@@ -128,11 +128,12 @@ public class WoodMaterial : Material
     {
         base.Burning(data);
         isBurning = true;
-        PlaySound();
+        PlayBurningSound();
     }
 
-    private void PlaySound()
+    private void PlayBurningSound()
     {
+        if (burningSound.hasHandle()) return;
         burningSound = RuntimeManager.CreateInstance(burnEvent);
         RuntimeManager.AttachInstanceToGameObject(burningSound, gameObject);
         burningSound.start();
