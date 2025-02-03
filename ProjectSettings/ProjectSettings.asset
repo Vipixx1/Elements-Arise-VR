@@ -12,13 +12,13 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: ElementsArise1
-  productName: ElementsArise1
+  companyName: ElementsArise
+  productName: ElementsArise
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_ShowUnitySplashScreen: 1
-  m_ShowUnitySplashLogo: 0
+  m_ShowUnitySplashLogo: 1
   m_SplashScreenOverlayOpacity: 1
   m_SplashScreenAnimation: 1
   m_SplashScreenLogoStyle: 1
@@ -138,9 +138,11 @@ PlayerSettings:
   vulkanEnableLateAcquireNextImage: 0
   vulkanEnableCommandBufferRecycling: 1
   loadStoreDebugModeEnabled: 0
-  bundleVersion: 1.2.2
+  bundleVersion: 1.2.4
   preloadedAssets:
   - {fileID: 11400000, guid: a3ec10b296aab8142b87be200dd66ef7, type: 2}
+  - {fileID: 1925429049402843558, guid: f7c4cf149baf7e24290156dafbe9c0ce, type: 2}
+  - {fileID: 11400000, guid: 0591bb2cfd9a12646972778015de37ae, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -161,7 +163,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.ElementsArise1.ElementsArise1
+    Android: com.ElementsArise.ElementsArise1
   buildNumber:
     Standalone: 0
     VisionOS: 0

@@ -8240,11 +8240,6 @@ SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 869462150883743412, guid: 314f6e1da20902f4ba50509fa6eb8fa8, type: 3}
   m_PrefabInstance: {fileID: 199557731}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &199557740 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 869462150446302935, guid: 314f6e1da20902f4ba50509fa6eb8fa8, type: 3}
-  m_PrefabInstance: {fileID: 199557731}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &199557741 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 869462151857947959, guid: 314f6e1da20902f4ba50509fa6eb8fa8, type: 3}
@@ -8317,11 +8312,6 @@ MonoBehaviour:
 --- !u!4 &199557750 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8549669565032678175, guid: 314f6e1da20902f4ba50509fa6eb8fa8, type: 3}
-  m_PrefabInstance: {fileID: 199557731}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &199557751 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8549669564981053684, guid: 314f6e1da20902f4ba50509fa6eb8fa8, type: 3}
   m_PrefabInstance: {fileID: 199557731}
   m_PrefabAsset: {fileID: 0}
 --- !u!137 &199557752 stripped
@@ -13553,6 +13543,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 282829343}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &294301509 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 869462150021453144, guid: 314f6e1da20902f4ba50509fa6eb8fa8, type: 3}
+  m_PrefabInstance: {fileID: 199557731}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &295029767
 GameObject:
   m_ObjectHideFlags: 0
@@ -37548,10 +37543,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f08efdd6824d2ef4287ce5d6ba55a02d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rightFinger: {fileID: 199557751}
-  leftFinger: {fileID: 199557740}
-  penSize: 20
-  tipHeight: 0.1
+  rightFinger: {fileID: 199557750}
+  leftFinger: {fileID: 294301509}
+  penSize: 25
+  tipHeight: 0.05
   color: {r: 0, g: 0, b: 0, a: 1}
   scroll: {fileID: 494623933}
   markerSoundEvent:
