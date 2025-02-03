@@ -28406,14 +28406,14 @@ MonoBehaviour:
     _middleRequirement: 1
     _ringRequirement: 0
     _pinkyRequirement: 0
-    _unselectMode: 0
+    _unselectMode: 1
   _palmGrabRules:
     _thumbRequirement: 1
     _indexRequirement: 2
     _middleRequirement: 2
     _ringRequirement: 2
     _pinkyRequirement: 1
-    _unselectMode: 0
+    _unselectMode: 1
   _movementProvider: {fileID: 0}
   _handAligment: 1
   _handGrabPoses: []
@@ -28650,13 +28650,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cc8543b84efd2144aac1b4da70ff12e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  burnEvent:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
 --- !u!1 &657970178
 GameObject:
   m_ObjectHideFlags: 0
@@ -35357,6 +35350,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f23f81f994b2cd649af981338a6bcc55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxScaling: 2
+  isBurning: 0
+  isGrowing: 0
+  axisesToBurn: 000000000100000002000000
   burnEvent:
     Guid:
       Data1: 439061981
@@ -35364,10 +35361,6 @@ MonoBehaviour:
       Data3: 1711798699
       Data4: -719757052
     Path: event:/Objects/Burn
-  maxScaling: 2
-  isBurning: 0
-  isGrowing: 0
-  axisesToBurn: 000000000100000002000000
 --- !u!54 &866860800
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -47397,6 +47390,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f23f81f994b2cd649af981338a6bcc55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxScaling: 2
+  isBurning: 0
+  isGrowing: 0
+  axisesToBurn: 000000000100000002000000
   burnEvent:
     Guid:
       Data1: 439061981
@@ -47404,10 +47401,6 @@ MonoBehaviour:
       Data3: 1711798699
       Data4: -719757052
     Path: event:/Objects/Burn
-  maxScaling: 2
-  isBurning: 0
-  isGrowing: 0
-  axisesToBurn: 000000000100000002000000
 --- !u!54 &1019654940
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -48047,14 +48040,14 @@ MonoBehaviour:
     _middleRequirement: 1
     _ringRequirement: 0
     _pinkyRequirement: 0
-    _unselectMode: 0
+    _unselectMode: 1
   _palmGrabRules:
     _thumbRequirement: 1
     _indexRequirement: 2
     _middleRequirement: 2
     _ringRequirement: 2
     _pinkyRequirement: 1
-    _unselectMode: 0
+    _unselectMode: 1
   _movementProvider: {fileID: 0}
   _handAligment: 1
   _handGrabPoses: []
@@ -64058,6 +64051,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f23f81f994b2cd649af981338a6bcc55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxScaling: 2
+  isBurning: 0
+  isGrowing: 0
+  axisesToBurn: 000000000100000002000000
   burnEvent:
     Guid:
       Data1: 439061981
@@ -64065,10 +64062,6 @@ MonoBehaviour:
       Data3: 1711798699
       Data4: -719757052
     Path: event:/Objects/Burn
-  maxScaling: 2
-  isBurning: 0
-  isGrowing: 0
-  axisesToBurn: 000000000100000002000000
 --- !u!54 &1263498265
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -75515,6 +75508,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f23f81f994b2cd649af981338a6bcc55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxScaling: 2
+  isBurning: 0
+  isGrowing: 0
+  axisesToBurn: 000000000100000002000000
   burnEvent:
     Guid:
       Data1: 439061981
@@ -75522,10 +75519,6 @@ MonoBehaviour:
       Data3: 1711798699
       Data4: -719757052
     Path: event:/Objects/Burn
-  maxScaling: 2
-  isBurning: 0
-  isGrowing: 0
-  axisesToBurn: 000000000100000002000000
 --- !u!54 &1396983293
 Rigidbody:
   m_ObjectHideFlags: 0

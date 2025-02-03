@@ -124,9 +124,9 @@ public class Demo : MonoBehaviour {
 
 		GUI.Box(drawArea, "Draw Area");
 
-		GUI.Label(new Rect(10, Screen.height - 40, 500, 50), message);
+		//GUI.Label(new Rect(10, Screen.height - 40, 500, 50), message);
 
-		if (GUI.Button(new Rect(Screen.width - 100, 10, 100, 30), "Recognize")) {
+		if (GUI.Button(new Rect(Screen.width - 100, 10, 100, 30), "Erase")) {
 
 			recognized = true;
 
