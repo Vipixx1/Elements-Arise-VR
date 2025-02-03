@@ -1,3 +1,5 @@
+using FMOD.Studio;
+using FMODUnity;
 using UnityEngine;
 
 namespace Magic.Materials
@@ -7,6 +9,8 @@ namespace Magic.Materials
         protected bool conductivite;
         protected float mass_multiplier;
         string[] baseS = new string[0];
+
+        private EventReference burnEvent;
 
         public virtual void OnFire(ObjectData data, float[] args = null)
         {
@@ -52,7 +56,10 @@ namespace Magic.Materials
 
         public virtual void Burning(ObjectData data)
         {
-
+            EventInstance burningSound = RuntimeManager.CreateInstance(burnEvent);
+            RuntimeManager.AttachInstanceToGameObject(burningSound, data.gameObject);
+            burningSound.start();
+            burningSound.release();
         }
 
         public virtual bool Frozen(ObjectData data)
