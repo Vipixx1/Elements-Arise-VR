@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{3914d1d1-a6e2-4adf-97c5-8c9aaecbd697}">
+		<property name="assetPath">
+			<value>fire_in_floor.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>7.1229251700680276</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{f866daa0-1bae-486a-8fcb-4d729371a8cf}</destination>
+		</relationship>
+	</object>
+</objects>

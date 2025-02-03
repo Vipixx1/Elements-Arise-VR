@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{9168f3c5-94aa-4b17-b897-dd3d6cd9307c}">
+		<property name="assetPath">
+			<value>mudd_in_floor.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>5.0390022675736965</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{f866daa0-1bae-486a-8fcb-4d729371a8cf}</destination>
+		</relationship>
+	</object>
+</objects>

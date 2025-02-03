@@ -4918,6 +4918,7 @@ GameObject:
   - component: {fileID: 3651737025505180248}
   - component: {fileID: 763961733015956184}
   - component: {fileID: -3099454616269997491}
+  - component: {fileID: -7167121856770426934}
   m_Layer: 0
   m_Name: SteamSpell
   m_TagString: Spell
@@ -9852,3 +9853,36 @@ MonoBehaviour:
   humidity: 1
   speed: 0
   shouldDispawn: 1
+--- !u!114 &-7167121856770426934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8413826142207088173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 872973974
+      Data2: 1124069879
+      Data3: 990729095
+      Data4: 1340619661
+    Path: event:/Magic/Throw
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params:
+  - Name: element
+    Value: 5
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20

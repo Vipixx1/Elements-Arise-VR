@@ -195,6 +195,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4715820552340555584, guid: 6df9287042a689141b831453675cc713, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5071066194325157359, guid: 6df9287042a689141b831453675cc713, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.62
@@ -1759,6 +1763,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7599819595425158991, guid: 3f6213d432f86934fbc78369d24f1975, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8413826142207088173, guid: 3f6213d432f86934fbc78369d24f1975, type: 3}
       propertyPath: m_Name
       value: IceSpell
@@ -1989,6 +1997,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8773011153273646063, guid: f4183d5271e8ba24ea7a952d75df2b47, type: 3}
       propertyPath: shouldDispawn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 743758299608382581, guid: f4183d5271e8ba24ea7a952d75df2b47, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 994250299823521779, guid: f4183d5271e8ba24ea7a952d75df2b47, type: 3}
@@ -2519,6 +2531,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7996844301979558765, guid: b4c41e5342453b944b782fcc6e84cf9c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8413826142207088173, guid: b4c41e5342453b944b782fcc6e84cf9c, type: 3}
       propertyPath: m_Name
       value: WindSpell
@@ -2917,6 +2933,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 873026607}
     m_Modifications:
+    - target: {fileID: -6008833265744411995, guid: 54d97d0b559015e469945e76306ca834, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -2639298786990205408, guid: 54d97d0b559015e469945e76306ca834, type: 3}
       propertyPath: shouldDispawn
       value: 0
@@ -3288,6 +3308,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7738677482253722756, guid: 4cf874b7fca4756478bbb6137cea5c57, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8413826142207088173, guid: 4cf874b7fca4756478bbb6137cea5c57, type: 3}
       propertyPath: m_Name
       value: WaterSpell
@@ -3310,6 +3334,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 873026607}
     m_Modifications:
+    - target: {fileID: -8197600537469841482, guid: 8038f23832ba1f94d8bfe0114a596b12, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -40091588435930208, guid: 8038f23832ba1f94d8bfe0114a596b12, type: 3}
       propertyPath: shouldDispawn
       value: 0
@@ -3932,6 +3960,10 @@ PrefabInstance:
       propertyPath: InitialModule.startLifetime.scalar
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2133375560487485635, guid: af16e819dfdd5094298a9c83eed316bf, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3651737025505180248, guid: af16e819dfdd5094298a9c83eed316bf, type: 3}
       propertyPath: looping
       value: 1
@@ -4123,6 +4155,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 609060075618586961, guid: 7e338ccf98ace4e44a5a3457d62f731c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 994250299823521779, guid: 7e338ccf98ace4e44a5a3457d62f731c, type: 3}
       propertyPath: InitialModule.startSize.scalar
       value: 0.3
@@ -4245,6 +4281,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 873026607}
     m_Modifications:
+    - target: {fileID: -7167121856770426934, guid: 181bd4092864ced4db93683ee3c091e3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -3099454616269997491, guid: 181bd4092864ced4db93683ee3c091e3, type: 3}
       propertyPath: shouldDispawn
       value: 0
