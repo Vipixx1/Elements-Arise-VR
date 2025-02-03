@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using FMOD.Studio;
+using FMODUnity;
 using UnityEngine;
 using Material = Magic.Materials.Material;
 
@@ -19,6 +21,8 @@ public class StoneMaterial : Material
 
     [SerializeField]
     private GameObject explosionParticle;
+
+    [SerializeField] private EventReference explosionEvent;
     
     public override void OnVolcano(ObjectData data, float[] args = null)
     {
@@ -55,9 +59,17 @@ public class StoneMaterial : Material
                 colliders[i].attachedRigidbody.AddExplosionForce(explosionForce, transform.position, explosionRadius);
         }
 
+        PlaySound();
         Destroy(this.gameObject);
     }
 
+    private void PlaySound()
+    {
+        EventInstance explosionSound = RuntimeManager.CreateInstance(explosionEvent);
+        RuntimeManager.PlayOneShot(explosionEvent, transform.position);
+        explosionSound.start();
+        explosionSound.release();
+    }
 
     public IEnumerator DestroyAfterTime(float time, GameObject go)
     {

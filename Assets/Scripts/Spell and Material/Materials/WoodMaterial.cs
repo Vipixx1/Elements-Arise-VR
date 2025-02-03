@@ -1,8 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using FMOD.Studio;
+using FMODUnity;
 using UnityEngine;
 using Material = Magic.Materials.Material;
+using STOP_MODE = FMODUnity.STOP_MODE;
 
 public enum Axis
 {
@@ -26,6 +29,9 @@ public class WoodMaterial : Material
     [SerializeField] private bool isGrowing = false;
 
     [SerializeField] private Axis[] axisesToBurn;
+    
+    [SerializeField] private EventReference burnEvent;
+    private EventInstance burningSound;
 
     private void Start()
     {
@@ -55,15 +61,15 @@ public class WoodMaterial : Material
         {
             if (axisesToBurn.Contains(Axis.x) && scalingX < maxScalingX)
             {
-                scalingX += Time.deltaTime;
+                scalingX += Time.deltaTime / 2f;
             }
             if (axisesToBurn.Contains(Axis.y) && scalingY < maxScalingY)
             {
-                scalingY += Time.deltaTime;
+                scalingY += Time.deltaTime / 2f;
             }
             if (axisesToBurn.Contains(Axis.z) && scalingZ < maxScalingZ)
             {
-                scalingZ += Time.deltaTime;
+                scalingZ += Time.deltaTime / 2f;
             }
         }
         else
@@ -75,7 +81,7 @@ public class WoodMaterial : Material
         {
             if (axisesToBurn.Contains(Axis.x))
             {
-                scalingX -= Time.deltaTime;
+                scalingX -= Time.deltaTime / 2f;
                 if (scalingX <= 0)
                 {
                     Destroy(gameObject);
@@ -83,7 +89,7 @@ public class WoodMaterial : Material
             }
             if (axisesToBurn.Contains(Axis.y))
             {
-                scalingY -= Time.deltaTime;
+                scalingY -= Time.deltaTime / 2f;
                 if (scalingY <= 0)
                 {
                     Destroy(gameObject);
@@ -91,7 +97,7 @@ public class WoodMaterial : Material
             }
             if (axisesToBurn.Contains(Axis.z))
             {
-                scalingZ -= Time.deltaTime;
+                scalingZ -= Time.deltaTime / 2f;
                 if (scalingZ <= 0)
                 {
                     Destroy(gameObject);
@@ -122,12 +128,28 @@ public class WoodMaterial : Material
     {
         base.Burning(data);
         isBurning = true;
+        PlaySound();
+    }
+
+    private void PlaySound()
+    {
+        burningSound = RuntimeManager.CreateInstance(burnEvent);
+        RuntimeManager.AttachInstanceToGameObject(burningSound, gameObject);
+        burningSound.start();
+    }
+
+    private void StopSound()
+    {
+        burningSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        burningSound.release();
     }
 
     public override void OnPlant(ObjectData data, float[] args = null)
     {
         if (!isBurning)
+        {
             isGrowing = true;
+        }
     }
 
     public override void OnIce(ObjectData data, float[] args = null)
@@ -135,13 +157,25 @@ public class WoodMaterial : Material
         base.OnIce(data);
         isGrowing = false;
         if (data.Humidity > 0 || data.Temperature < 1)
+        {
             isBurning = false;
+            StopSound();
+        }
     }
 
     public override void OnWater(ObjectData data, float[] args = null)
     {
         base.OnWater(data);
         if (data.Humidity > 0 || data.Temperature < 1)
+        {
             isBurning = false;
+            StopSound();
+        }
+    }
+    
+    private void OnDestroy()
+    {
+        burningSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        burningSound.release();
     }
 }

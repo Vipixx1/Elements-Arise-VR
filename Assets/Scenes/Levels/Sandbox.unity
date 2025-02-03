@@ -28650,6 +28650,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cc8543b84efd2144aac1b4da70ff12e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  burnEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1 &657970178
 GameObject:
   m_ObjectHideFlags: 0
@@ -35350,6 +35357,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f23f81f994b2cd649af981338a6bcc55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  burnEvent:
+    Guid:
+      Data1: 439061981
+      Data2: 1189307580
+      Data3: 1711798699
+      Data4: -719757052
+    Path: event:/Objects/Burn
   maxScaling: 2
   isBurning: 0
   isGrowing: 0
@@ -47383,6 +47397,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f23f81f994b2cd649af981338a6bcc55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  burnEvent:
+    Guid:
+      Data1: 439061981
+      Data2: 1189307580
+      Data3: 1711798699
+      Data4: -719757052
+    Path: event:/Objects/Burn
   maxScaling: 2
   isBurning: 0
   isGrowing: 0
@@ -64037,6 +64058,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f23f81f994b2cd649af981338a6bcc55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  burnEvent:
+    Guid:
+      Data1: 439061981
+      Data2: 1189307580
+      Data3: 1711798699
+      Data4: -719757052
+    Path: event:/Objects/Burn
   maxScaling: 2
   isBurning: 0
   isGrowing: 0
@@ -75487,6 +75515,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f23f81f994b2cd649af981338a6bcc55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  burnEvent:
+    Guid:
+      Data1: 439061981
+      Data2: 1189307580
+      Data3: 1711798699
+      Data4: -719757052
+    Path: event:/Objects/Burn
   maxScaling: 2
   isBurning: 0
   isGrowing: 0

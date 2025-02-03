@@ -713,6 +713,13 @@ MonoBehaviour:
   isBurning: 0
   isGrowing: 0
   axisesToBurn: 
+  burnEvent:
+    Guid:
+      Data1: 439061981
+      Data2: 1189307580
+      Data3: 1711798699
+      Data4: -719757052
+    Path: event:/Objects/Burn
 --- !u!1 &71412955 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 916917378494744782, guid: 98f5378049f9b5745a77677f581b32b1, type: 3}
@@ -867,6 +874,13 @@ MonoBehaviour:
   isBurning: 0
   isGrowing: 0
   axisesToBurn: 
+  burnEvent:
+    Guid:
+      Data1: 439061981
+      Data2: 1189307580
+      Data3: 1711798699
+      Data4: -719757052
+    Path: event:/Objects/Burn
 --- !u!1 &103243599 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 916917378494744782, guid: 98f5378049f9b5745a77677f581b32b1, type: 3}
@@ -1095,6 +1109,13 @@ MonoBehaviour:
   isBurning: 0
   isGrowing: 0
   axisesToBurn: 
+  burnEvent:
+    Guid:
+      Data1: 439061981
+      Data2: 1189307580
+      Data3: 1711798699
+      Data4: -719757052
+    Path: event:/Objects/Burn
 --- !u!1001 &114939883
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24140,6 +24161,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   explosionParticle: {fileID: 5524076853092147726, guid: 5004b7236681228488e3d6e5d031ebb0, type: 3}
+  explosionEvent:
+    Guid:
+      Data1: 1477605916
+      Data2: 1175806119
+      Data3: 1300144540
+      Data4: 1598217084
+    Path: event:/Objects/RockExplose
 --- !u!54 &375450483
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -24567,6 +24595,13 @@ MonoBehaviour:
   isBurning: 0
   isGrowing: 0
   axisesToBurn: 
+  burnEvent:
+    Guid:
+      Data1: 439061981
+      Data2: 1189307580
+      Data3: 1711798699
+      Data4: -719757052
+    Path: event:/Objects/Burn
 --- !u!1 &409330705
 GameObject:
   m_ObjectHideFlags: 0
@@ -30631,6 +30666,13 @@ MonoBehaviour:
   isBurning: 0
   isGrowing: 0
   axisesToBurn: 
+  burnEvent:
+    Guid:
+      Data1: 439061981
+      Data2: 1189307580
+      Data3: 1711798699
+      Data4: -719757052
+    Path: event:/Objects/Burn
 --- !u!136 &502578060
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -59296,6 +59338,13 @@ MonoBehaviour:
   isBurning: 0
   isGrowing: 0
   axisesToBurn: 
+  burnEvent:
+    Guid:
+      Data1: 439061981
+      Data2: 1189307580
+      Data3: 1711798699
+      Data4: -719757052
+    Path: event:/Objects/Burn
 --- !u!1 &1053016241 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 916917378494744782, guid: 98f5378049f9b5745a77677f581b32b1, type: 3}
@@ -59530,6 +59579,13 @@ MonoBehaviour:
   isBurning: 0
   isGrowing: 0
   axisesToBurn: 
+  burnEvent:
+    Guid:
+      Data1: 439061981
+      Data2: 1189307580
+      Data3: 1711798699
+      Data4: -719757052
+    Path: event:/Objects/Burn
 --- !u!1 &1086064285
 GameObject:
   m_ObjectHideFlags: 0
@@ -59758,6 +59814,13 @@ MonoBehaviour:
   isBurning: 0
   isGrowing: 0
   axisesToBurn: 02000000
+  burnEvent:
+    Guid:
+      Data1: 439061981
+      Data2: 1189307580
+      Data3: 1711798699
+      Data4: -719757052
+    Path: event:/Objects/Burn
 --- !u!114 &1106380590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65356,6 +65419,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   explosionParticle: {fileID: 5524076853092147726, guid: 5004b7236681228488e3d6e5d031ebb0, type: 3}
+  explosionEvent:
+    Guid:
+      Data1: 1477605916
+      Data2: 1175806119
+      Data3: 1300144540
+      Data4: 1598217084
+    Path: event:/Objects/RockExplose
 --- !u!114 &1193333479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80480,6 +80550,13 @@ MonoBehaviour:
   isBurning: 0
   isGrowing: 0
   axisesToBurn: 
+  burnEvent:
+    Guid:
+      Data1: 439061981
+      Data2: 1189307580
+      Data3: 1711798699
+      Data4: -719757052
+    Path: event:/Objects/Burn
 --- !u!1 &1281008817
 GameObject:
   m_ObjectHideFlags: 0
@@ -86150,6 +86227,13 @@ MonoBehaviour:
   isBurning: 0
   isGrowing: 0
   axisesToBurn: 
+  burnEvent:
+    Guid:
+      Data1: 439061981
+      Data2: 1189307580
+      Data3: 1711798699
+      Data4: -719757052
+    Path: event:/Objects/Burn
 --- !u!1001 &1419489915
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -86491,6 +86575,13 @@ MonoBehaviour:
   isBurning: 0
   isGrowing: 0
   axisesToBurn: 02000000
+  burnEvent:
+    Guid:
+      Data1: 439061981
+      Data2: 1189307580
+      Data3: 1711798699
+      Data4: -719757052
+    Path: event:/Objects/Burn
 --- !u!114 &1431397367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87144,6 +87235,13 @@ MonoBehaviour:
   isBurning: 0
   isGrowing: 0
   axisesToBurn: 02000000
+  burnEvent:
+    Guid:
+      Data1: 439061981
+      Data2: 1189307580
+      Data3: 1711798699
+      Data4: -719757052
+    Path: event:/Objects/Burn
 --- !u!114 &1531230394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87538,6 +87636,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   explosionParticle: {fileID: 5524076853092147726, guid: 5004b7236681228488e3d6e5d031ebb0, type: 3}
+  explosionEvent:
+    Guid:
+      Data1: 1477605916
+      Data2: 1175806119
+      Data3: 1300144540
+      Data4: 1598217084
+    Path: event:/Objects/RockExplose
 --- !u!1001 &1578054814
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -99243,6 +99348,13 @@ MonoBehaviour:
   isBurning: 0
   isGrowing: 0
   axisesToBurn: 0000000002000000
+  burnEvent:
+    Guid:
+      Data1: 439061981
+      Data2: 1189307580
+      Data3: 1711798699
+      Data4: -719757052
+    Path: event:/Objects/Burn
 --- !u!1001 &1746106048
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -99475,6 +99587,13 @@ MonoBehaviour:
   isBurning: 0
   isGrowing: 0
   axisesToBurn: 02000000
+  burnEvent:
+    Guid:
+      Data1: 439061981
+      Data2: 1189307580
+      Data3: 1711798699
+      Data4: -719757052
+    Path: event:/Objects/Burn
 --- !u!114 &1751249339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105780,6 +105899,13 @@ MonoBehaviour:
   isBurning: 0
   isGrowing: 0
   axisesToBurn: 
+  burnEvent:
+    Guid:
+      Data1: 439061981
+      Data2: 1189307580
+      Data3: 1711798699
+      Data4: -719757052
+    Path: event:/Objects/Burn
 --- !u!1 &1944035732
 GameObject:
   m_ObjectHideFlags: 0

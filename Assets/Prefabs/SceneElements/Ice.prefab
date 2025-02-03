@@ -119,6 +119,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444b730e19e4f8a468d62359bccc95e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  burnEvent:
+    Guid:
+      Data1: 439061981
+      Data2: 1189307580
+      Data3: 1711798699
+      Data4: -719757052
+    Path: event:/Objects/Burn
   initialMaxScale: 5
   maxTimeDuration: 10
 --- !u!54 &6330187059840766921

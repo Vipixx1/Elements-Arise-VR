@@ -154,6 +154,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   explosionParticle: {fileID: 5524076853092147726, guid: 5004b7236681228488e3d6e5d031ebb0, type: 3}
+  explosionEvent:
+    Guid:
+      Data1: 1477605916
+      Data2: 1175806119
+      Data3: 1300144540
+      Data4: 1598217084
+    Path: event:/Objects/RockExplose
 --- !u!114 &8251299897018923986
 MonoBehaviour:
   m_ObjectHideFlags: 0

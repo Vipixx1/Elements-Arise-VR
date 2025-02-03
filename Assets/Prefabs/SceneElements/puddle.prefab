@@ -99,8 +99,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409b0469f0b258148a6253d6e9898b52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  burnEvent:
+    Guid:
+      Data1: 439061981
+      Data2: 1189307580
+      Data3: 1711798699
+      Data4: -719757052
+    Path: event:/Objects/Burn
   initialMaxScale: 5
+  minScale: {x: 0, y: 0, z: 0}
   icePrefab: {fileID: 5150503099792141148, guid: 5578a26a44a07a648be5a2b55c91c4cc, type: 3}
+  canChangeScale: 1
 --- !u!114 &3187348473789290374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,6 +127,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 7630112088591105337}
   electrified: 0
+  hasParticle: 0
 --- !u!54 &3070509126883686968
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -149,6 +149,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06403b6cdd7c8ac4aac2bbacbe01a4b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  burnEvent:
+    Guid:
+      Data1: 439061981
+      Data2: 1189307580
+      Data3: 1711798699
+      Data4: -719757052
+    Path: event:/Objects/Burn
 --- !u!114 &4049116822717478147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,3 +173,4 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 4104331470178155928}
   electrified: 0
+  hasParticle: 0
