@@ -24139,6 +24139,7 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 128
+  explosionParticle: {fileID: 5524076853092147726, guid: 5004b7236681228488e3d6e5d031ebb0, type: 3}
 --- !u!54 &375450483
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -65354,6 +65355,7 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 128
+  explosionParticle: {fileID: 5524076853092147726, guid: 5004b7236681228488e3d6e5d031ebb0, type: 3}
 --- !u!114 &1193333479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87535,6 +87537,7 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 128
+  explosionParticle: {fileID: 5524076853092147726, guid: 5004b7236681228488e3d6e5d031ebb0, type: 3}
 --- !u!1001 &1578054814
 PrefabInstance:
   m_ObjectHideFlags: 0

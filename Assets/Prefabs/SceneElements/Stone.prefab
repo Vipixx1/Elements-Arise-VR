@@ -153,6 +153,7 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 128
+  explosionParticle: {fileID: 5524076853092147726, guid: 5004b7236681228488e3d6e5d031ebb0, type: 3}
 --- !u!114 &8251299897018923986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,3 +171,4 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 2011798969969595159}
   electrified: 0
+  hasParticle: 0
