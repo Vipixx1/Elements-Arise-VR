@@ -29,28 +29,7 @@ public class ScrollSpellResult : MonoBehaviour
         {
             return;
         }
-        if (this.gameObject.GetComponent<Renderer>())
-        {
-            this.gameObject.GetComponent<Renderer>().enabled = false;
-        }
-
-        if (this.gameObject.GetComponent<ParticleSystem>())
-        {
-            this.gameObject.GetComponent<ParticleSystem>().Stop();
-        }
-
-        foreach (Transform child in this.gameObject.transform)
-        {
-            if (child.gameObject.GetComponent<Renderer>())
-            {
-                child.gameObject.GetComponent<Renderer>().enabled = false;
-            }
-
-            if (child.gameObject.GetComponent<ParticleSystem>())
-            {
-                child.gameObject.GetComponent<ParticleSystem>().Stop();
-            }
-        }
+        HideGrabbableSphere();
 
         PlayCollectSound(currentSpellElement);
         OnSpellReady?.Invoke(currentSpellElement, currentHandTag);
@@ -115,5 +94,31 @@ public class ScrollSpellResult : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void HideGrabbableSphere()
+    {
+        if (this.gameObject.GetComponent<Renderer>())
+        {
+            this.gameObject.GetComponent<Renderer>().enabled = false;
+        }
+
+        if (this.gameObject.GetComponent<ParticleSystem>())
+        {
+            this.gameObject.GetComponent<ParticleSystem>().Stop();
+        }
+
+        foreach (Transform child in this.gameObject.transform)
+        {
+            if (child.gameObject.GetComponent<Renderer>())
+            {
+                child.gameObject.GetComponent<Renderer>().enabled = false;
+            }
+
+            if (child.gameObject.GetComponent<ParticleSystem>())
+            {
+                child.gameObject.GetComponent<ParticleSystem>().Stop();
+            }
+        }
     }
 }

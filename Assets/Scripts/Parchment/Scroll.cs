@@ -45,10 +45,8 @@ public class Scroll : MonoBehaviour
         r.material.mainTexture = texture;
         Points.Clear();
         strokeId = -1; // Reset stroke ID
-        if (scrollSpellResult.gameObject.GetComponent<Renderer>())
-        {
-            scrollSpellResult.gameObject.GetComponent<Renderer>().enabled = false;
-        }
+        if (scrollSpellResult)
+            scrollSpellResult.HideGrabbableSphere();
         EraseScrollEvent?.Invoke();
     }
 
