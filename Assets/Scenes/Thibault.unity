@@ -635,7 +635,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae1cb11c9ce1db04f97203de24b5aed9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxDuration: 20
+  maxDuration: 15
   spellType: 0
 --- !u!114 &1321639567
 MonoBehaviour:
@@ -654,6 +654,7 @@ MonoBehaviour:
   mass: 0
   material: {fileID: 1321639566}
   electrified: 0
+  hasParticle: 0
 --- !u!1001 &1401992453
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -781,6 +782,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e68c43eee6d803a419134bb49187284d, type: 3}
+--- !u!1001 &485213615399379889
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1511426942960078414, guid: 5004b7236681228488e3d6e5d031ebb0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511426942960078414, guid: 5004b7236681228488e3d6e5d031ebb0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511426942960078414, guid: 5004b7236681228488e3d6e5d031ebb0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511426942960078414, guid: 5004b7236681228488e3d6e5d031ebb0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511426942960078414, guid: 5004b7236681228488e3d6e5d031ebb0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511426942960078414, guid: 5004b7236681228488e3d6e5d031ebb0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511426942960078414, guid: 5004b7236681228488e3d6e5d031ebb0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511426942960078414, guid: 5004b7236681228488e3d6e5d031ebb0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 270
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511426942960078414, guid: 5004b7236681228488e3d6e5d031ebb0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511426942960078414, guid: 5004b7236681228488e3d6e5d031ebb0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5524076853092147726, guid: 5004b7236681228488e3d6e5d031ebb0, type: 3}
+      propertyPath: m_Name
+      value: ExplosionGO
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5004b7236681228488e3d6e5d031ebb0, type: 3}
 --- !u!1001 &5950718813346326073
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -863,3 +921,4 @@ SceneRoots:
   - {fileID: 1321639565}
   - {fileID: 5950718813346326073}
   - {fileID: 1053595928}
+  - {fileID: 485213615399379889}

@@ -16,6 +16,9 @@ public class StoneMaterial : Material
 
     [SerializeField]
     private LayerMask layer;
+
+    [SerializeField]
+    private GameObject explosionParticle;
     
     public override void OnVolcano(ObjectData data, float[] args = null)
     {
@@ -37,6 +40,11 @@ public class StoneMaterial : Material
 
     private void Explode()
     {
+
+        GameObject explosionGO = Instantiate(explosionParticle, transform.position, Quaternion.identity);
+        ParticleSystem.MainModule mainexplosionParticlesystem = explosionGO.GetComponent<ParticleSystem>().main;
+        mainexplosionParticlesystem.startColor = gameObject.GetComponent<Renderer>().material.color;
+        StartCoroutine(DestroyAfterTime(1, explosionGO));
         Collider[] colliders = new Collider[30];
         int numColliders = Physics.OverlapSphereNonAlloc(transform.position, explosionRadius,colliders, layer);
 
@@ -48,7 +56,12 @@ public class StoneMaterial : Material
         }
 
         Destroy(this.gameObject);
-
     }
 
+
+    public IEnumerator DestroyAfterTime(float time, GameObject go)
+    {
+        yield return new WaitForSeconds(time);
+        Destroy(go);
+    }
 }
