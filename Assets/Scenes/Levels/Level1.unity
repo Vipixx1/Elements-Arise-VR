@@ -80672,6 +80672,13 @@ MonoBehaviour:
       Data3: 1712064191
       Data4: 641362532
     Path: event:/Magic/Throw
+  fuseSoundEvent:
+    Guid:
+      Data1: -1780133119
+      Data2: 1337316651
+      Data3: -1221285970
+      Data4: -185292314
+    Path: event:/Magic/Fuse
 --- !u!1 &1382130987
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System;
 using Oculus.Interaction;
 using System.Collections.Generic;
 using FMOD;
@@ -38,8 +39,19 @@ public class ShootingManager : MonoBehaviour
     [SerializeField] private GameObject sandSpell;
 
     [SerializeField] private EventReference shootEventReference;
+    [SerializeField] private EventReference fuseSoundEvent;
 
     public static event System.Action<string> OnSpellFusion;
+
+    private void Awake()
+    {
+        OnSpellFusion += PlayFuseSound;
+    }
+
+    private void OnDestroy()
+    {
+        OnSpellFusion -= PlayFuseSound;
+    }
 
     private void OnEnable()
     {
@@ -217,5 +229,14 @@ public class ShootingManager : MonoBehaviour
             AssignSpellToBothHands("sand");
         }
 
+    }
+    
+    private void PlayFuseSound(string spell)
+    {
+        EventInstance collectSoundInstance = RuntimeManager.CreateInstance(fuseSoundEvent);
+        collectSoundInstance.setParameterByNameWithLabel("element", spell.ToUpper());
+        RuntimeManager.AttachInstanceToGameObject(collectSoundInstance, rightHandTransform);
+        collectSoundInstance.start();
+        collectSoundInstance.release();
     }
 }

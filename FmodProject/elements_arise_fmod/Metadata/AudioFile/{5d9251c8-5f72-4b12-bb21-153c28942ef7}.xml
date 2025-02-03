@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{5d9251c8-5f72-4b12-bb21-153c28942ef7}">
+		<property name="assetPath">
+			<value>ice_splash.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.92310657596371881</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{f866daa0-1bae-486a-8fcb-4d729371a8cf}</destination>
+		</relationship>
+	</object>
+</objects>
