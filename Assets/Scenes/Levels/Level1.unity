@@ -5595,7 +5595,7 @@ MonoBehaviour:
   maxScaling: 2
   isBurning: 0
   isGrowing: 0
-  axisesToBurn: 
+  axisesToBurn: 01000000
   burnEvent:
     Guid:
       Data1: 439061981
@@ -5756,7 +5756,7 @@ MonoBehaviour:
   maxScaling: 2
   isBurning: 0
   isGrowing: 0
-  axisesToBurn: 
+  axisesToBurn: 01000000
   burnEvent:
     Guid:
       Data1: 439061981
@@ -5991,7 +5991,7 @@ MonoBehaviour:
   maxScaling: 2
   isBurning: 0
   isGrowing: 0
-  axisesToBurn: 
+  axisesToBurn: 01000000
   burnEvent:
     Guid:
       Data1: 439061981
@@ -19365,7 +19365,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 4c8d15c477e583d40a3718643d281f34, type: 2}
-  - {fileID: 2100000, guid: 4c8d15c477e583d40a3718643d281f34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19501,7 +19500,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -19607,8 +19606,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.8867924, g: 0.81663454, b: 0.10541113, a: 1}
-      maxColor: {r: 1, g: 0.2231145, b: 0, a: 1}
+      minColor: {r: 1, g: 0.9926202, b: 0.08018869, a: 1}
+      maxColor: {r: 1, g: 0.09784111, b: 0.08018869, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -19671,9 +19670,9 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     startSize:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0.12
-      minScalar: 0.5
+      minMaxState: 3
+      scalar: 0.15
+      minScalar: 0.1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -19724,7 +19723,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -19777,7 +19776,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeZ:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -19989,7 +19988,7 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 0
     gravitySource: 0
-    maxNumParticles: 100
+    maxNumParticles: 500
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -20255,7 +20254,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 30
+      scalar: 100
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -21039,8 +21038,8 @@ ParticleSystem:
     orbitalX:
       serializedVersion: 2
       minMaxState: 3
-      scalar: -1
-      minScalar: 1
+      scalar: 0
+      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -21092,8 +21091,8 @@ ParticleSystem:
     orbitalY:
       serializedVersion: 2
       minMaxState: 3
-      scalar: -1
-      minScalar: 1
+      scalar: 0
+      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -21145,8 +21144,8 @@ ParticleSystem:
     orbitalZ:
       serializedVersion: 2
       minMaxState: 3
-      scalar: -1
-      minScalar: 1
+      scalar: 0
+      minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -23319,7 +23318,7 @@ ParticleSystem:
         m_RotationOrder: 4
     maxLights: 20
   TrailModule:
-    enabled: 1
+    enabled: 0
     mode: 0
     ratio: 1
     lifetime:
@@ -23381,7 +23380,7 @@ ParticleSystem:
     ribbonCount: 1
     shadowBias: 0.5
     worldSpace: 0
-    dieWithParticles: 0
+    dieWithParticles: 1
     sizeAffectsWidth: 1
     sizeAffectsLifetime: 0
     inheritParticleColor: 1
@@ -24590,7 +24589,7 @@ MonoBehaviour:
   maxScaling: 2
   isBurning: 0
   isGrowing: 0
-  axisesToBurn: 
+  axisesToBurn: 01000000
   burnEvent:
     Guid:
       Data1: 439061981
@@ -30661,7 +30660,7 @@ MonoBehaviour:
   maxScaling: 2
   isBurning: 0
   isGrowing: 0
-  axisesToBurn: 
+  axisesToBurn: 01000000
   burnEvent:
     Guid:
       Data1: 439061981
@@ -64214,7 +64213,7 @@ MonoBehaviour:
   maxScaling: 2
   isBurning: 0
   isGrowing: 0
-  axisesToBurn: 
+  axisesToBurn: 01000000
   burnEvent:
     Guid:
       Data1: 439061981
@@ -64476,7 +64475,7 @@ MonoBehaviour:
   maxScaling: 2
   isBurning: 0
   isGrowing: 0
-  axisesToBurn: 
+  axisesToBurn: 01000000
   burnEvent:
     Guid:
       Data1: 439061981
@@ -85447,7 +85446,7 @@ MonoBehaviour:
   maxScaling: 2
   isBurning: 0
   isGrowing: 0
-  axisesToBurn: 
+  axisesToBurn: 01000000
   burnEvent:
     Guid:
       Data1: 439061981
@@ -86242,7 +86241,7 @@ MonoBehaviour:
   maxScaling: 2
   isBurning: 0
   isGrowing: 0
-  axisesToBurn: 
+  axisesToBurn: 01000000
   burnEvent:
     Guid:
       Data1: 439061981
@@ -111054,7 +111053,7 @@ MonoBehaviour:
   maxScaling: 2
   isBurning: 0
   isGrowing: 0
-  axisesToBurn: 
+  axisesToBurn: 01000000
   burnEvent:
     Guid:
       Data1: 439061981
@@ -111334,6 +111333,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxDuration: 15
   spellType: 0
+  cristalSoundEvent:
+    Guid:
+      Data1: 1389666372
+      Data2: 1157047740
+      Data3: -212193089
+      Data4: -959225340
+    Path: event:/Objects/Cristal
 --- !u!1 &1950835606
 GameObject:
   m_ObjectHideFlags: 0

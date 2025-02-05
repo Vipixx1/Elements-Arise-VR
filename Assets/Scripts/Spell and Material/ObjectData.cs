@@ -96,14 +96,14 @@ public class ObjectData : MonoBehaviour
         UnityEngine.Material matWat = humidity > 0 ? Resources.Load("orb") as UnityEngine.Material : Resources.Load("smoke") as UnityEngine.Material;
         particleSystem.GetComponent<ParticleSystemRenderer>().material = matWat;
         ParticleSystem.EmissionModule emission = particleSystem.emission;
-        emission.rateOverTime = (humidity > 0) ? Mathf.Clamp(Mathf.Abs(humidity),0,5) * 5 : Mathf.Clamp(Mathf.Abs(humidity), 0, 5) * 50;
+        emission.rateOverTime = (humidity > 0) ? Mathf.Clamp(Mathf.Abs(humidity),0,5) * 5 : Mathf.Clamp(Mathf.Abs(humidity), 0, 5) * 60;
         
         main.startRotation3D = true;
        
         var shapeModule = particleSystem.shape;
         shapeModule.angle = 1;
         shapeModule.rotation = new Vector3(-90, 0, 0);
-        shapeModule.radius = transform.lossyScale.z * ((humidity > 0) ? 5.5f : 27f);
+        shapeModule.radius = transform.lossyScale.z * ((humidity > 0) ? 6f : 29f);
         shapeModule.scale = new Vector3(1, 1, 0.10f);
         main.gravityModifier = 0.5f;
         float alpha = 1.0f;
@@ -147,7 +147,7 @@ public class ObjectData : MonoBehaviour
         var shapeModuletemp = particleSystemtemp.shape;
         shapeModuletemp.rotation = (temperature < 0) ?  new Vector3(-90, 0, 0) : new Vector3(90, 0, 0);
         shapeModuletemp.angle = 1;
-        shapeModuletemp.radius = transform.lossyScale.z * 5.5f;
+        shapeModuletemp.radius = transform.lossyScale.z * 6f;
         shapeModuletemp.scale = new Vector3(1, 1, 0.10f);
         maintemp.gravityModifier = (temperature > 0) ? 0 : 0.5f;
         // float ratio = Mathf.Abs(temperature) / (Mathf.Abs(humidity) + (float)Mathf.Abs(temperature));

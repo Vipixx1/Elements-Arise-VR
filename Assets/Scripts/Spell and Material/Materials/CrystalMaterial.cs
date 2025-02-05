@@ -1,7 +1,11 @@
+using System;
 using Magic.Materials;
 using System.Collections;
+using FMOD.Studio;
+using FMODUnity;
 using UnityEngine;
 using Material = Magic.Materials.Material;
+using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 public class CrystalMaterial : Material
 {
@@ -9,6 +13,9 @@ public class CrystalMaterial : Material
 
     [SerializeField] private float maxDuration = 15f;
     [SerializeField] private SpellType spellType;
+
+    [SerializeField] private EventReference cristalSoundEvent;
+    private EventInstance cristalSound;
 
     private Renderer crystalRenderer;
     private MaterialPropertyBlock propertyBlock;
@@ -26,6 +33,9 @@ public class CrystalMaterial : Material
         crystalRenderer = GetComponent<Renderer>();
         propertyBlock = new MaterialPropertyBlock();
 
+        cristalSound = RuntimeManager.CreateInstance(cristalSoundEvent);
+        RuntimeManager.AttachInstanceToGameObject(cristalSound, gameObject);
+        
         // Initialize base color from the material
         crystalRenderer.GetPropertyBlock(propertyBlock);
         baseColor = crystalRenderer.sharedMaterial.color;
@@ -37,7 +47,7 @@ public class CrystalMaterial : Material
         if (IsActivated)
         {
             timeRemaining -= Time.deltaTime;
-            Debug.Log(timeRemaining);
+            //Debug.Log(timeRemaining);
 
             if (timeRemaining <= 0)
             {
@@ -72,9 +82,12 @@ public class CrystalMaterial : Material
         timeRemaining = 0f;
 
         StopAllCoroutines(); // Stop any ongoing effects to avoid conflicts
+        cristalSound.stop(STOP_MODE.ALLOWFADEOUT);
+        cristalSound.setParameterByName("cristal_loop", 0);
         StartCoroutine(BlinkEffect());
         if (spellType == type)
         {
+            cristalSound.setParameterByName("cristal_loop", 1);
             timeRemaining = maxDuration;
             StartCoroutine(GlowEffect());
         }
@@ -82,6 +95,7 @@ public class CrystalMaterial : Material
 
     private IEnumerator BlinkEffect()
     {
+        cristalSound.start();
         float elapsed = 0f;
 
         while (elapsed < BlinkDuration)
@@ -109,6 +123,7 @@ public class CrystalMaterial : Material
     {
         SetCrystalColor(baseColor);
         crystalRenderer.SetPropertyBlock(propertyBlock);
+        cristalSound.setParameterByName("cristal_loop", 0);
     }
 
     private void SetCrystalColor(Color color)
@@ -116,5 +131,11 @@ public class CrystalMaterial : Material
         crystalRenderer.GetPropertyBlock(propertyBlock);
         propertyBlock.SetColor("_Color", color);
         crystalRenderer.SetPropertyBlock(propertyBlock);
+    }
+
+    private void OnDestroy()
+    {
+        cristalSound.stop(STOP_MODE.ALLOWFADEOUT);
+        cristalSound.release();
     }
 }

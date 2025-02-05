@@ -12,6 +12,7 @@ TagManager:
   - Spell
   - FusionCollider
   - Prespell
+  - NewScroll
   layers:
   - Default
   - TransparentFX

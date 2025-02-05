@@ -60,7 +60,7 @@ namespace Drawing
         {
             foreach (DrawableShapeSO shape in DrawableShapesList)
             {
-                if (!_drawableShapes.IsShape(shape, scroll, boundingBoxPosition, boundingBoxSize)) continue;
+                if (!_drawableShapes.IsShape(shape, scroll, boundingBoxPosition, boundingBoxSize, Color.blue)) continue;
                 _text.text = shape.ShapeName;
                 return;
             }
@@ -81,84 +81,6 @@ namespace Drawing
             
             scroll.texture.Apply();
         }
-        
-        /*private bool ComputeDrawingBoundingBox(out Vector2 squarePosition, out Vector2 size)
-        {
-            int minX = GetMinPixelX();
-            int minY = GetMinPixelY();
-            int maxX = GetMaxPixelX();
-            int maxY = GetMaxPixelY();
-            squarePosition = new Vector2(minX, minY);
-            size = new Vector2(maxX - minX, maxY - minY);
-            return minX != 0 || minY != 0 || maxX != 0 || maxY != 0;
-        }
-        
-        private void ComputeDrawingBoundingBox()
-        {
-            int minX = GetMinPixelX();
-            int minY = GetMinPixelY();
-            int maxX = GetMaxPixelX();
-            int maxY = GetMaxPixelY();
-            _boundingBoxPosition = new Vector2(minX, minY);
-            _boundingBoxSize = new Vector2(maxX - minX, maxY - minY);
-        }*/
-
-        /*private int GetMinPixelX()
-        {
-            for (int i = 0; i < scroll.textureSize.x; i++)
-            {
-                for (int j = 0; j < scroll.textureSize.y; j++)
-                {
-                    if (scroll.texture.GetPixel(i, j) == Color.blue)
-                        return i;
-                } 
-            }
-
-            return 0;
-        }
-        
-        private int GetMinPixelY()
-        {
-            for (int i = 0; i < scroll.textureSize.y; i++)
-            {
-                for (int j = 0; j < scroll.textureSize.x; j++)
-                {
-                    if (scroll.texture.GetPixel(j, i) == Color.blue)
-                        return i;
-                } 
-            }
-
-            return 0; 
-        }
-        
-        private int GetMaxPixelY()
-        {
-            for (int i = (int) scroll.textureSize.y - 1; i >= 0; i--)
-            {
-                for (int j = 0; j < scroll.textureSize.x; j++)
-                {
-                    if (scroll.texture.GetPixel(j, i) == Color.blue)
-                        return i;
-                } 
-            }
-
-            return 0; 
-        }
-        
-        
-        private int GetMaxPixelX()
-        {
-            for (int i = (int) scroll.textureSize.y - 1; i >= 0; i--)
-            {
-                for (int j = 0; j < scroll.textureSize.y; j++)
-                {
-                    if (scroll.texture.GetPixel(i, j) == Color.blue)
-                        return i;
-                } 
-            }
-
-            return 0;
-        }*/
 
         private void CheckForBoundingBox(int x, int y, int sizeX, int sizeY)
         {
