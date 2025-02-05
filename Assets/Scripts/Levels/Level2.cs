@@ -64,15 +64,27 @@ public class Level2 : MonoBehaviour
                 if (door != null) Destroy(door);
                 foreach (Transform carpet in floor.transform)
                 {
-                    SetInteractable(carpet.gameObject);
+                    Debug.Log(carpet.gameObject);
+                    if (!SetInteractable(carpet.gameObject))
+                    {
+                        foreach (Transform carpet2 in carpet.transform)
+                        {
+                            SetInteractable(carpet2.gameObject);
+                        }
+                    }
                 }
             }
         }
     }
 
-    void SetInteractable(GameObject item)
+    bool SetInteractable(GameObject item)
     {
+        if (item.GetComponent<TeleportInteractable>() == null)
+        {
+            return false;
+        }
         item.GetComponent<TeleportInteractable>().AllowTeleport = true;
+        return true;
     }
 
     void EnableDrawingFusion(string element)
