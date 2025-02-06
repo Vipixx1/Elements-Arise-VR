@@ -136,6 +136,18 @@ public class WoodMaterial : Material
         if (burningSound.hasHandle()) return;
         burningSound = RuntimeManager.CreateInstance(burnEvent);
         RuntimeManager.AttachInstanceToGameObject(burningSound, gameObject);
+        if (GetComponent<Collider>())
+        {
+            burningSound.setParameterByName("size", GetComponent<Collider>().bounds.size.magnitude);
+        } else if (GetComponentsInChildren<Collider>().Length != 0)
+        {
+            float size = 0;
+            foreach (var childCollider in GetComponentsInChildren<Collider>())
+            {
+                size += childCollider.bounds.size.magnitude;
+            }
+            burningSound.setParameterByName("size", size);
+        }
         burningSound.start();
     }
 
@@ -176,7 +188,6 @@ public class WoodMaterial : Material
     
     private void OnDestroy()
     {
-        burningSound.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        burningSound.release();
+        StopSound();
     }
 }

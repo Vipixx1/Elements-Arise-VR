@@ -23,6 +23,8 @@ public class ShootingManager : MonoBehaviour
 
     [SerializeField]
     private GameObject windFieldPrefab;
+    
+    private bool _canFuse = true;
 
     public Vector3? firstWindSpell;
     public Vector3? secondWindSpell;
@@ -151,7 +153,7 @@ public class ShootingManager : MonoBehaviour
         // If rightHand, rightOrLeftCoeff = 1, if leftHand, rightOrLeftCoeff = -1
         spell.GetComponent<Rigidbody>().AddForce(rightOrLeftCoeff * (-handTransform.up*0.4f + handTransform.right*0.6f) * 800);
         
-        RuntimeManager.PlayOneShotAttached(shootEventReference, (rightOrLeftCoeff == 1 ? rightHandTransform : leftHandTransform).gameObject);
+        //RuntimeManager.PlayOneShotAttached(shootEventReference, (rightOrLeftCoeff == 1 ? rightHandTransform : leftHandTransform).gameObject);
     }
 
 
@@ -189,8 +191,20 @@ public class ShootingManager : MonoBehaviour
 
     }
 
+    public void SetCanFuse(bool canFuse)
+    {
+        _canFuse = canFuse;
+    }
+    
+    public bool CanFuse()
+    {
+        return _canFuse;
+    }
+
     public void FuseSpell()
     {
+        if (!CanFuse()) return;
+        
         List<string> handElements = new List<string> { leftHandElement.ToLower(), rightHandElement.ToLower() };
 
         if (handElements.Contains("fire") && handElements.Contains("water"))
